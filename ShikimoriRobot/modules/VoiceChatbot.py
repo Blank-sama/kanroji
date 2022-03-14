@@ -6,7 +6,7 @@ import aiofiles
 import aiohttp
 from pyrogram import filters
 
-from ErinaRobot import pbot as LYCIA
+from ShikimoriRobot import pbot as LYCIA
 
 
 async def fetch(url):
@@ -48,7 +48,7 @@ async def Lycia(_, message):
     except Exception as e:
         await m.edit(str(e))
         return
-    await m.edit("Made By @SimpleBoy787")
+    await m.edit("Made By @Sawada_Kun")
     LyciaVoice = await ai_lycia(VoiceAi)
     await m.edit("Repyping...")
     await message.reply_audio(audio=LyciaVoice, title=chatbot, performer=name)
