@@ -34,8 +34,8 @@ from pyrate_limiter import (
 from telegram import Update
 from telegram.ext import CommandHandler, Filters, MessageHandler, RegexHandler
 
-import ErinaRobot.modules.sql.blacklistusers_sql as sql
-from ErinaRobot import ALLOW_EXCL, DEV_USERS, FAFNIRS, LUINORS, REDLIONS, SPRYZONS
+import ShikimoriRobot.modules.sql.blacklistusers_sql as sql
+from ShikimoriRobot import ALLOW_EXCL, DEV_USERS, FAFNIRS, LUINORS, REDLIONS, SPRYZONS
 
 CMD_STARTERS = ("/", "!") if ALLOW_EXCL else ("/",)
 
