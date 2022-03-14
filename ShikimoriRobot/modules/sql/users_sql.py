@@ -36,8 +36,8 @@ from sqlalchemy import (
     func,
 )
 
-from ErinaRobot import dispatcher
-from ErinaRobot.modules.sql import BASE, SESSION
+from ShikimoriRobot import dispatcher
+from ShikimoriRobot.modules.sql import BASE, SESSION
 from sqlalchemy.sql.sqltypes import BigInteger
 
 
