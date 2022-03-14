@@ -2,7 +2,7 @@ import sys
 
 from envparse import env
 
-from ErinaRobot import LOGGER
+from ShikimoriRobot import LOGGER
 
 DEFAULTS = {
     "LOAD_MODULES": True,
