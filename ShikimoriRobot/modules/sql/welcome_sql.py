@@ -30,8 +30,8 @@ from typing import Union
 
 from sqlalchemy import BigInteger, Boolean, Column, Integer, String, UnicodeText
 
-from ErinaRobot.modules.helper_funcs.msg_types import Types
-from ErinaRobot.modules.sql import BASE, SESSION
+from ShikimoriRobot.modules.helper_funcs.msg_types import Types
+from ShikimoriRobot.modules.sql import BASE, SESSION
 from sqlalchemy.sql.sqltypes import BigInteger
 
 DEFAULT_WELCOME = "Hey {first}, how are you?"
