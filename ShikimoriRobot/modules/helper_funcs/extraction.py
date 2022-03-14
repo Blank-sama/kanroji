@@ -29,8 +29,8 @@ from typing import List, Optional
 from telegram import Message, MessageEntity
 from telegram.error import BadRequest
 
-from ErinaRobot import LOGGER
-from ErinaRobot.modules.users import get_user_id
+from ShikimoriRobot import LOGGER
+from ShikimoriRobot.modules.users import get_user_id
 
 
 def id_from_reply(message):
