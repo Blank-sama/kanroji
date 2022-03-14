@@ -29,7 +29,7 @@ from typing import Dict, List
 from telegram import MAX_MESSAGE_LENGTH, Bot, InlineKeyboardButton, ParseMode
 from telegram.error import TelegramError
 
-from ErinaRobot import NO_LOAD
+from ShikimoriRobot import NO_LOAD
 
 
 class EqInlineKeyboardButton(InlineKeyboardButton):
