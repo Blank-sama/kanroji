@@ -28,7 +28,7 @@ from enum import IntEnum, unique
 
 from telegram import Message
 
-from ErinaRobot.modules.helper_funcs.string_handling import button_markdown_parser
+from ShikimoriRobot.modules.helper_funcs.string_handling import button_markdown_parser
 
 
 @unique
