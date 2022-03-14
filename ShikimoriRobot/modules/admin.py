@@ -5,10 +5,10 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, Filters, run_async
 from telegram.utils.helpers import mention_html
 
-from ErinaRobot import REDLIONS, dispatcher
-from ErinaRobot.modules.disable import DisableAbleCommandHandler
-from ErinaRobot.modules.helper_funcs.alternate import send_message, typing_action
-from ErinaRobot.modules.helper_funcs.chat_status import (
+from ShikimoriRobot import REDLIONS, dispatcher
+from ShikimoriRobot.modules.disable import DisableAbleCommandHandler
+from ShikimoriRobot.modules.helper_funcs.alternate import send_message, typing_action
+from ShikimoriRobot.modules.helper_funcs.chat_status import (
     ADMIN_CACHE,
     bot_admin,
     can_pin,
@@ -16,9 +16,9 @@ from ErinaRobot.modules.helper_funcs.chat_status import (
     connection_status,
     user_admin,
 )
-from ErinaRobot.modules.helper_funcs.extraction import extract_user, extract_user_and_text
-from ErinaRobot.modules.log_channel import loggable
-from ErinaRobot.utils.admin_rights import (
+from ShikimoriRobot.modules.helper_funcs.extraction import extract_user, extract_user_and_text
+from ShikimoriRobot.modules.log_channel import loggable
+from ShikimoriRobot.utils.admin_rights import (
     user_can_changeinfo,
     user_can_pin,
     user_can_promote,
