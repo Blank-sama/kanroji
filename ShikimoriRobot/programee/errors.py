@@ -3,7 +3,7 @@ import sys
 import traceback
 from functools import wraps
 
-from ErinaRobot import SUPPORT_CHAT, pbot
+from ShikimoriRobot import SUPPORT_CHAT, pbot
 
 
 def split_limits(text):
