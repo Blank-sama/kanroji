@@ -28,8 +28,8 @@ import threading
 
 from sqlalchemy import Boolean, Column, Integer, String, UnicodeText, distinct, func
 
-from ErinaRobot.modules.helper_funcs.msg_types import Types
-from ErinaRobot.modules.sql import BASE, SESSION
+from ShikimoriRobot.modules.helper_funcs.msg_types import Types
+from ShikimoriRobot.modules.sql import BASE, SESSION
 
 
 class Notes(BASE):
