@@ -28,7 +28,7 @@ import threading
 
 from sqlalchemy import Column, Integer, String, UnicodeText
 
-from ErinaRobot.modules.sql import BASE, SESSION
+from ShikimoriRobot.modules.sql import BASE, SESSION
 from sqlalchemy.sql.sqltypes import BigInteger
 
 DEF_COUNT = 1
