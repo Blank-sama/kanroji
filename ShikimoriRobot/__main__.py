@@ -48,8 +48,8 @@ from telegram.ext import CallbackContext, CallbackQueryHandler, Filters, Message
 from telegram.ext.dispatcher import DispatcherHandlerStop
 from telegram.utils.helpers import escape_markdown
 
-import ErinaRobot.modules.sql.users_sql as sql
-from ErinaRobot import (
+import ShikimoriRobot.modules.sql.users_sql as sql
+from ShikimoriRobot import (
     BOT_NAME,
     BOT_USERNAME,
     CERT_PATH,
@@ -73,11 +73,11 @@ from ErinaRobot import (
 
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
-from ErinaRobot.modules import ALL_MODULES
-from ErinaRobot.modules.disable import DisableAbleCommandHandler
-from ErinaRobot.modules.helper_funcs.alternate import typing_action
-from ErinaRobot.modules.helper_funcs.chat_status import is_user_admin
-from ErinaRobot.modules.helper_funcs.misc import paginate_modules
+from ShikimoriRobot.modules import ALL_MODULES
+from ShikimoriRobot.modules.disable import DisableAbleCommandHandler
+from ShikimoriRobot.modules.helper_funcs.alternate import typing_action
+from ShikimoriRobot.modules.helper_funcs.chat_status import is_user_admin
+from ShikimoriRobot.modules.helper_funcs.misc import paginate_modules
 
 HELP_IMG = ""
 
@@ -171,7 +171,7 @@ CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("ErinaRobot.modules." + module_name)
+    imported_module = importlib.import_module("ShikimoriRobot.modules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
 
@@ -452,7 +452,7 @@ def shasa_callback_data(update, context):
             text=f"*Here's basic Help regarding* *How to use Me?*"
             f"\n\n• Firstly Add {dispatcher.bot.first_name} to your group by pressing [here](http://t.me/{dispatcher.bot.username}?startgroup=true)\n"
             f"\n• After adding promote me manually with full rights for faster experience.\n"
-            f"\n• Than send `/admincache@ErinaRobot` in that chat to refresh admin list in My database.\n"
+            f"\n• Than send `/admincache@Shikimori_Robot` in that chat to refresh admin list in My database.\n"
             f"\n\n*All done now use below given button's to know about use!*\n"
             f"",
             parse_mode=ParseMode.MARKDOWN,
@@ -465,7 +465,7 @@ def shasa_callback_data(update, context):
                     ],
                     [
                         InlineKeyboardButton(
-                            text="sᴜᴘᴘᴏʀᴛ", callback_data="ErinaSupport"
+                            text="sᴜᴘᴘᴏʀᴛ", callback_data="ShikimoriSupport"
                         ),
                         InlineKeyboardButton(
                             text="ᴄʀᴇᴅɪᴛ", callback_data="shasa_credit"
@@ -519,14 +519,14 @@ def shasa_callback_data(update, context):
                 ]
             ),
         )
-    elif query.data == "ErinaSupport":
+    elif query.data == "ShikimoriSupport":
         query.message.edit_text(
-            text="* Erina support chats*" "\nJoin Support Group/Channel",
+            text="* Shikimori support chats*" "\nJoin Support Group/Channel",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="ᴀʙᴏᴜᴛ", url="t.me/ErinaSupport"),
+                        InlineKeyboardButton(text="ᴀʙᴏᴜᴛ", url="t.me/KyoukoXsupport"),
                         InlineKeyboardButton(
                             text="ᴠᴄ ʜᴇʟᴘ", url="https://telegra.ph/file/bc78aaf26976f892d6478.jpg"
                         ),
