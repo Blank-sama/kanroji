@@ -2,7 +2,7 @@ import threading
 
 from sqlalchemy import Column, String
 
-from ErinaRobot.modules.sql import BASE, SESSION
+from ShikimoriRobot.modules.sql import BASE, SESSION
 
 
 class aiChats(BASE):
