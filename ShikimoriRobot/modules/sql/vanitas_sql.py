@@ -2,7 +2,7 @@ import threading
 
 from sqlalchemy import Column, String, Integer
 
-from ErinaRobot.modules.sql import BASE, SESSION # import your file name
+from ShikimoriRobot.modules.sql import BASE, SESSION # import your file name
 
 class VanitasUser(BASE):
     __tablename__ = "vanitasuser"
