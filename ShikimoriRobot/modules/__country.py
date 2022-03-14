@@ -1,8 +1,8 @@
 import flag
 from countryinfo import CountryInfo
 
-from ErinaRobot import pbot as borg
-from ErinaRobot.events import register
+from ShikimoriRobot import pbot as borg
+from ShikimoriRobot.events import register
 
 
 @register(pattern="^/country (.*)")
