@@ -26,7 +26,7 @@ SOFTWARE.
 
 import ast
 
-from ErinaRobot import REDIS
+from ShikimoriRobot import REDIS
 
 try:
     ast.literal_eval(REDIS.get("Approvals"))
