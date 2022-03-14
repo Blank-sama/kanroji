@@ -28,7 +28,7 @@ import threading
 
 from sqlalchemy import Boolean, Column, UnicodeText
 
-from ErinaRobot.modules.sql import BASE, SESSION
+from ShikimoriRobot.modules.sql import BASE, SESSION
 
 
 class CleanerBlueTextChatSettings(BASE):
