@@ -32,7 +32,7 @@ from cachetools import TTLCache
 from telegram import Chat, ChatMember, ParseMode, Update
 from telegram.ext import CallbackContext
 
-from ErinaRobot import (
+from ShikimoriRobot import (
     DEL_CMDS,
     DEV_USERS,
     FAFNIRS,
@@ -460,6 +460,6 @@ def connection_status(func):
     return connected_status
 
 
-from ErinaRobot.modules import connection
+from ShikimoriRobot.modules import connection
 
 connected = connection.connected
