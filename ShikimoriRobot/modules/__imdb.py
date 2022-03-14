@@ -3,7 +3,7 @@ import re
 import bs4
 import requests
 
-from ErinaRobot.events import register
+from ShikimoriRobot.events import register
 
 langi = "en"
 
