@@ -2,8 +2,8 @@
 import aiohttp
 from pyrogram import filters
 
-from ErinaRobot import pbot
-from ErinaRobot.utils.errors import capture_err
+from ShikimoriRobot import pbot
+from ShikimoriRobot.utils.errors import capture_err
 
 __mod_name__ = "Github"
 
