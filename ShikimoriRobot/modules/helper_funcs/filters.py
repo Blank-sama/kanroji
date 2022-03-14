@@ -27,7 +27,7 @@ SOFTWARE.
 from telegram import Message
 from telegram.ext import MessageFilter
 
-from ErinaRobot import DEV_USERS, REDLIONS, SPRYZONS
+from ShikimoriRobot import DEV_USERS, REDLIONS, SPRYZONS
 
 
 class CustomFilters:
