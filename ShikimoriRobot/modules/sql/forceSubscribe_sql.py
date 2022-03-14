@@ -26,7 +26,7 @@ SOFTWARE.
 
 from sqlalchemy import Column, Numeric, String
 
-from ErinaRobot.modules.sql import BASE, SESSION
+from ShikimoriRobot.modules.sql import BASE, SESSION
 
 
 class forceSubscribe(BASE):
