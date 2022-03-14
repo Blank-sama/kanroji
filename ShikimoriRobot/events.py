@@ -1,6 +1,6 @@
 from telethon import events
 
-from ErinaRobot import telethn
+from ShikimoriRobot import telethn
 
 
 def register(**args):
@@ -73,8 +73,8 @@ def load_module(shortname):
 
         import MarinRobot.events
 
-        path = Path(f"ErinaRobot/modules/{shortname}.py")
-        name = "ErinaRobot.modules.{}".format(shortname)
+        path = Path(f"ShikimoriRobot/modules/{shortname}.py")
+        name = "ShikimoriRobot.modules.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
@@ -82,16 +82,16 @@ def load_module(shortname):
     else:
         import importlib
 
-        import ErinaRobot.events
+        import ShikimoriRobot.events
 
-        path = Path(f"ErinaRobot/modules/{shortname}.py")
-        name = "ErinaRobot.modules.{}".format(shortname)
+        path = Path(f"ShikimoriRobot/modules/{shortname}.py")
+        name = "ShikimoriRobot.modules.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.register = register
-        mod.ErinaRobot = ErinaRobot
+        mod.ShikimoriRobot = ShikimoriRobot
         mod.tbot = telethn
         mod.logger = logging.getLogger(shortname)
         spec.loader.exec_module(mod)
-        sys.modules["ErinaRobot.modules." + shortname] = mod
+        sys.modules["ShkimoriRobot.modules." + shortname] = mod
         print("Successfully imported " + shortname)
