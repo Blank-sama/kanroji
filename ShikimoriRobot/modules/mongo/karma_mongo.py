@@ -26,7 +26,7 @@ SOFTWARE.
 
 from typing import Dict, Union
 
-from ErinaRobot import db
+from ShikimoriRobot import db
 
 karmadb = db.karma
 
