@@ -7,7 +7,7 @@ import time
 import aiohttp
 import httpx
 import spamwatch
-from ErinaRobot.utils import Sylviorus
+from ShikimoriRobot.utils import Sylviorus
 import telegram.ext as tg
 from aiohttp import ClientSession
 from motor import motor_asyncio
@@ -271,11 +271,11 @@ except BaseException:
     sys.exit(1)
 
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
-telethn = TelegramClient("Erina", API_ID, API_HASH)
-pbot = Client("Erinapbot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
+telethn = TelegramClient("Shikimori", API_ID, API_HASH)
+pbot = Client("Shikimoripbot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 dispatcher = updater.dispatcher
 
-print("[CLAN]: Connecting To Erina • Data Center • Mumbai • MongoDB Database")
+print("[CLAN]: Connecting To Shikimori • Data Center • Mumbai • MongoDB Database")
 mongodb = MongoClient(MONGO_DB_URL, MONGO_PORT)[MONGO_DB]
 motor = motor_asyncio.AsyncIOMotorClient(MONGO_DB_URL)
 db = motor[MONGO_DB]
@@ -295,7 +295,7 @@ FAFNIRS = list(FAFNIRS)
 
 
 # Load at end to ensure all prev variables have been set
-from ErinaRobot.modules.helper_funcs.handlers import (
+from ShkimoriRobot.modules.helper_funcs.handlers import (
     CustomCommandHandler,
     CustomMessageHandler,
     CustomRegexHandler,
