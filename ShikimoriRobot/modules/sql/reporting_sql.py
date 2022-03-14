@@ -29,7 +29,7 @@ from typing import Union
 
 from sqlalchemy import Boolean, Column, Integer, String
 
-from ErinaRobot.modules.sql import BASE, SESSION
+from ShikimoriRobot.modules.sql import BASE, SESSION
 from sqlalchemy.sql.sqltypes import BigInteger
 
 
