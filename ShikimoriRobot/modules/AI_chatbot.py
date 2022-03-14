@@ -49,11 +49,11 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import mention_html
 
-import ErinaRobot.modules.sql.chatbot_sql as sql
-from ErinaRobot import dispatcher
-from ErinaRobot.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
-from ErinaRobot.modules.helper_funcs.filters import CustomFilters
-from ErinaRobot.modules.log_channel import gloggable
+import ShikimoriRobot.modules.sql.chatbot_sql as sql
+from ShikimoriRobot import dispatcher
+from ShikimoriRobot.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
+from ShikimoriRobot.modules.helper_funcs.filters import CustomFilters
+from ShikimoriRobot.modules.log_channel import gloggable
 
 
 @user_admin_no_reply
@@ -75,7 +75,7 @@ def kukirm(update: Update, context: CallbackContext) -> str:
             )
         else:
             update.effective_message.edit_text(
-                "Nezuko Chatbot disable by {}.".format(
+                "Shikimori Chatbot disable by {}.".format(
                     mention_html(user.id, user.first_name)
                 ),
                 parse_mode=ParseMode.HTML,
@@ -103,7 +103,7 @@ def kukiadd(update: Update, context: CallbackContext) -> str:
             )
         else:
             update.effective_message.edit_text(
-                "Nezuko Chatbot enable by {}.".format(
+                "Shikimori Chatbot enable by {}.".format(
                     mention_html(user.id, user.first_name)
                 ),
                 parse_mode=ParseMode.HTML,
@@ -181,7 +181,7 @@ def list_all_chats(update: Update, context: CallbackContext):
 
 
 __help__ = """
-Chatbot utilizes the Nezuko's api which allows Nezuko to talk and provide a more interactive group chat experience.
+Chatbot utilizes the Shikimori's api which allows Shikimori to talk and provide a more interactive group chat experience.
 
 *Admins only Commands*:
  |• `/chatbot`*:* Shows chatbot control panel
