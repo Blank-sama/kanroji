@@ -30,8 +30,8 @@ import threading
 from sqlalchemy import Boolean, Column, Integer, String, UnicodeText
 from telegram.error import BadRequest, Unauthorized
 
-from ErinaRobot import dispatcher
-from ErinaRobot.modules.sql import BASE, SESSION
+from ShikimoriRobot import dispatcher
+from ShikimoriRobot.modules.sql import BASE, SESSION
 from sqlalchemy.sql.sqltypes import BigInteger
 
 
