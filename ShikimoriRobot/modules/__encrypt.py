@@ -1,6 +1,6 @@
 import secureme
 
-from ErinaRobot.events import register
+from ShikimoriRobot.events import register
 
 
 @register(pattern="^/encrypt ?(.*)")
