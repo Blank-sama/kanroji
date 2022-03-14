@@ -29,7 +29,7 @@ import threading
 
 from sqlalchemy import Boolean, Column, String
 
-from ErinaRobot.modules.sql import BASE, SESSION
+from ShikimoriRobot.modules.sql import BASE, SESSION
 
 
 class Permissions(BASE):
