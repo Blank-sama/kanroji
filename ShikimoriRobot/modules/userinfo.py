@@ -41,8 +41,8 @@ from telethon import events
 from telethon.tl.functions.channels import GetFullChannelRequest
 from telethon.tl.types import ChannelParticipantsAdmins
 
-import ErinaRobot.modules.sql.userinfo_sql as sql
-from ErinaRobot import (
+import ShikimoriRobot.modules.sql.userinfo_sql as sql
+from ShikimoriRobot import (
     DEV_USERS,
     FAFNIRS,
     INFOPIC,
@@ -56,13 +56,13 @@ from ErinaRobot import (
     sw,
     telethn,
 )
-from ErinaRobot.__main__ import STATS, TOKEN, USER_INFO
-from ErinaRobot.modules.disable import DisableAbleCommandHandler
-from ErinaRobot.modules.helper_funcs.chat_status import sudo_plus
-from ErinaRobot.modules.helper_funcs.extraction import extract_user
-from ErinaRobot.modules.redis.afk_redis import afk_reason, is_user_afk
-from ErinaRobot.modules.sql.global_bans_sql import is_user_gbanned
-from ErinaRobot.modules.sql.users_sql import get_user_num_chats
+from ShikimoriRobot.__main__ import STATS, TOKEN, USER_INFO
+from ShikimoriRobot.modules.disable import DisableAbleCommandHandler
+from ShikimoriRobot.modules.helper_funcs.chat_status import sudo_plus
+from ShikimoriRobot.modules.helper_funcs.extraction import extract_user
+from ShikimoriRobot.modules.redis.afk_redis import afk_reason, is_user_afk
+from ShikimoriRobot.modules.sql.global_bans_sql import is_user_gbanned
+from ShikimoriRobot.modules.sql.users_sql import get_user_num_chats
 
 
 def no_by_per(totalhp, percentage):
@@ -347,7 +347,7 @@ def info(update: Update, context: CallbackContext):
         disaster_level_present = True
 
     if disaster_level_present:
-        text += ' [<a href="https://t.me/ErinaUpdates/3">?</a>]'.format(
+        text += ' [<a href="https://t.me/ShikimoriUpdates/3">?</a>]'.format(
             bot.username,
         )
 
@@ -471,7 +471,7 @@ def stats(update, context):
             status
             + "\n*Bot statistics*:\n"
             + "\n".join([mod.__stats__() for mod in STATS])
-            + f"\n\n [✦Updates](https://t.me/ErinaUpdates) | [✦Support](https://t.me/ErinaSupport)\n\n"
+            + f"\n\n [✦Updates](https://t.me/ShikimoriUpdates) | [✦Support](https://t.me/ShikimoriSupport)\n\n"
             + "╘══「 by [Nosferatu Zodd](https://t.me/Zodd_The_Immortal) 」\n",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
@@ -484,7 +484,7 @@ def stats(update, context):
                         "\n*Bot statistics*:\n"
                         + "\n".join(mod.__stats__() for mod in STATS)
                     )
-                    + f"\n\n [✦Updates](https://t.me/ErinaUpdates) | [✦Support](https://t.me/{SUPPORT_CHAT})\n\n"
+                    + f"\n\n [✦Updates](https://t.me/ShikimoriUpdates) | [✦Support](https://t.me/{SUPPORT_CHAT})\n\n"
                 )
                 + "╘══「 by [Nosferatu Zodd](https://t.me/Zodd_The_Immortal) 」\n"
             ),
