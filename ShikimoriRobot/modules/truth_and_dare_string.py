@@ -15,6 +15,7 @@ TRUTH = (
     "When’s the last time you lied to your parents and why?",
     "Have you ever lied about your age to participate in a contest?",
     "Have you ever been caught checking someone out?",
+    "Are you madharchod? Have you masterbate ever using your mom's photo?",
 )
 
 DARE = (
@@ -42,6 +43,7 @@ DARE = (
     "Eat a snack without using your hands",
     "Say two honest things about everyone else in the group",
     "Twerk for a minute",
+    "Go masterbate using your mom's photo then cum on her face",
     "Try and make the group laugh as quickly as possible",
     "Try to put your whole fist in your mouth",
     "Tell everyone an embarrassing story about yourself",
