@@ -4,14 +4,14 @@ import nekos
 import requests
 from PIL import Image
 from telegram import ParseMode
-from ErinaRobot import dispatcher, updater
-import ErinaRobot.modules.sql.nsfw_sql as sql
-from ErinaRobot.modules.log_channel import gloggable
+from ShikimoriRobot import dispatcher, updater
+import ShikimoriRobot.modules.sql.nsfw_sql as sql
+from ShikimoriRobot.modules.log_channel import gloggable
 from telegram import Message, Chat, Update, Bot, MessageEntity
 from telegram.error import BadRequest, RetryAfter, Unauthorized
 from telegram.ext import CommandHandler, run_async, CallbackContext
-from ErinaRobot.modules.helper_funcs.filters import CustomFilters
-from ErinaRobot.modules.helper_funcs.chat_status import user_admin
+from ShikimoriRobot.modules.helper_funcs.filters import CustomFilters
+from ShikimoriRobot.modules.helper_funcs.chat_status import user_admin
 from telegram.utils.helpers import mention_html, mention_markdown, escape_markdown
 
 @run_async
