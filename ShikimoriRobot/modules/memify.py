@@ -3,8 +3,8 @@ import textwrap
 
 from PIL import Image, ImageDraw, ImageFont
 
-from ErinaRobot import telethn as bot
-from ErinaRobot.events import register
+from ShikimoriRobot import telethn as bot
+from ShikimoriRobot.events import register
 
 
 @register(pattern="^/mmf ?(.*)")
@@ -19,7 +19,7 @@ async def handler(event):
         await event.reply("```Reply to a image/sticker.```")
         return
     file = await bot.download_media(reply_message)
-    await event.reply("```Memify 🤪🤪 ```")
+    await event.reply("```Memify 🫂🫂 ```")
     text = str(event.pattern_match.group(1)).strip()
     if len(text) < 1:
         return await event.reply("You might want to try `/help memify`")
@@ -39,7 +39,7 @@ async def drawText(image_path, text):
     if os.name == "nt":
         fnt = "ariel.ttf"
     else:
-        fnt = "./MarinRobot/resources/Vampire_Wars_Italic.ttf"
+        fnt = "./ShikimoriRobot/resources/Vampire_Wars_Italic.ttf"
     m_font = ImageFont.truetype(fnt, int((70 / 640) * i_width))
     if ";" in text:
         upper_text, lower_text = text.split(";")
