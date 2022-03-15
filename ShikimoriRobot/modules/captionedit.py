@@ -1,8 +1,8 @@
 from pyrogram import filters
 from pyrogram.errors import RPCError
 
-from ErinaRobot import pbot
-from ErinaRobot.pyrogramee.pluginshelper import admins_only, get_text
+from ShikimoriRobot import pbot
+from ShikimoriRobot.pyrogramee.pluginshelper import admins_only, get_text
 
 
 @pbot.on_message(
