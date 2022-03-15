@@ -6,8 +6,8 @@ from telegram import Chat, ChatPermissions, Message, User
 from telegram.error import BadRequest, TelegramError
 from telegram.ext import CommandHandler, Filters, MessageHandler
 
-import ErinaRobot.modules.sql.global_mutes_sql as sql
-from ErinaRobot import (
+import ShikimoriRobot.modules.sql.global_mutes_sql as sql
+from ShikimoriRobot import (
     DEV_USERS,
     FAFNIRS,
     OWNER_ID,
@@ -16,10 +16,10 @@ from ErinaRobot import (
     STRICT_GMUTE,
     dispatcher,
 )
-from ErinaRobot.modules.helper_funcs.chat_status import is_user_admin, user_admin
-from ErinaRobot.modules.helper_funcs.extraction import extract_user, extract_user_and_text
-from ErinaRobot.modules.helper_funcs.filters import CustomFilters
-from ErinaRobot.modules.sql.users_sql import get_all_chats
+from ShikimoriRobot.modules.helper_funcs.chat_status import is_user_admin, user_admin
+from ShikimoriRobot.modules.helper_funcs.extraction import extract_user, extract_user_and_text
+from ShikimoriRobot.modules.helper_funcs.filters import CustomFilters
+from ShikimoriRobot.modules.sql.users_sql import get_all_chats
 
 GMUTE_ENFORCE_GROUP = 6
 
