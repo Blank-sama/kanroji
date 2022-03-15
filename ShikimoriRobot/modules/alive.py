@@ -60,7 +60,7 @@ async def hmm(yes):
     Shu += f"♡ **Telethon Version** ~♪ `{version.__version__}`\n\n"
     Shu += f"♡ **Python Telegram Bot Version** ~♪ `{telegram.__version__}`\n\n"
     Shu += f"♡ **Pyrogram Version** ~♪ `{pyro}`\n\n"
-    Shu += f"♡ **My Darling** ~♪ [[Sawada Tsunayoshi](tg://user?id={OWNER_ID})"
+    Shu += f"♡ **My Darling** ~♪ [Sawada Tsunayoshi](tg://user?id={OWNER_ID})"
     BUTTON = [[Button.url("ʜᴇʟᴘ", f"https://t.me/Shikimori_Robot?start=help"),Button.url("sᴜᴘᴘᴏʀᴛ", f"https://t.me/KyoukoXsupport"),],[Button.url("♡ᴅᴀʀʟɪɴɢ♡", f"https://t.me/Sawada_Kun")]]
     on = await borg.send_file(yes.chat_id, file=file2,caption=Shu, buttons=BUTTON)
 
