@@ -1,11 +1,11 @@
 <p align="center">
-    <a href="https://github.com/Yoriichi-Tsugikuni/sexyboyerehh"/stargazers><img src="https://img.shields.io/github/stars/Yoriichi-Tsugikuni/sexyboyerehh?label=Stars&style=flat-square&logo=github&color=F10070" alt="Stars" /></a>
+    <a href="https://github.com/Unknown-San/Marin-Robot"/stargazers><img src="https://img.shields.io/github/stars/Yoriichi-Tsugikuni/sexyboyerehh?label=Stars&style=flat-square&logo=github&color=F10070" alt="Stars" /></a>
 </p>
 <p align="center">
-    <a href="https://github.com/Yoriichi-Tsugikuni/sexyboyerehh"> <img src="https://img.shields.io/github/repo-size/MdNoor786/ShasaBot-1?color=orange&logo=github&logoColor=green&style=for-the-badge" /></a>
-    <a href="https://github.com/Yoriichi-Tsugikuni/sexyboyerehh/commits"> <img src="https://img.shields.io/github/last-commit/Yoriichi-Tsugikuni/sexyboyerehh?color=blue&logo=github&logoColor=green&style=for-the-badge" /></a>
-    <a href="https://github.com/Yoriichi-Tsugikuni/sexyboyerehh/issues"> <img src="https://img.shields.io/github/issues/Yoriichi-Tsugikuni/sexyboyerehh?color=blueviolet&logo=github&logoColor=green&style=for-the-badge" /></a>
-    <a href="https://github.com/Yoriichi-Tsugikuni/sexyboyerehh/network/members"> <img src="https://img.shields.io/github/forks/MdNoor786/ShasaBot?color=red&logo=github&logoColor=green&style=for-the-badge" /></a>  
+    <a href="https://github.com/Unknown-San/Marin-Robot"> <img src="https://img.shields.io/github/repo-size/MdNoor786/ShasaBot-1?color=orange&logo=github&logoColor=green&style=for-the-badge" /></a>
+    <a href="https://github.com/Unknown-San/Marin-Robot/commits"> <img src="https://img.shields.io/github/last-commit/Yoriichi-Tsugikuni/sexyboyerehh?color=blue&logo=github&logoColor=green&style=for-the-badge" /></a>
+    <a href="https://github.com/Unknown-San/Marin-Robot/issues"> <img src="https://img.shields.io/github/issues/Yoriichi-Tsugikuni/sexyboyerehh?color=blueviolet&logo=github&logoColor=green&style=for-the-badge" /></a>
+    <a href="https://github.com/Unknown-San/Marin-Robot/network/members"> <img src="https://img.shields.io/github/forks/MdNoor786/ShasaBot?color=red&logo=github&logoColor=green&style=for-the-badge" /></a>  
     <a href="https://pypi.org/project/Telethon/"> <img src="https://img.shields.io/pypi/v/telethon?color=yellow&label=telethon&logo=python&logoColor=green&style=for-the-badge" /></a>
 </p>
 
