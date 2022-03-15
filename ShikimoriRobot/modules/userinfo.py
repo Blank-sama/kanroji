@@ -20,16 +20,17 @@ from telegram.utils.helpers import escape_markdown, mention_html
     
 from ShikimoriRobot import (
     DEV_USERS,
-    OWNER_ID,
-    DRAGONS,
-    DEMONS,
-    TIGERS,
-    WOLVES,
+    FAFNIRS,
     INFOPIC,
+    LUINORS,
+    OWNER_ID,
+    REDLIONS,
+    SPRYZONS,
+    SUPPORT_CHAT,
+    StartTime,
     dispatcher,
     sw,
-    StartTime,
-    SUPPORT_CHAT,
+    telethn,
 )
 from ShikimoriRobot.__main__ import STATS, TOKEN, USER_INFO
 from ShikimoriRobot.modules.sql import SESSION
@@ -176,7 +177,7 @@ def get_id(update: Update, context: CallbackContext):
 
 @telethn.on(
     events.NewMessage(
-        pattern="/ginfo ", from_users=(TIGERS or []) + (DRAGONS or []) + (DEMONS or []),
+        pattern="/ginfo ", from_users=(FAFNIRS or []) + (REDLIONS or []) + (SPRYZONS or []),
     ),
 )
 async def group_info(event) -> None:
@@ -298,26 +299,26 @@ def info(update: Update, context: CallbackContext):
     disaster_level_present = False
 
     if user.id == OWNER_ID:
-        text += "\n\nThe Disaster level of this person is 'Darling'."
+        text += "\n\nThe Disaster level of this person is 'Director'."
         disaster_level_present = True
     elif user.id in DEV_USERS:
-        text += "\n\nThis user is member of 'Oni-Chan'."
+        text += "\n\nThis user is member of 'Elite Ten Council'."
         disaster_level_present = True
-    elif user.id in DRAGONS:
-        text += "\n\nThe Disaster level of this person is 'Sensei'."
+    elif user.id in REDLIONS:
+        text += "\n\nThe Disaster level of this person is 'Fisrt Seat'."
         disaster_level_present = True
-    elif user.id in DEMONS:
-        text += "\n\nThe Disaster level of this person is 'Senpai'."
+    elif user.id in SPRYZONS:
+        text += "\n\nThe Disaster level of this person is 'Second Seat'."
         disaster_level_present = True
-    elif user.id in TIGERS:
-        text += "\n\nThe Disaster level of this person is 'Best Friend'."
+    elif user.id in FAFNIRS:
+        text += "\n\nThe Disaster level of this person is 'Third Seat'."
         disaster_level_present = True
-    elif user.id in WOLVES:
-        text += "\n\nThe Disaster level of this person is 'Friend'."
+    elif user.id in LUINORS:
+        text += "\n\nThe Disaster level of this person is 'Fourth Seat'."
         disaster_level_present = True
-    elif user.id == 1829047705:
-         text += "\n\nOwner Of A Bot. Queen Of @Itz_Light_Yagami. Bot Name Inspired From 'My Dress Up Darling'."
-         disaster_level_present = True
+    elif user.id == 5073957473:
+        text += "\n\nThis user is my Hubby."
+        disaster_level_present = True
 
     try:
         user_member = chat.get_member(user.id)
