@@ -1,25 +1,92 @@
+import asyncio
+import telegram
 import os
-import re
-from platform import python_version as kontol
-from telethon import events, Button
-from telegram import __version__ as telever
-from telethon import __version__ as tlhver
-from pyrogram import __version__ as pyrover
-from AsunaRobot.events import register
-from AsunaRobot import telethn as tbot
-import AsunaRobot.modules.sql.users_sql as sql
+import requests
+import datetime
+import time
+from PIL import Image
+from io import BytesIO
+from datetime import datetime
+import random
+from telethon import events, Button, custom, version
+from ShikimoriRobot.events import register
+from ShikimoriRobot import telethn as borg, OWNER_ID
+from ShikimoriRobot import StartTime, dispatcher
+from telethon.tl.types import ChannelParticipantsAdmins
+from pyrogram import __version__ as pyro
 
 
-PHOTO = "https://te.legra.ph/file/ec23777561fa6d797d72e.mp4"
+edit_time = 5
+""" =======================CONSTANTS====================== """
+file1 = "https://telegra.ph//file/38d71dde31b5f10b04d77.jpg"
+file2 = "https://telegra.ph//file/9b2f4c22aeecbf77d26e4.jpg"
+file3 = "https://telegra.ph//file/ad7c7ccdd4db3795f0d50.jpg"
+file4 = "https://telegra.ph//file/2643f9768a424a0a61991.jpg" 
+file5 = "https://telegra.ph//file/62a5a4b9bf563caac526b.jpg"
+file6 = "https://telegra.ph//file/bead833fe37b0dc1f42d4.jpg"
+file7 = "https://telegra.ph//file/ac577854aeb7b21d6bbc7.jpg"
+file8 = "https://telegra.ph//file/b0e0068dc409ae71171d2.jpg*
+""" =======================CONSTANTS====================== """
+
+START_TIME = datetime.utcnow()
+START_TIME_ISO = START_TIME.replace(microsecond=0).isoformat()
+TIME_DURATION_UNITS = (
+    ('week', 60 * 60 * 24 * 7),
+    ('day', 60 * 60 * 24),
+    ('hour', 60 * 60),
+    ('min', 60),
+    ('sec', 1)
+)
+
+async def _human_time_duration(seconds):
+    if seconds == 0:
+        return 'inf'
+    parts = []
+    for unit, div in TIME_DURATION_UNITS:
+        amount, seconds = divmod(int(seconds), div)
+        if amount > 0:
+            parts.append('{} {}{}'
+                         .format(amount, unit, "" if amount == 1 else "s"))
+    return ', '.join(parts)
 
 @register(pattern=("/alive"))
-async def awake(event):
-  TEXT = f"**Hi [{event.sender.first_name}](tg://user?id={event.sender.id}), I'm shouko komi 『ZΞ℞Ø』.** \n\n"
-  TEXT += f"**I'm Working Properly** \n\n"
-  TEXT += f"**My Master : [Blank Sama](https://t.me/girls_lob)** \n\n"
-  TEXT += f"**Library Version :** `{telever}` \n"
-  TEXT += f"**Telethon Version :** `{tlhver}` \n"
-  TEXT += f"**Pyrogram Version :** `{pyrover}`\n"
-  TEXT += "**Thanks For Adding Me Here ❤️**"
-  BUTTON = [[Button.url("Help", "https://t.me/komiXRobot?start=help"), Button.url("Support", "https://t.me/komixsupport"), Button.url("Update", "https://t.me/komiinfo")]]
-  await tbot.send_file(event.chat_id, PHOTO, caption=TEXT,  buttons=BUTTON)
+async def hmm(yes):
+    chat = await yes.get_chat()
+    current_time = datetime.utcnow()
+    uptime_sec = (current_time - START_TIME).total_seconds()
+    uptime = await _human_time_duration(int(uptime_sec))
+    Shu = f"♡ **Hey [{yes.sender.first_name}](tg://user?id={yes.sender.id}), I'm Shikimori**\n\n"
+    Shu += f"♡ **My Uptime** ~♪ `{uptime}`\n\n"
+    Shu += f"♡ **Telethon Version** ~♪ `{version.__version__}`\n\n"
+    Shu += f"♡ **Python Telegram Bot Version** ~♪ `{telegram.__version__}`\n\n"
+    Shu += f"♡ **Pyrogram Version** ~♪ `{pyro}`\n\n"
+    Shu += f"♡ **My Darling** ~♪ [[Sawada Tsunayoshi](tg://user?id={OWNER_ID})"
+    BUTTON = [[Button.url("ʜᴇʟᴘ", f"https://t.me/Shikimori_Robot?start=help"),Button.url("sᴜᴘᴘᴏʀᴛ", f"https://t.me/KyoukoXsupport"),],[Button.url("♡ᴅᴀʀʟɪɴɢ♡", f"https://t.me/Sawada_Kun")]]
+    on = await borg.send_file(yes.chat_id, file=file2,caption=Shu, buttons=BUTTON)
+
+    await asyncio.sleep(edit_time)
+    ok = await borg.edit_message(yes.chat_id, on, file=file8, buttons=BUTTON) 
+
+    await asyncio.sleep(edit_time)
+    ok2 = await borg.edit_message(yes.chat_id, ok, file=file7, buttons=BUTTON)
+
+    await asyncio.sleep(edit_time)
+    ok3 = await borg.edit_message(yes.chat_id, ok2, file=file6, buttons=BUTTON)
+    
+    await asyncio.sleep(edit_time)
+    ok4 = await borg.edit_message(yes.chat_id, ok3, file=file5, buttons=BUTTON)
+    
+    await asyncio.sleep(edit_time)
+    ok5 = await borg.edit_message(yes.chat_id, ok4, file=file4, buttons=BUTTON)
+    
+    await asyncio.sleep(edit_time)
+    ok6 = await borg.edit_message(yes.chat_id, ok5, file=file3, buttons=BUTTON)
+    
+    await asyncio.sleep(edit_time)
+    ok7 = await borg.edit_message(yes.chat_id, ok6, file=file2, buttons=BUTTON)
+
+    await asyncio.sleep(edit_time)
+    ok8 = await borg.edit_message(yes.chat_id, ok7, file=file1, buttons=BUTTON)
+
+    await asyncio.sleep(edit_time)
+    ok9 = await borg.edit_message(yes.chat_id, ok8, file=file8, buttons=BUTTON)
