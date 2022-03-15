@@ -105,7 +105,7 @@ buttons = [
         InlineKeyboardButton(text="ᴜᴘᴅᴀᴛᴇs", url="https://t.me/Shikimori_Updates"),
     ],
     [
-        InlineKeyboardButton(text="ʜᴇʟᴘ𝘴 & ᴄᴏᴍᴀɴᴅᴀɴ𝘴", url=f"https://t.me/TohruXrobot?start=help"),
+        InlineKeyboardButton(text="ʜᴇʟᴘ𝘴 & ᴄᴏᴍᴀɴᴅᴀɴ𝘴", url=f"https://t.me/Shikimori_Robot?start=help"),
     ],
 ]
 
@@ -252,11 +252,11 @@ def start(update: Update, context: CallbackContext):
                 [
                     [
                          InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", url="https://t.me/kyoukoXSupport"),
-                         InlineKeyboardButton(text="ʜᴇʟᴘ", url=f"https://t.me/tohruXrobot?start=help"),
+                         InlineKeyboardButton(text="ʜᴇʟᴘ", url=f"https://t.me/Shikimori_Robot?start=help"),
                     ],
                     [
                          InlineKeyboardButton(
-                          text="☆☆ ᴅᴀʀʟɪɴɢ ☆☆", url="https://t.me/Sawada_Kun"),  
+                          text="☆ᴅᴀʀʟɪɴɢ☆", url="https://t.me/Sawada_Kun"),  
                     ]
                 ]
             ),
@@ -411,8 +411,8 @@ def get_help(update: Update, context: CallbackContext):
                 ),
             )
             return
-        update.effective_message.reply_text(
-            "Contact me in PM to get the list of possible commands.",
+        update.effective_message.reply_photo(
+           HELP_IMG, caption= "Contact me in PM to get the list of possible commands.",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
