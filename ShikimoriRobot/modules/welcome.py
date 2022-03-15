@@ -48,8 +48,8 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import escape_markdown, mention_html, mention_markdown
 
-import ErinaRobot.modules.sql.welcome_sql as sql
-from ErinaRobot import (
+import ShikimoriRobot.modules.sql.welcome_sql as sql
+from ShikimoriRobo import (
     DEV_USERS,
     LOGGER,
     LUINORS,
@@ -60,16 +60,16 @@ from ErinaRobot import (
     dispatcher,
     sw,
 )
-from ErinaRobot.modules.helper_funcs.chat_status import is_user_ban_protected, user_admin
-from ErinaRobot.modules.helper_funcs.handlers import MessageHandlerChecker
-from ErinaRobot.modules.helper_funcs.misc import build_keyboard, revert_buttons
-from ErinaRobot.modules.helper_funcs.msg_types import get_welcome_type
-from ErinaRobot.modules.helper_funcs.string_handling import (
+from ShikimoriRobot.modules.helper_funcs.chat_status import is_user_ban_protected, user_admin
+from ShikimoriRobot.modules.helper_funcs.handlers import MessageHandlerChecker
+from ShikimoriRobot.modules.helper_funcs.misc import build_keyboard, revert_buttons
+from ShikimoriRobot.modules.helper_funcs.msg_types import get_welcome_type
+from ShikimoriRobot.modules.helper_funcs.string_handling import (
     escape_invalid_curly_brackets,
     markdown_parser,
 )
-from ErinaRobot.modules.log_channel import loggable
-from ErinaRobot.modules.sql.global_bans_sql import is_user_gbanned
+from ShikimoriRobot.modules.log_channel import loggable
+from ShikimoriRobot.modules.sql.global_bans_sql import is_user_gbanned
 
 VALID_WELCOME_FORMATTERS = [
     "first",
