@@ -598,7 +598,7 @@ GBAM_REASON = (
     "sasta fri-fire player",
     "sasta chhota bhim",
     "sasta chhapri",
-    "sasta jony sin",
+    "sasta johny sin",
     "sasta chhapri nibba",
     "sasta nibba",
     "sasti ria chokroborti",
