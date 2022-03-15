@@ -64,12 +64,12 @@ RUN apt update && apt upgrade -y && \
 # Pypi package Repo upgrade
 RUN pip3 install --upgrade pip setuptools
 
-# Copy Python Requirements to /root/ErinaRobot
-RUN git clone -b shiken https://github.com/MdNoor786/ErinaRobot /root/ErinaRobot
-WORKDIR /root/ErinaRobot
+# Copy Python Requirements to /root/ShikimoriRobot
+RUN git clone -b shiken https://github.com/MdNoor786/ShikimoriRobot /root/ShikimoriRobot
+WORKDIR /root/ShikimoriRobot
 
-#Copy config file to /root/ErinaRobot/ErinaRobot
-COPY ./ErinaRobot/sample_config.py ./ErinaRobot/config.py* /root/ErinaRobot/ErinaRobot/
+#Copy config file to /root/ShikimoriRobot/ShikimoriRobot
+COPY ./ShikimoriRobot/sample_config.py ./ShikimoriRobot/config.py* /root/ShikimoriRobot/ShikimoriRobot/
 
 ENV PATH="/home/bot/bin:$PATH"
 
@@ -77,4 +77,4 @@ ENV PATH="/home/bot/bin:$PATH"
 RUN pip3 install -U -r requirements.txt
 
 # Starting Worker
-CMD ["python3","-m","ErinaRobot"]
+CMD ["python3","-m","ShikimoriRobot"]
