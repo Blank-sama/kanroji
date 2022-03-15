@@ -1,2 +1,2 @@
-worker: python3 -m ErinaRobot
+worker: python3 -m ShikimoriRobot
 ps:scale worker=1
