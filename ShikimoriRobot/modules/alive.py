@@ -25,7 +25,7 @@ file4 = "https://telegra.ph//file/2643f9768a424a0a61991.jpg"
 file5 = "https://telegra.ph//file/62a5a4b9bf563caac526b.jpg"
 file6 = "https://telegra.ph//file/bead833fe37b0dc1f42d4.jpg"
 file7 = "https://telegra.ph//file/ac577854aeb7b21d6bbc7.jpg"
-file8 = "https://telegra.ph//file/b0e0068dc409ae71171d2.jpg*
+file8 = "https://telegra.ph//file/b0e0068dc409ae71171d2.jpg"
 """ =======================CONSTANTS====================== """
 
 START_TIME = datetime.utcnow()
