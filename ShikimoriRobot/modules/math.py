@@ -4,8 +4,8 @@ import pynewtonmath as newton
 from telegram import Update
 from telegram.ext import CallbackContext
 
-from ErinaRobot import dispatcher
-from ErinaRobot.modules.disable import DisableAbleCommandHandler
+from ShikimoriRobot import dispatcher
+from ShikimoriRobot.modules.disable import DisableAbleCommandHandler
 
 
 def simplify(update: Update, context: CallbackContext):
