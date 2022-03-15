@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="https://github.com/Yoriichi-Tsugikuni/sexyboyerehh"><img src="https://img.shields.io/github/stars/Yoriichi-Tsugikuni/sexyboyerehh?label=Stars&style=flat-square&logo=github&color=F10070" alt="Stars" /></a>
+    <a href="https://github.com/Yoriichi-Tsugikuni/sexyboyerehh"/stargazzers><img src="https://img.shields.io/github/stars/Yoriichi-Tsugikuni/sexyboyerehh?label=Stars&style=flat-square&logo=github&color=F10070" alt="Stars" /></a>
 </p>
 <p align="center">
     <a href="https://github.com/Yoriichi-Tsugikuni/sexyboyerehh"> <img src="https://img.shields.io/github/repo-size/MdNoor786/ShasaBot-1?color=orange&logo=github&logoColor=green&style=for-the-badge" /></a>
