@@ -21,7 +21,7 @@ from requests import get
 import time , datetime
 
 from pyrogram import Client , filters
-from ErinaRobot import pbot as bot
+from ShikimoriRobot import pbot as bot
 
 
 
