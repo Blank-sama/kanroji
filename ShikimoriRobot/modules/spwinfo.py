@@ -31,7 +31,7 @@ import aiohttp
 from pyrogram import filters
 from pyrogram.errors import PeerIdInvalid
 
-from ErinaRobot import BOT_USERNAME, pbot
+from ShikimoriRobot import BOT_USERNAME, pbot
 
 
 class AioHttp:
