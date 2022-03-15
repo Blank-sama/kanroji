@@ -12,15 +12,15 @@ from telethon import events
 from telethon.tl.types import ChatBannedRights
 from pymongo import MongoClient
 
-from ErinaRobot.utils.pluginhelpers import is_admin
-from ErinaRobot.events import register
-from ErinaRobot.modules.sql.nsfw_watch_sql import (
+from ShikimoriRobot.utils.pluginhelpers import is_admin
+from ShikimoriRobot.events import register
+from ShikimoriRobot.modules.sql.nsfw_watch_sql import (
     add_nsfwatch,
     get_all_nsfw_enabled_chat,
     is_nsfwatch_indb,
     rmnsfwatch,
 )
-from ErinaRobot import telethn, MONGO_DB_URL
+from ShikimoriRobot import telethn, MONGO_DB_URL
 
 translator = google_translator()
 MUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
