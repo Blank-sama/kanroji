@@ -168,7 +168,7 @@ CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("ErinaRobot.modules." + module_name)
+    imported_module = importlib.import_module("ShikimoriRobot.modules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
 
@@ -515,7 +515,8 @@ def shasa_callback_data(update, context):
         )
     elif query.data == "ShikimoriSupport":
         query.message.edit_text(
-            text="* Erina support chats*" "\nJoin Support Group/Channel",
+            text="* Shikimori
+ support chats*" "\nJoin Support Group/Channel",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
@@ -544,7 +545,7 @@ def shasa_callback_data(update, context):
     elif query.data == "shasa_credit":
         query.message.edit_text(
             text=f"<b>Shikimori Developers</b>\n"
-            f"\nHere Some Developers Helping in Making Nakiri Erina",
+            f"\nHere Some Developers Helping in Making Micchon Shikimori",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [
