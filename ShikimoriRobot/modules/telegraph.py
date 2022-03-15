@@ -1,7 +1,7 @@
 import os
 
-from ErinaRobot.events import register
-from ErinaRobot import telethn as Client
+from ShikimoriRobot.events import register
+from ShikimoriRobot import telethn as Client
 from telethon import events, Button, types
 
 TMP_DOWNLOAD_DIRECTORY = "./"
