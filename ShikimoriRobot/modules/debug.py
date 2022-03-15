@@ -31,8 +31,8 @@ from telegram import Update
 from telegram.ext import CallbackContext, CommandHandler
 from telethon import events
 
-from ErinaRobot import dispatcher, telethn
-from ErinaRobot.modules.helper_funcs.chat_status import dev_plus
+from ShikimoriRobot import dispatcher, telethn
+from ShikimoriRobot.modules.helper_funcs.chat_status import dev_plus
 
 DEBUG_MODE = False
 
