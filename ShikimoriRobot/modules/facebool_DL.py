@@ -31,8 +31,8 @@ from datetime import datetime
 import requests
 from telethon import events
 
-from ErinaRobot import BOT_USERNAME, SUPPORT_CHAT, telethn
-from ErinaRobot.pyrogramee.pluginshelper import is_admin
+from ShikimoriRobot import BOT_USERNAME, SUPPORT_CHAT, telethn
+from ShikimoriRobot.pyrogramee.pluginshelper import is_admin
 
 
 def main(url, filename):
