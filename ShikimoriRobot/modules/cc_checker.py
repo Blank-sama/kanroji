@@ -29,8 +29,8 @@ import datetime
 
 from telethon.tl import functions, types
 
-from ErinaRobot import telethn, ubot
-from ErinaRobot.events import register
+from ShikimoriRobot import telethn, ubot
+from ShikimoriRobot.events import register
 
 
 async def is_register_admin(chat, user):
