@@ -2,8 +2,8 @@ from gpytranslate import SyncTranslator
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.ext import CallbackContext
 
-from ErinaRobot import dispatcher
-from ErinaRobot.modules.disable import DisableAbleCommandHandler
+from ShikimoriRobot import dispatcher
+from ShikimoriRobot.modules.disable import DisableAbleCommandHandler
 
 trans = SyncTranslator()
 
