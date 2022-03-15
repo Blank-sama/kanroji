@@ -5,11 +5,11 @@ from telegram import TelegramError
 from telegram.error import BadRequest
 from telegram.ext import CommandHandler, Filters
 
-import ErinaRobot.modules.sql.users_sql as sql
-from ErinaRobot import LOGGER, OWNER_ID, dispatcher
-from ErinaRobot.modules.disable import DisableAbleCommandHandler
-from ErinaRobot.modules.helper_funcs.chat_status import user_admin
-from ErinaRobot.modules.helper_funcs.filters import CustomFilters
+import ShikimoriRobot.modules.sql.users_sql as sql
+from ShikimoriRobot import LOGGER, OWNER_ID, dispatcher
+from ShikimoriRobot.modules.disable import DisableAbleCommandHandler
+from ShikimoriRobot.modules.helper_funcs.chat_status import user_admin
+from ShikimoriRobot.modules.helper_funcs.filters import CustomFilters
 
 USERS_GROUP = 4
 
