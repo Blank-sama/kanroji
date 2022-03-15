@@ -24,7 +24,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from ErinaRobot import REDIS
+from ShikimoriRobot import REDIS
 
 # will put redis python commands here later
 
