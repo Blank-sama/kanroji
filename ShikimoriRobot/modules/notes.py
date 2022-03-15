@@ -48,14 +48,14 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import escape_markdown, mention_markdown
 
-import ErinaRobot.modules.sql.notes_sql as sql
-from ErinaRobot import JOIN_LOGGER, LOGGER, REDLIONS, SUPPORT_CHAT, dispatcher
-from ErinaRobot.modules.disable import DisableAbleCommandHandler
-from ErinaRobot.modules.helper_funcs.chat_status import connection_status, user_admin
-from ErinaRobot.modules.helper_funcs.handlers import MessageHandlerChecker
-from ErinaRobot.modules.helper_funcs.misc import build_keyboard, revert_buttons
-from ErinaRobot.modules.helper_funcs.msg_types import get_note_type
-from ErinaRobot.modules.helper_funcs.string_handling import escape_invalid_curly_brackets
+import ShikimoriRobot.modules.sql.notes_sql as sql
+from ShikimoriRobot import JOIN_LOGGER, LOGGER, REDLIONS, SUPPORT_CHAT, dispatcher
+from ShikimoriRobot.modules.disable import DisableAbleCommandHandler
+from ShikimoriRobot.modules.helper_funcs.chat_status import connection_status, user_admin
+from ShikimoriRobot.modules.helper_funcs.handlers import MessageHandlerChecker
+from ShikimoriRobot.modules.helper_funcs.misc import build_keyboard, revert_buttons
+from ShikimoriRobot.modules.helper_funcs.msg_types import get_note_type
+from ShikimoriRobot.modules.helper_funcs.string_handling import escape_invalid_curly_brackets
 
 FILE_MATCHER = re.compile(r"^###file_id(!photo)?###:(.*?)(?:\s|$)")
 STICKER_MATCHER = re.compile(r"^###sticker(!photo)?###:")
