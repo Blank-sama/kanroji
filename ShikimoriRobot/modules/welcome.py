@@ -49,7 +49,7 @@ from telegram.ext import (
 from telegram.utils.helpers import escape_markdown, mention_html, mention_markdown
 
 import ShikimoriRobot.modules.sql.welcome_sql as sql
-from ShikimoriRobo import (
+from ShikimoriRobot import (
     DEV_USERS,
     LOGGER,
     LUINORS,
