@@ -1,11 +1,11 @@
 import asyncio
 import os
 
-from ErinaRobot import OWNER_ID
-from ErinaRobot import telethn as tbot
-from ErinaRobot.events import register
+from ShikimoriRobot import OWNER_ID
+from ShikimoriRobot import telethn as tbot
+from ShikimoriRobot.events import register
 
-water = "./ErinaRobot/resources/Shasa.jpg"
+water = "./ShikimoriRobot/resources/Shikimori.png"
 client = tbot
 
 
@@ -18,7 +18,7 @@ async def Prof(event):
     thumb = water
     message_id = event.message.id
     input_str = event.pattern_match.group(1)
-    the_plugin_file = "./ErinaRobot/modules/{}.py".format(input_str)
+    the_plugin_file = "./ShikimoriRobot/modules/{}.py".format(input_str)
     if os.path.exists(the_plugin_file):
         message_id = event.message.id
         await event.client.send_file(
@@ -35,7 +35,7 @@ async def Prof(event):
 
 from pathlib import Path
 
-from ErinaRobot.events import load_module
+from ShikimoriRobot.events import load_module
 
 
 @register(pattern="^/install")
@@ -51,7 +51,7 @@ async def install(event):
             downloaded_file_name = (
                 await event.client.download_media(  # pylint:disable=E0602
                     await event.get_reply_message(),
-                    "ErinaRobot/modules/",  # pylint:disable=E0602
+                    "ShikimoriRobot/modules/",  # pylint:disable=E0602
                 )
             )
             if "(" not in downloaded_file_name:
