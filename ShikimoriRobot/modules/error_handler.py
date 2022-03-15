@@ -35,7 +35,7 @@ import requests
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.ext import CallbackContext, CommandHandler
 
-from ErinaRobot import DEV_USERS, ERROR_LOGS, dispatcher
+from ShikimoriRobot import DEV_USERS, ERROR_LOGS, dispatcher
 
 pretty_errors.mono()
 
