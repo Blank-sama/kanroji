@@ -33,9 +33,9 @@ from pykeyboard import InlineKeyboard
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton
 
-from ErinaRobot import aiohttpsession, pbot
-from ErinaRobot.utils.errors import capture_err
-from ErinaRobot.utils.paste import paste
+from ShikimoriRobot import aiohttpsession, pbot
+from ShikimoriRobot.utils.errors import capture_err
+from ShikimoriRobot.utils.paste import paste
 
 pattern = re.compile(r"^text/|json$|yaml$|xml$|toml$|x-sh$|x-shellscript$")
 
