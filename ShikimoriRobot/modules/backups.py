@@ -7,22 +7,22 @@ from telegram import Message, ParseMode
 from telegram.error import BadRequest
 from telegram.ext import CommandHandler
 
-# from ErinaRobot.modules.sql import warns_sql as warnssql
-import ErinaRobot.modules.sql.blacklist_sql as blacklistsql
+# from ShikimoriRobot.modules.sql import warns_sql as warnssql
+import ShikimoriRobot.modules.sql.blacklist_sql as blacklistsql
 
-# from ErinaRobot.modules.sql import cust_filters_sql as filtersql
-# import ErinaRobot.modules.sql.welcome_sql as welcsql
-import ErinaRobot.modules.sql.locks_sql as locksql
-import ErinaRobot.modules.sql.notes_sql as sql
+# from ShikimoriRobot.modules.sql import cust_filters_sql as filtersql
+# import ShikimoriRobot.modules.sql.welcome_sql as welcsql
+import ShikimoriRobot.modules.sql.locks_sql as locksql
+import ShikimoriRobot.modules.sql.notes_sql as sql
 
-# from ErinaRobot.modules.rules import get_rules
-import ErinaRobot.modules.sql.rules_sql as rulessql
-from ErinaRobot import JOIN_LOGGER, LOGGER, OWNER_ID, SUPPORT_CHAT, dispatcher
-from ErinaRobot.__main__ import DATA_IMPORT
-from ErinaRobot.modules.connection import connected
-from ErinaRobot.modules.helper_funcs.alternate import typing_action
-from ErinaRobot.modules.helper_funcs.chat_status import user_admin
-from ErinaRobot.modules.sql import disable_sql as disabledsql
+# from ShikimoriRobot.modules.rules import get_rules
+import ShikimoriRobot.modules.sql.rules_sql as rulessql
+from ShikimoriRobot import JOIN_LOGGER, LOGGER, OWNER_ID, SUPPORT_CHAT, dispatcher
+from ShikimoriRobot.__main__ import DATA_IMPORT
+from ShikimoriRobot.modules.connection import connected
+from ShikimoriRobot.modules.helper_funcs.alternate import typing_action
+from ShikimoriRobot.modules.helper_funcs.chat_status import user_admin
+from ShikimoriRobot.modules.sql import disable_sql as disabledsql
 
 
 @user_admin
