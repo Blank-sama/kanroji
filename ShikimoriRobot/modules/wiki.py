@@ -29,8 +29,8 @@ from telegram import ParseMode, Update
 from telegram.ext import CallbackContext
 from wikipedia.exceptions import DisambiguationError, PageError
 
-from ErinaRobot import dispatcher
-from ErinaRobot.modules.disable import DisableAbleCommandHandler
+from ShikimoriRobot import dispatcher
+from ShikimoriRobot.modules.disable import DisableAbleCommandHandler
 
 
 def wiki(update: Update, context: CallbackContext):
