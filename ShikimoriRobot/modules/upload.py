@@ -7,11 +7,11 @@ import traceback
 import aiohttp
 from telethon import events
 
-from ErinaRobot import telethn as bot
-from ErinaRobot.modules.urluploader import download_file
-from ErinaRobot.pyrogramee.pluginshelper import humanbytes, progress
+from ShikimoriRobot import telethn as bot
+from ShikimoriRobot.modules.urluploader import download_file
+from ShikimoriRobot.pyrogramee.pluginshelper import humanbytes, progress
 
-DOWNLOADPATH = "./ErinaRobot/Downloads/"
+DOWNLOADPATH = "./ShikimoriRobot/Downloads/"
 
 
 def get_date_in_two_weeks():
