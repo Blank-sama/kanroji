@@ -30,9 +30,9 @@ import requests as r
 from telegram import ChatAction, Update
 from telegram.ext import CallbackContext
 
-from ErinaRobot import SUPPORT_CHAT, WALL_API, dispatcher
-from ErinaRobot.modules.disable import DisableAbleCommandHandler
-from ErinaRobot.modules.helper_funcs.alternate import send_action
+from ShikimoriRobot import SUPPORT_CHAT, WALL_API, dispatcher
+from ShikimoriRobot.modules.disable import DisableAbleCommandHandler
+from ShikimoriRobot.modules.helper_funcs.alternate import send_action
 
 # Wallpaper module powered by wall.alphacoders.com
 
