@@ -34,7 +34,7 @@ from telegram.utils.helpers import mention_html, mention_markdown
 
 import ShikimoriRobot.modules.sql.blsticker_sql as sql
 from ShikimoriRobot import LOGGER, dispatcher
-from ShikimoriRobot.modules.helper_funcs.extraction.modules.connection import connected
+from ShikimoriRobot.modules.connection import connected
 from ShikimoriRobot.modules.disable import DisableAbleCommandHandler
 from ShikimoriRobot.modules.helper_funcs.alternate import send_message
 from ShikimoriRobot.modules.helper_funcs.chat_status import user_admin, user_not_admin
