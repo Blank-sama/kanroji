@@ -31,10 +31,10 @@ from telegram import Bot, InlineKeyboardButton, InlineKeyboardMarkup, ParseMode,
 from telegram.error import BadRequest, Unauthorized
 from telegram.ext import CallbackQueryHandler, CommandHandler
 
-import ErinaRobot.modules.sql.connection_sql as sql
-from ErinaRobot import DEV_USERS, REDLIONS, dispatcher
-from ErinaRobot.modules.helper_funcs import chat_status
-from ErinaRobot.modules.helper_funcs.alternate import send_message, typing_action
+import ShikimoriRobot.modules.sql.connection_sql as sql
+from ShikimoriRobot import DEV_USERS, REDLIONS, dispatcher
+from ShikimoriRobot.modules.helper_funcs import chat_status
+from ShikimoriRobot.modules.helper_funcs.alternate import send_message, typing_action
 
 user_admin = chat_status.user_admin
 
