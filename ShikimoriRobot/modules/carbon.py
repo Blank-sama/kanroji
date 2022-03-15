@@ -6,7 +6,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from telegram import __version__ as o
 from telethon import __version__ as s
 
-from ShikimoriRobot import SHIKIMORI_PHOTO, SUPPORT_CHAT, pbot
+from ShikimoriRobot import SHASA_PHOTO, SUPPORT_CHAT, pbot
 from ShikimoriRobot.utils.carbon import make_carbon
 from ShikimoriRobot.utils.errors import capture_err
 
