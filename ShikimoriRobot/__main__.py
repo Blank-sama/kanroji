@@ -841,7 +841,7 @@ def main():
         try:
             dispatcher.bot.sendMessage(
                 f"@{SUPPORT_CHAT}",
-                " Ready To Buzz [.](https://telegra.ph/file/7cc959d97c7f5007a1059.mp4)",
+                " I am back online[✨](https://telegra.ph/file/0c56e980cb026034bb40b.mp4)",
                 parse_mode=ParseMode.MARKDOWN,
             )
         except Unauthorized:
