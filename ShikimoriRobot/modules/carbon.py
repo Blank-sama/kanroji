@@ -29,7 +29,7 @@ async def carbon_func(_, message):
 @pbot.on_message(filters.command("alive"))
 async def alive(_, message):
     await message.reply_photo(
-        photo=SHIKIMORI_PHOTO,
+        photo=SHASA_PHOTO,
         caption=f"""⚡ **ʜᴇʏ ɪ ᴀᴍ sʜɪᴋɪᴍᴏʀɪ** 
 
 **✨ Cʀᴇᴀᴛᴇᴅ ʙʏ : [𝙎𝙖𝙬𝙖𝙙𝙖 𝙏𝙨𝙪𝙣𝙖𝙮𝙤𝙨𝙝𝙞](t.me/Sawada_Kun)**
