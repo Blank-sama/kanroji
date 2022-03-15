@@ -13,7 +13,7 @@
   <img src="https://telegra.ph//file/ac577854aeb7b21d6bbc7.jpg">
 </p>
 
-# Support
+# Shikimori On Telegram
 Me On Telegram [✨ Shikimori ✨](http://t.me/Shikimori_Robot)
 
 ## How To Host
