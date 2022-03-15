@@ -43,8 +43,8 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CallbackQueryHandler, CommandHandler
 from telegram.utils.helpers import mention_html
 
-from ErinaRobot import FAFNIRS, LOGGER, dispatcher
-from ErinaRobot.modules.helper_funcs.chat_status import (
+from ShikimoriRobot import FAFNIRS, LOGGER, dispatcher
+from ShikimoriRobot.modules.helper_funcs.chat_status import (
     bot_admin,
     can_restrict,
     connection_status,
@@ -52,10 +52,10 @@ from ErinaRobot.modules.helper_funcs.chat_status import (
     user_admin,
     user_admin_no_reply,
 )
-from ErinaRobot.modules.helper_funcs.extraction import extract_user_and_text
-from ErinaRobot.modules.helper_funcs.string_handling import extract_time
-from ErinaRobot.modules.log_channel import loggable
-from ErinaRobot.modules.redis.approvals_redis import is_approved
+from ShikimoriRobot.modules.helper_funcs.extraction import extract_user_and_text
+from ShikimoriRobot.modules.helper_funcs.string_handling import extract_time
+from ShikimoriRobot.modules.log_channel import loggable
+from ShikimoriRobot.modules.redis.approvals_redis import is_approved
 
 
 def check_user(user_id: int, bot: Bot, chat: Chat) -> Optional[str]:
