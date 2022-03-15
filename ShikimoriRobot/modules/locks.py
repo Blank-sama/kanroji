@@ -40,19 +40,19 @@ from telegram.error import BadRequest
 from telegram.ext import CommandHandler, Filters, MessageHandler
 from telegram.utils.helpers import mention_html
 
-import ErinaRobot.modules.sql.locks_sql as sql
-from ErinaRobot import LOGGER, REDIS, dispatcher
-from ErinaRobot.modules.connection import connected
-from ErinaRobot.modules.disable import DisableAbleCommandHandler
-from ErinaRobot.modules.helper_funcs.alternate import send_message, typing_action
-from ErinaRobot.modules.helper_funcs.chat_status import (
+import ShikimoriRobot.modules.sql.locks_sql as sql
+from ShikimoriRobot import LOGGER, REDIS, dispatcher
+from ShikimoriRobot.modules.connection import connected
+from ShikimoriRobot.modules.disable import DisableAbleCommandHandler
+from ShikimoriRobot.modules.helper_funcs.alternate import send_message, typing_action
+from ShikimoriRobot.modules.helper_funcs.chat_status import (
     can_delete,
     is_bot_admin,
     is_user_admin,
     user_admin,
     user_not_admin,
 )
-from ErinaRobot.modules.log_channel import loggable
+from ShikimoriRobot.modules.log_channel import loggable
 
 ad = AlphabetDetector()
 
