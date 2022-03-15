@@ -30,9 +30,9 @@ from telethon import *
 from telethon import functions
 from telethon.tl.types import ChatBannedRights
 
-from ErinaRobot import LOGGER, OWNER_ID, telethn
-from ErinaRobot.events import register
-from ErinaRobot.modules.sql.night_mode_sql import (
+from ShikimoriRobot import LOGGER, OWNER_ID, telethn
+from ShikimoriRobot.events import register
+from ShikimoriRobot.modules.sql.night_mode_sql import (
     add_nightmode,
     get_all_chat_id,
     is_nightmode_indb,
