@@ -11,10 +11,10 @@ from telegram import InputMediaPhoto, TelegramError
 from telegram import Update
 from telegram.ext import CallbackContext, run_async
 
-from ErinaRobot import dispatcher
+from ShikimoriRobot import dispatcher
 
-from ErinaRobot.modules.disable import DisableAbleCommandHandler
-from ErinaRobot.modules.helper_funcs.alternate import typing_action
+from ShikimoriRobot.modules.disable import DisableAbleCommandHandler
+from ShikimoriRobot.modules.helper_funcs.alternate import typing_action
 
 opener = urllib.request.build_opener()
 useragent = 'Mozilla/5.0 (Linux; Android 6.0.1; SM-G920V Build/MMB29K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.98 Mobile Safari/537.36'
@@ -187,7 +187,7 @@ Do you know that you can search an image with a link too? /reverse picturelink <
 __mod_name__ = "Reverse"
 
 REVERSE_HANDLER = DisableAbleCommandHandler(
-    ["reverse", "grs" , "p" , "pp"], reverse, pass_args=True, admin_ok=True
+    ["reverse", "grs" , "pt" , "p" , "pp"], reverse, pass_args=True, admin_ok=True
 )
 
 dispatcher.add_handler(REVERSE_HANDLER)
