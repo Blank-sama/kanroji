@@ -38,10 +38,10 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, Filters
 from telegram.utils.helpers import escape_markdown
 
-import ErinaRobot.modules.sql.rules_sql as sql
-from ErinaRobot import dispatcher
-from ErinaRobot.modules.helper_funcs.chat_status import user_admin
-from ErinaRobot.modules.helper_funcs.string_handling import markdown_parser
+import ShikimoriRobot.modules.sql.rules_sql as sql
+from ShikimoriRobot import dispatcher
+from ShikimoriRobot.modules.helper_funcs.chat_status import user_admin
+from ShikimoriRobot.modules.helper_funcs.string_handling import markdown_parser
 
 
 def get_rules(update: Update, context: CallbackContext):
