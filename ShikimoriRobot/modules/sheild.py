@@ -12,16 +12,16 @@ from pymongo import MongoClient
 from telethon import events
 from telethon.tl.types import ChatBannedRights
 
-from ErinaRobot import BOT_ID, MONGO_DB_URL
-from ErinaRobot import telethn as tbot
-from ErinaRobot.conf import get_str_key
-from ErinaRobot.events import register
-from ErinaRobot.modules.sql.nsfw_watch_sql import (
+from ShikimoriRobot import BOT_ID, MONGO_DB_URL
+from ShikimoriRobot import telethn as tbot
+from ShikimoriRobot.conf import get_str_key
+from ShikimoriRobot.events import register
+from ShikimoriRobot.modules.sql.nsfw_watch_sql import (
     add_nsfwatch,
     is_nsfwatch_indb,
     rmnsfwatch,
 )
-from ErinaRobot.pyrogramee.telethonbasics import is_admin
+from ShikimoriRobot.pyrogramee.telethonbasics import is_admin
 
 translator = google_translator()
 MUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
@@ -30,7 +30,7 @@ MONGO_DB_URL = get_str_key("MONGO_DB_URL")
 
 client = MongoClient()
 client = MongoClient(MONGO_DB_URL)
-db = client["ErinaRobot"]
+db = client["ShikimoriRobot"]
 
 
 async def is_nsfw(event):
