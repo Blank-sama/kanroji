@@ -29,8 +29,8 @@ import subprocess
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, CommandHandler
 
-from ErinaRobot import LOGGER, dispatcher
-from ErinaRobot.modules.helper_funcs.chat_status import dev_plus
+from ShikimoriRobot import LOGGER, dispatcher
+from ShikimoriRobot.modules.helper_funcs.chat_status import dev_plus
 
 
 @dev_plus
