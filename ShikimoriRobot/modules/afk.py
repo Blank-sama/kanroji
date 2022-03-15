@@ -31,11 +31,11 @@ from telegram import MessageEntity
 from telegram.error import BadRequest
 from telegram.ext import Filters, MessageHandler
 
-from ErinaRobot import REDIS, dispatcher
-from ErinaRobot.modules.disable import DisableAbleCommandHandler
-from ErinaRobot.modules.helper_funcs.readable_time import get_readable_time
-from ErinaRobot.modules.redis.afk_redis import afk_reason, end_afk, is_user_afk, start_afk
-from ErinaRobot.modules.users import get_user_id
+from ShikimoriRobot import REDIS, dispatcher
+from ShikimoriRobot.modules.disable import DisableAbleCommandHandler
+from ShikimoriRobot.modules.helper_funcs.readable_time import get_readable_time
+from ShikimoriRobot.modules.redis.afk_redis import afk_reason, end_afk, is_user_afk, start_afk
+from ShikimoriRobot.modules.users import get_user_id
 
 AFK_GROUP = 7
 AFK_REPLY_GROUP = 8
