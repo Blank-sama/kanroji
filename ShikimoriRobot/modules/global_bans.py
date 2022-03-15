@@ -8,8 +8,8 @@ from telegram.error import BadRequest, TelegramError, Unauthorized
 from telegram.ext import CallbackContext, CommandHandler, Filters, MessageHandler
 from telegram.utils.helpers import mention_html
 
-import ErinaRobot.modules.sql.global_bans_sql as sql
-from ErinaRobot import (
+import ShikimoriRobot.modules.sql.global_bans_sql as sql
+from ShikimoriRobot import (
     DEV_USERS,
     EVENT_LOGS,
     FAFNIRS,
@@ -23,10 +23,10 @@ from ErinaRobot import (
     dispatcher,
     sw,
 )
-from ErinaRobot.modules.sql.users_sql import get_user_com_chats
-from ErinaRobot.modules.helper_funcs.chat_status import is_user_admin, support_plus, user_admin
-from ErinaRobot.modules.helper_funcs.extraction import extract_user, extract_user_and_text
-from ErinaRobot.modules.helper_funcs.misc import send_to_list
+from ShikimoriRobot.modules.sql.users_sql import get_user_com_chats
+from ShikimoriRobot.modules.helper_funcs.chat_status import is_user_admin, support_plus, user_admin
+from ShikimoriRobot.modules.helper_funcs.extraction import extract_user, extract_user_and_text
+from ShikimoriRobot.modules.helper_funcs.misc import send_to_list
 
 GBAN_ENFORCE_GROUP = 6
 
