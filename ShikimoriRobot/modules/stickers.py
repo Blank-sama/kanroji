@@ -122,7 +122,7 @@ def kang(update: Update, context: CallbackContext):
         elif msg.reply_to_message.sticker and msg.reply_to_message.sticker.emoji:
             sticker_emoji = msg.reply_to_message.sticker.emoji
         else:
-            sticker_emoji = "🤔"
+            sticker_emoji = "👽"
 
         if not is_animated:
             try:
@@ -157,7 +157,7 @@ def kang(update: Update, context: CallbackContext):
                     f"Sticker emoji: {sticker_emoji}",
                     reply_markup=InlineKeyboardMarkup([
                   [
-                    InlineKeyboardButton(text="Your pack", url=f"t.me/addstickers/{packname}")
+                    InlineKeyboardButton(text="le bsdk apna pack", url=f"t.me/addstickers/{packname}")
                   ],
                 
                 ]),
@@ -194,7 +194,7 @@ def kang(update: Update, context: CallbackContext):
                         f"Sticker emoji: {sticker_emoji}",
                         reply_markup=InlineKeyboardMarkup([
                                 [
-                                    InlineKeyboardButton(text="Your pack", url=f"t.me/addstickers/{packname}")
+                                    InlineKeyboardButton(text="le bsdk apna pack", url=f"t.me/addstickers/{packname}")
                                 ],
                 
                         ]),                         
@@ -242,7 +242,7 @@ def kang(update: Update, context: CallbackContext):
                     f"Sticker emoji: {sticker_emoji}",
                     reply_markup=InlineKeyboardMarkup([
                                 [
-                                    InlineKeyboardButton(text="Your pack", url=f"t.me/addstickers/{packname}")
+                                    InlineKeyboardButton(text="le bsdk apna pack", url=f"t.me/addstickers/{packname}")
                                 ],
                 
                         ]),                    
@@ -312,7 +312,7 @@ def kang(update: Update, context: CallbackContext):
                 f"Sticker emoji: {sticker_emoji}",
                 reply_markup=InlineKeyboardMarkup([
                                 [
-                                    InlineKeyboardButton(text="Your pack", url=f"t.me/addstickers/{packname}")
+                                    InlineKeyboardButton(text="le bsdk apna pack", url=f"t.me/addstickers/{packname}")
                                 ],
                 
                         ]),                    
@@ -440,7 +440,7 @@ def makepack_internal(
             f"Sticker emoji: {sticker_emoji}",
             reply_markup=InlineKeyboardMarkup([
                                 [
-                                    InlineKeyboardButton(text="Your pack", url=f"t.me/addstickers/%s" % packname)
+                                    InlineKeyboardButton(text="le bsdk apna pack", url=f"t.me/addstickers/%s" % packname)
                                 ],
                 
                         ]),                    
