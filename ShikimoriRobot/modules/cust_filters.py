@@ -39,23 +39,23 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import escape_markdown, mention_html
 
-from ErinaRobot import LOGGER, REDLIONS, dispatcher
-from ErinaRobot.modules.connection import connected
-from ErinaRobot.modules.disable import DisableAbleCommandHandler
-from ErinaRobot.modules.helper_funcs.alternate import send_message, typing_action
-from ErinaRobot.modules.helper_funcs.chat_status import user_admin
-from ErinaRobot.modules.helper_funcs.extraction import extract_text
-from ErinaRobot.modules.helper_funcs.filters import CustomFilters
-from ErinaRobot.modules.helper_funcs.handlers import MessageHandlerChecker
-from ErinaRobot.modules.helper_funcs.misc import build_keyboard_parser
-from ErinaRobot.modules.helper_funcs.msg_types import get_filter_type
-from ErinaRobot.modules.helper_funcs.string_handling import (
+from ShikimoriRobot import LOGGER, REDLIONS, dispatcher
+from ShikimoriRobot.modules.connection import connected
+from ShikimoriRobot.modules.disable import DisableAbleCommandHandler
+from ShikimoriRobot.modules.helper_funcs.alternate import send_message, typing_action
+from ShikimoriRobot.modules.helper_funcs.chat_status import user_admin
+from ShikimoriRobot.modules.helper_funcs.extraction import extract_text
+from ShikimoriRobot.modules.helper_funcs.filters import CustomFilters
+from ShikimoriRobot.modules.helper_funcs.handlers import MessageHandlerChecker
+from ShikimoriRobot.modules.helper_funcs.misc import build_keyboard_parser
+from ShikimoriRobot.modules.helper_funcs.msg_types import get_filter_type
+from ShikimoriRobot.modules.helper_funcs.string_handling import (
     button_markdown_parser,
     escape_invalid_curly_brackets,
     markdown_to_html,
     split_quotes,
 )
-from ErinaRobot.modules.sql import cust_filters_sql as sql
+from ShikimoriRobot.modules.sql import cust_filters_sql as sql
 
 HANDLER_GROUP = 10
 
