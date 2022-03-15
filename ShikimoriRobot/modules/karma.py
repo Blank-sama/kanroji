@@ -3,9 +3,9 @@ import re
 
 from pyrogram import filters
 
-from ErinaRobot import BOT_USERNAME
-from ErinaRobot import pbot as app
-from ErinaRobot.modules.mongo.karma_mongo import (
+from ShikimoriRobot import BOT_USERNAME
+from ShikimoriRobot import pbot as app
+from ShikimoriRobot.modules.mongo.karma_mongo import (
     alpha_to_int,
     get_karma,
     get_karmas,
@@ -15,15 +15,15 @@ from ErinaRobot.modules.mongo.karma_mongo import (
     karma_on,
     update_karma,
 )
-from ErinaRobot.utils.errors import capture_err
+from ShikimoriRobot.utils.errors import capture_err
 from random import choice
-from ErinaRobot.utils.permission import adminsOnly
+from ShikimoriRobot.utils.permission import adminsOnly
 
 karma_positive_group = 3
 karma_negative_group = 4
 
-regex_upvote = r"^((?i)\+|\+\+|\+1|👍|pro|thanks|ty|great|good)$"
-regex_downvote = r"^(\-|\-\-|\-1|👎|noob|nub|bad|fu)$"
+regex_upvote = r"^((?i)\+|\+\+|\+1|👍|pro|thanks|ty|great|good|noice|sexy|op)$"
+regex_downvote = r"^(\-|\-\-|\-1|👎|noob|nub|bad|fu|chutiya|bkl)$"
 
 
 KARMARANDOM = (
