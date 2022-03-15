@@ -2,6 +2,7 @@ import os
 
 from ErinaRobot.events import register
 from ErinaRobot import telethn as Client
+from datetime import datetime
 from telethon import events, Button, types
 
 TMP_DOWNLOAD_DIRECTORY = "./"
@@ -11,13 +12,13 @@ from datetime import datetime
 from telegraph import Telegraph, upload_file, exceptions
 
 
-wibu = "NezukoXRobot"
+wibu = "Shikimori"
 telegraph = Telegraph()
 data = telegraph.create_account(short_name=wibu)
 auth_url = data["auth_url"]
 
 
-@register(pattern="^/t(gm|gt) ?(.*)")
+@register(pattern="^/t(gm|gt|m) ?(.*)")
 async def telegrap(event):
     optional_title = event.pattern_match.group(2)
     if event.reply_to_msg_id:
@@ -52,7 +53,7 @@ async def telegrap(event):
                     os.remove(downloaded_file_name)
                     await Client.send_message(
                         event.chat_id,
-                        "Your telegraph is complete uploaded!",
+                        "Your telegraph is complete uploaded in {} seconds.".format(response["path"], ms), link_preview=True)",
                         buttons=[
                             [
                                 types.KeyboardButtonUrl(
@@ -95,7 +96,7 @@ async def telegrap(event):
             ms = (end - start).seconds
             await Client.send_message(
                     event.chat_id,
-                    "Your telegraph is complete uploaded!",
+                    "Your telegraph is complete uploaded in {} seconds.".format(response["path"], ms), link_preview=True)",
                     buttons=[
                         [
                             types.KeyboardButtonUrl(
