@@ -38,21 +38,21 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import escape_markdown
 
-from ErinaRobot import dispatcher
-from ErinaRobot.modules.helper_funcs.handlers import CMD_STARTERS, SpamChecker
-from ErinaRobot.modules.helper_funcs.misc import is_module_loaded
+from ShikimoriRobot import dispatcher
+from ShikimoriRobot.modules.helper_funcs.handlers import CMD_STARTERS, SpamChecker
+from ShikimoriRobot.modules.helper_funcs.misc import is_module_loaded
 
 FILENAME = __name__.rsplit(".", 1)[-1]
 
 # If module is due to be loaded, then setup all the magical handlers
 if is_module_loaded(FILENAME):
 
-    from ErinaRobot.modules.helper_funcs.chat_status import (
+    from ShikimoriRobot.modules.helper_funcs.chat_status import (
         connection_status,
         is_user_admin,
         user_admin,
     )
-    from ErinaRobot.modules.sql import disable_sql as sql
+    from ShikimoriRobot.modules.sql import disable_sql as sql
 
     DISABLE_CMDS = []
     DISABLE_OTHER = []
@@ -176,7 +176,7 @@ if is_module_loaded(FILENAME):
         args = context.args
         chat = update.effective_chat
         if len(args) >= 1:
-            disable_module = "ErinaRobot.modules." + args[0].rsplit(".", 1)[0]
+            disable_module = "ShikimoriRobot.modules." + args[0].rsplit(".", 1)[0]
 
             try:
                 module = importlib.import_module(disable_module)
@@ -250,7 +250,7 @@ if is_module_loaded(FILENAME):
         chat = update.effective_chat
 
         if len(args) >= 1:
-            enable_module = "ErinaRobot.modules." + args[0].rsplit(".", 1)[0]
+            enable_module = "ShikimoriRobot.modules." + args[0].rsplit(".", 1)[0]
 
             try:
                 module = importlib.import_module(enable_module)
