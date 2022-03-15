@@ -30,8 +30,8 @@ import importlib
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, CommandHandler
 
-from ErinaRobot import dispatcher, telethn
-from ErinaRobot.__main__ import (
+from ShikimoriRobot import dispatcher, telethn
+from ShikimoriRobot.__main__ import (
     CHAT_SETTINGS,
     DATA_EXPORT,
     DATA_IMPORT,
@@ -42,7 +42,7 @@ from ErinaRobot.__main__ import (
     USER_INFO,
     USER_SETTINGS,
 )
-from ErinaRobot.modules.helper_funcs.chat_status import dev_plus, sudo_plus
+from ShikimoriRobot.modules.helper_funcs.chat_status import dev_plus, sudo_plus
 
 
 @dev_plus
