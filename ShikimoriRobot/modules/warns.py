@@ -50,26 +50,26 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import mention_html
 
-from ErinaRobot import FAFNIRS, LUINORS, dispatcher
-from ErinaRobot.modules.disable import DisableAbleCommandHandler
-from ErinaRobot.modules.helper_funcs.chat_status import (
+from ShikimoriRobot import FAFNIRS, LUINORS, dispatcher
+from ShikimoriRobot.modules.disable import DisableAbleCommandHandler
+from ShikimoriRobot.modules.helper_funcs.chat_status import (
     bot_admin,
     can_restrict,
     is_user_admin,
     user_admin,
     user_admin_no_reply,
 )
-from ErinaRobot.modules.helper_funcs.extraction import (
+from ShikimoriRobot.modules.helper_funcs.extraction import (
     extract_text,
     extract_user,
     extract_user_and_text,
 )
-from ErinaRobot.modules.helper_funcs.filters import CustomFilters
-from ErinaRobot.modules.helper_funcs.misc import split_message
-from ErinaRobot.modules.helper_funcs.string_handling import split_quotes
-from ErinaRobot.modules.log_channel import loggable
-from ErinaRobot.modules.redis.approvals_redis import is_approved
-from ErinaRobot.modules.sql import warns_sql as sql
+from ShikimoriRobot.modules.helper_funcs.filters import CustomFilters
+from ShikimoriRobot.modules.helper_funcs.misc import split_message
+from ShikimoriRobot.modules.helper_funcs.string_handling import split_quotes
+from ShikimoriRobot.modules.log_channel import loggable
+from ShikimoriRobot.modules.redis.approvals_redis import is_approved
+from ShikimoriRobot.modules.sql import warns_sql as sql
 
 WARN_HANDLER_GROUP = 9
 CURRENT_WARNING_FILTER_STRING = "<b>Current warning filters in this chat:</b>\n"
