@@ -295,7 +295,7 @@ FAFNIRS = list(FAFNIRS)
 
 
 # Load at end to ensure all prev variables have been set
-from ShkimoriRobot.modules.helper_funcs.handlers import (
+from ShikimoriRobot.modules.helper_funcs.handlers import (
     CustomCommandHandler,
     CustomMessageHandler,
     CustomRegexHandler,
