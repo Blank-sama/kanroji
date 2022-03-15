@@ -5,9 +5,9 @@ import telegram
 from telegram import Update
 from telegram.ext import CallbackContext, Filters
 
-from ErinaRobot import LOGGER, dispatcher
-from ErinaRobot.modules.disable import DisableAbleMessageHandler
-from ErinaRobot.modules.helper_funcs.regex_helper import infinite_loop_check
+from ShikimoriRobot import LOGGER, dispatcher
+from ShikimoriRobot.modules.disable import DisableAbleMessageHandler
+from ShikimoriRobot.modules.helper_funcs.regex_helper import infinite_loop_check
 
 DELIMITERS = ("/", ":", "|", "_")
 
