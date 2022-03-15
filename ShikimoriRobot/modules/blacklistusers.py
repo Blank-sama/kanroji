@@ -31,8 +31,8 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler
 from telegram.utils.helpers import mention_html
 
-import ErinaRobot.modules.sql.blacklistusers_sql as sql
-from ErinaRobot import (
+import ShikimoriRobot.modules.sql.blacklistusers_sql as sql
+from ShikimoriRobot import (
     DEV_USERS,
     FAFNIRS,
     LUINORS,
@@ -41,9 +41,9 @@ from ErinaRobot import (
     SPRYZONS,
     dispatcher,
 )
-from ErinaRobot.modules.helper_funcs.chat_status import dev_plus
-from ErinaRobot.modules.helper_funcs.extraction import extract_user, extract_user_and_text
-from ErinaRobot.modules.log_channel import gloggable
+from ShikimoriRobot.modules.helper_funcs.chat_status import dev_plus
+from ShikimoriRobot.modules.helper_funcs.extraction import extract_user, extract_user_and_text
+from ShikimoriRobot.modules.log_channel import gloggable
 
 BLACKLISTWHITELIST = [OWNER_ID] + DEV_USERS + REDLIONS + LUINORS + SPRYZONS
 BLABLEUSERS = [OWNER_ID] + DEV_USERS
