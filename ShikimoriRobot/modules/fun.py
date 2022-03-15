@@ -7,15 +7,15 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext, Filters
 from telegram.utils.helpers import escape_markdown
 
-import ErinaRobot.modules.fun_strings as fun_strings
-from ErinaRobot import REDLIONS, SPRYZONS, dispatcher
-from ErinaRobot.modules.disable import (
+import ShikimoriRobot.modules.fun_strings as fun_strings
+from ShikimoriRobot import REDLIONS, SPRYZONS, dispatcher
+from ShikimoriRobot.modules.disable import (
     DisableAbleCommandHandler,
     DisableAbleMessageHandler,
 )
-from ErinaRobot.modules.helper_funcs.alternate import typing_action
-from ErinaRobot.modules.helper_funcs.chat_status import is_user_admin
-from ErinaRobot.modules.helper_funcs.extraction import extract_user
+from ShikimoriRobot.modules.helper_funcs.alternate import typing_action
+from ShikimoriRobot.modules.helper_funcs.chat_status import is_user_admin
+from ShikimoriRobot.modules.helper_funcs.extraction import extract_user
 
 GIF_ID = "CgACAgQAAx0CSVUvGgAC7KpfWxMrgGyQs-GUUJgt-TSO8cOIDgACaAgAAlZD0VHT3Zynpr5nGxsE"
 
