@@ -5,7 +5,7 @@ from datetime import datetime
 from requests import get, post
 from telethon.tl import functions, types
 
-from ErinaRobot.events import register
+from ShikimoriRobot.events import register
 
 
 def progress(current, total):
