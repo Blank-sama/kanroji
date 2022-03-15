@@ -30,10 +30,10 @@ from telegram import Bot, InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.error import BadRequest, Unauthorized
 from telegram.ext import CallbackContext, CallbackQueryHandler, CommandHandler
 
-import ErinaRobot.modules.sql.global_bans_sql as gban_sql
-import ErinaRobot.modules.sql.users_sql as user_sql
-from ErinaRobot import DEV_USERS, OWNER_ID, dispatcher
-from ErinaRobot.modules.helper_funcs.chat_status import dev_plus
+import ShikimoriRobot.modules.sql.global_bans_sql as gban_sql
+import ShikimoriRobot.modules.sql.users_sql as user_sql
+from ShikimoriRobot import DEV_USERS, OWNER_ID, dispatcher
+from ShikimoriRobot.modules.helper_funcs.chat_status import dev_plus
 
 
 def get_muted_chats(bot: Bot, update: Update, leave: bool = False):
