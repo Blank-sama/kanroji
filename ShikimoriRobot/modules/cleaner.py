@@ -29,15 +29,15 @@ import html
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, CommandHandler, Filters, MessageHandler
 
-from ErinaRobot import ALLOW_EXCL, BOT_NAME, CustomCommandHandler, dispatcher
-from ErinaRobot.modules.disable import DisableAbleCommandHandler
-from ErinaRobot.modules.helper_funcs.chat_status import (
+from ShikimoriRobot import ALLOW_EXCL, BOT_NAME, CustomCommandHandler, dispatcher
+from ShikimoriRobot.modules.disable import DisableAbleCommandHandler
+from ShikimoriRobot.modules.helper_funcs.chat_status import (
     bot_can_delete,
     connection_status,
     dev_plus,
     user_admin,
 )
-from ErinaRobot.modules.sql import cleaner_sql as sql
+from ShikimoriRobot.modules.sql import cleaner_sql as sql
 
 CMD_STARTERS = ("/", "!") if ALLOW_EXCL else "/"
 BLUE_TEXT_CLEAN_GROUP = 13
