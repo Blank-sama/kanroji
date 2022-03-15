@@ -31,8 +31,8 @@ import requests
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext
 
-from ErinaRobot import TIME_API_KEY, dispatcher
-from ErinaRobot.modules.disable import DisableAbleCommandHandler
+from ShikimoriRobot import TIME_API_KEY, dispatcher
+from ShikimoriRobot.modules.disable import DisableAbleCommandHandler
 
 
 def generate_time(to_find: str, findtype: List[str]) -> str:
