@@ -8,21 +8,21 @@ from telegram import TelegramError, Update
 from telegram.error import Unauthorized
 from telegram.ext import CallbackContext, CommandHandler
 
-import ErinaRobot
-from ErinaRobot import dispatcher
-from ErinaRobot.modules.helper_funcs.chat_status import dev_plus
+import ShikimoriRobot
+from ShikimoriRobot import dispatcher
+from ShikimoriRobot.modules.helper_funcs.chat_status import dev_plus
 
 
 @dev_plus
 def allow_groups(update: Update, context: CallbackContext):
     args = context.args
     if not args:
-        update.effective_message.reply_text(f"Current state: {ErinaRobot.ALLOW_CHATS}")
+        update.effective_message.reply_text(f"Current state: {ShikimoriRobot.ALLOW_CHATS}")
         return
     if args[0].lower() in ["off", "no"]:
-        ErinaRobot.ALLOW_CHATS = True
+        ShikimoriRobot.ALLOW_CHATS = True
     elif args[0].lower() in ["yes", "on"]:
-        ErinaRobot.ALLOW_CHATS = False
+        ShikimoriRobot.ALLOW_CHATS = False
     else:
         update.effective_message.reply_text("Format: /lockdown Yes/No or Off/On")
         return
