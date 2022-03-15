@@ -2,8 +2,8 @@ from faker import Faker
 from faker.providers import internet
 from telethon import events
 
-from ErinaRobot import telethn as tbot
-from ErinaRobot.pyrogramee.telethonbasics import is_admin
+from ShikimoriRobot import telethn as tbot
+from ShikimoriRobot.pyrogramee.telethonbasics import is_admin
 
 
 @tbot.on(events.NewMessage(pattern="/fakegen$"))
