@@ -32,8 +32,8 @@ import requests
 from telethon import types
 from telethon.tl import functions
 
-from ErinaRobot import REM_BG_API_KEY, TEMP_DOWNLOAD_DIRECTORY, telethn
-from ErinaRobot.events import register
+from ShikimoriRobot import REM_BG_API_KEY, TEMP_DOWNLOAD_DIRECTORY, telethn
+from ShikimoriRobot.events import register
 
 
 async def is_register_admin(chat, user):
