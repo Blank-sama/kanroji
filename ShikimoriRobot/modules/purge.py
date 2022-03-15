@@ -28,8 +28,8 @@ import time
 
 from telethon import events
 
-from ErinaRobot import telethn
-from ErinaRobot.modules.helper_funcs.telethn.chatstatus import (
+from ShikimoriRobot import telethn
+from ShikimoriRobot.modules.helper_funcs.telethn.chatstatus import (
     can_delete_messages,
     user_is_admin,
 )
