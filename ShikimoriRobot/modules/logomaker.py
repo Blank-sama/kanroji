@@ -2,9 +2,9 @@ import os
 
 from PIL import Image, ImageDraw, ImageFont
 
-from ErinaRobot import OWNER_ID
-from ErinaRobot import telethn as tbot
-from ErinaRobot.events import register
+from ShikimoriRobot import OWNER_ID
+from ShikimoriRobot import telethn as tbot
+from ShikimoriRobot.events import register
 
 
 @register(pattern="^/logo ?(.*)")
@@ -34,13 +34,13 @@ async def lego(event):
 
         text = event.pattern_match.group(1)
 
-        img = Image.open("./ErinaRobot/resources/blackbg.jpg")
+        img = Image.open("./ShikimoriRobot/resources/blackbg.jpg")
 
         draw = ImageDraw.Draw(img)
 
         image_widthz, image_heightz = img.size
 
-        font = ImageFont.truetype("./ErinaRobot/resources/Chopsic.otf", 330)
+        font = ImageFont.truetype("./ShikimoriRobot/resources/Chopsic.otf", 330)
 
         w, h = draw.textsize(text, font=font)
 
@@ -67,7 +67,7 @@ async def lego(event):
 
         img.save(fname2, "png")
 
-        await tbot.send_file(event.chat_id, fname2, caption="Made By @Erina_GroupBot")
+        await tbot.send_file(event.chat_id, fname2, caption="Made By @Shikimori_Robot")
 
         if os.path.exists(fname2):
 
@@ -75,7 +75,7 @@ async def lego(event):
 
     except Exception as e:
 
-        await event.reply(f"Error Report @ErinaSupport, {e}")
+        await event.reply(f"Error Report @NobaraSupport, {e}")
 
 
 @register(pattern="^/wlogo ?(.*)")
@@ -105,13 +105,13 @@ async def lego(event):
 
         text = event.pattern_match.group(1)
 
-        img = Image.open("./ErinaRobot/resources/blackbg.jpg")
+        img = Image.open("./ShikimoriRobot/resources/blackbg.jpg")
 
         draw = ImageDraw.Draw(img)
 
         image_widthz, image_heightz = img.size
 
-        font = ImageFont.truetype("./ErinaRobot/resources/Maghrib.ttf", 1000)
+        font = ImageFont.truetype("./ShikimoriRobot/resources/Maghrib.ttf", 1000)
 
         w, h = draw.textsize(text, font=font)
 
@@ -138,7 +138,7 @@ async def lego(event):
 
         img.save(fname2, "png")
 
-        await tbot.send_file(event.chat_id, fname2, caption="Made By @Erina_GroupBot")
+        await tbot.send_file(event.chat_id, fname2, caption="Made By @Shikimori_Robot")
 
         if os.path.exists(fname2):
 
@@ -146,7 +146,7 @@ async def lego(event):
 
     except Exception as e:
 
-        await event.reply(f"Error Report @ErinaSupport, {e}")
+        await event.reply(f"Error Report @NobaraSupport, {e}")
 
 
 file_help = os.path.basename(__file__)
