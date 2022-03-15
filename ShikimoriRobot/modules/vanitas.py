@@ -12,7 +12,7 @@ import requests
 from telegram.ext.filters import Filters
 from telegram.parsemode import ParseMode
 
-import ErinaRobot.modules.sql.vanitas_sql as sql
+import ShikimoriRobot.modules.sql.vanitas_sql as sql
 from vanitas import User as vanitas # pip install vanitas
 
 from time import sleep
@@ -23,14 +23,14 @@ from telegram.ext import (CallbackContext, CallbackQueryHandler, CommandHandler,
                           DispatcherHandlerStop, Filters, MessageHandler,
                           run_async)
 from telegram.error import BadRequest, RetryAfter, Unauthorized, TelegramError
-from ErinaRobot import LOGGER
+from ShikimoriRobot import LOGGER
 from requests import get
 from telegram.utils.helpers import mention_html, mention_markdown, escape_markdown
 
-from ErinaRobot.modules.helper_funcs.filters import CustomFilters
-from ErinaRobot.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
-from ErinaRobot import dispatcher, updater, SUPPORT_CHAT
-from ErinaRobot.modules.log_channel import gloggable
+from ShikimoriRobot.modules.helper_funcs.filters import CustomFilters
+from ShikimoriRobot.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
+from ShikimoriRobot import dispatcher, updater, SUPPORT_CHAT
+from ShikimoriRobot.modules.log_channel import gloggable
 
 v = vanitas()
 
