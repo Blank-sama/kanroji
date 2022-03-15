@@ -6,9 +6,9 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from telegram import __version__ as o
 from telethon import __version__ as s
 
-from ErinaRobot import SHASA_PHOTO, SUPPORT_CHAT, pbot
-from ErinaRobot.utils.carbon import make_carbon
-from ErinaRobot.utils.errors import capture_err
+from ShikimoriRobot import SHIKIMORI_PHOTO, SUPPORT_CHAT, pbot
+from ShikimoriRobot.utils.carbon import make_carbon
+from ShikimoriRobot.utils.errors import capture_err
 
 
 @pbot.on_message(filters.command("carbon"))
@@ -29,10 +29,10 @@ async def carbon_func(_, message):
 @pbot.on_message(filters.command("alive"))
 async def alive(_, message):
     await message.reply_photo(
-        photo=SHASA_PHOTO,
-        caption=f"""⚡ **Hᴇʏ I Aᴍ Erina** 
+        photo=SHIKIMORI_PHOTO,
+        caption=f"""⚡ **ʜᴇʏ ɪ ᴀᴍ sʜɪᴋɪᴍᴏʀɪ** 
 
-**✨ Cʀᴇᴀᴛᴇᴅ ʙʏ : [Hɪʀᴏ Kᴜɴ](t.me/Zodd_The_Immortal)**
+**✨ Cʀᴇᴀᴛᴇᴅ ʙʏ : [𝙎𝙖𝙬𝙖𝙙𝙖 𝙏𝙨𝙪𝙣𝙖𝙮𝙤𝙨𝙝𝙞](t.me/Sawada_Kun)**
 **🐍 Pʏᴛʜᴏɴ Vᴇʀsɪᴏɴ :** `{y()}`
 **📃 ᴘᴛʙ Vᴇʀsɪᴏɴ :** `{o}`
 **💫 Tᴇʟᴇᴛʜᴏɴ Vᴇʀsɪᴏɴ :** `{s}`
@@ -44,7 +44,7 @@ async def alive(_, message):
             [
                 [
                     InlineKeyboardButton("Sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{SUPPORT_CHAT}"),
-                    InlineKeyboardButton("Uᴘᴅᴀᴛᴇs", url="https://t.me/ErinaUpdates"),
+                    InlineKeyboardButton("sᴀᴡᴀᴅᴀ ᴛsᴜɴᴀʏᴏsʜɪ", url="https://t.me/Sawada_Kun"),
                 ]
             ]
         ),
