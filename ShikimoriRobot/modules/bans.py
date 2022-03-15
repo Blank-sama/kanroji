@@ -11,7 +11,7 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CallbackQueryHandler, CommandHandler, Filters
 from telegram.utils.helpers import mention_html
 
-from ErinaRobot import (
+from ShikimoriRobot import (
     DEV_USERS,
     FAFNIRS,
     LOGGER,
@@ -21,8 +21,8 @@ from ErinaRobot import (
     SPRYZONS,
     dispatcher,
 )
-from ErinaRobot.modules.disable import DisableAbleCommandHandler
-from ErinaRobot.modules.helper_funcs.chat_status import (
+from ShikimoriRobot.modules.disable import DisableAbleCommandHandler
+from ShikimoriRobot.modules.helper_funcs.chat_status import (
     bot_admin,
     can_delete,
     can_restrict,
@@ -35,10 +35,10 @@ from ErinaRobot.modules.helper_funcs.chat_status import (
     user_admin_no_reply,
     user_can_ban,
 )
-from ErinaRobot.modules.helper_funcs.extraction import extract_user_and_text
-from ErinaRobot.modules.helper_funcs.filters import CustomFilters
-from ErinaRobot.modules.helper_funcs.string_handling import extract_time
-from ErinaRobot.modules.log_channel import gloggable, loggable
+from ShikimoriRobot.modules.helper_funcs.extraction import extract_user_and_text
+from ShikimoriRobot.modules.helper_funcs.filters import CustomFilters
+from ShikimoriRobot.modules.helper_funcs.string_handling import extract_time
+from ShikimoriRobot.modules.log_channel import gloggable, loggable
 
 
 @connection_status
