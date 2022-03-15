@@ -4,9 +4,9 @@ from traceback import format_exc
 from pyrogram import filters
 from pyrogram.types import Message
 
-from ErinaRobot import arq
-from ErinaRobot.pyrogramee.errors import capture_err
-from ErinaRobot import pbot as app
+from ShikimoriRobot import arq
+from ShikimoriRobot.pyrogramee.errors import capture_err
+from ShikimoriRobot import pbot as app
 
 
 
