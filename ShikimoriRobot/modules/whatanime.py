@@ -1,6 +1,6 @@
 import tracemoepy
 from pyrogram import filters
-from ErinaRobot import pbot
+from ShikimoriRobot import pbot
 import os
 
 tracemoe = tracemoepy.tracemoe.TraceMoe()
