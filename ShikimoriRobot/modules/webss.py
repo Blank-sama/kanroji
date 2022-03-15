@@ -26,8 +26,8 @@ SOFTWARE.
 from pyrogram import filters
 from pyrogram.types import Message
 
-from ErinaRobot import pbot
-from ErinaRobot.utils.errors import capture_err
+from ShikimoriRobot import pbot
+from ShikimoriRobot.utils.errors import capture_err
 
 
 @pbot.on_message(filters.command("webss"))
