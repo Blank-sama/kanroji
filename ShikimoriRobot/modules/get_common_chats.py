@@ -31,9 +31,9 @@ from telegram import Update
 from telegram.error import BadRequest, RetryAfter, Unauthorized
 from telegram.ext import CallbackContext, CommandHandler, Filters
 
-from ErinaRobot import OWNER_ID, dispatcher
-from ErinaRobot.modules.helper_funcs.extraction import extract_user
-from ErinaRobot.modules.sql.users_sql import get_user_com_chats
+from ShikimoriRobot import OWNER_ID, dispatcher
+from ShikimoriRobot.modules.helper_funcs.extraction import extract_user
+from ShikimoriRobot.modules.sql.users_sql import get_user_com_chats
 
 
 def get_user_common_chats(update: Update, context: CallbackContext):
