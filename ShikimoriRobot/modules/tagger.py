@@ -1,7 +1,7 @@
 from telethon.tl.types import ChannelParticipantsAdmins
 
-from ErinaRobot import telethn
-from ErinaRobot.events import register as shasa
+from ShikimoriRobot import telethn
+from ShikimoriRobot.events import register as shasa
 
 
 @shasa(pattern="^/tagall ?(.*)")
