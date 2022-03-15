@@ -515,8 +515,7 @@ def shasa_callback_data(update, context):
         )
     elif query.data == "ShikimoriSupport":
         query.message.edit_text(
-            text="* Shikimori
- support chats*" "\nJoin Support Group/Channel",
+            text="*Shikimori Support chats*" "\nJoin Support Group/Channel",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
