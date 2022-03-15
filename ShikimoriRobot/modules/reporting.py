@@ -37,10 +37,10 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import mention_html
 
-from ErinaRobot import FAFNIRS, LOGGER, LUINORS, REDLIONS, dispatcher
-from ErinaRobot.modules.helper_funcs.chat_status import user_admin, user_not_admin
-from ErinaRobot.modules.log_channel import loggable
-from ErinaRobot.modules.sql import reporting_sql as sql
+from ShikimoriRobot import FAFNIRS, LOGGER, LUINORS, REDLIONS, dispatcher
+from ShikimoriRobot.modules.helper_funcs.chat_status import user_admin, user_not_admin
+from ShikimoriRobot.modules.log_channel import loggable
+from ShikimoriRobot.modules.sql import reporting_sql as sql
 
 REPORT_GROUP = 12
 REPORT_IMMUNE_USERS = REDLIONS + FAFNIRS + LUINORS
