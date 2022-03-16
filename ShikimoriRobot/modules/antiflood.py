@@ -354,7 +354,7 @@ def __chat_settings__(chat_id, user_id):
     return "Antiflood has been set to`{}`.".format(limit)
 
 
-__mod_name__ = "Anti-Flood"
+__mod_name__ = "♡ᴀɴᴛɪ-ғʟᴏᴏᴅ♡"
 
 FLOOD_BAN_HANDLER = MessageHandler(
     Filters.all & ~Filters.status_update & Filters.chat_type.groups,
