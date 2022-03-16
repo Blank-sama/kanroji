@@ -236,7 +236,7 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
                     f"#USER_JOINED\n"
-                    f"My Darling just joined the chat"
+                    f"Bot Owner just joined the group"               
                 )
                 continue
 
@@ -248,7 +248,7 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
                     f"#USER_JOINED\n"
-                    f"My Darling's Brother just joined the group"
+                    f"SEXY just joined the group"
                 )
                 continue   
 
