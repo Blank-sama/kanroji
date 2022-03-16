@@ -91,7 +91,7 @@ def callbackk(_,query):
             query.answer("Refreshed!")
         
 
-__mod_name__ = "◎Scheldude"
+__mod_name__ = "♡sᴄʜᴇᴅᴜʟᴇ♡"
 
 __help__ = """
  ❍ /latest: to see latest anime episode
