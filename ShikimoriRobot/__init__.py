@@ -17,6 +17,7 @@ from pymongo.errors import ServerSelectionTimeoutError
 from pyrogram import Client, errors
 from pyrogram.errors.exceptions.bad_request_400 import ChannelInvalid, PeerIdInvalid
 from Python_ARQ import ARQ
+from telegraph import Telegraph
 from redis import StrictRedis
 from telegram import Chat
 from telethon import TelegramClient
@@ -271,9 +272,6 @@ except BaseException:
     print("Userbot Error ! Have you added a STRING_SESSION in deploying??")
     sys.exit(1)
 
-telegraph = Telegraph()
-print("[shikimori]: Telegraph Account Creating")
-telegraph.create_account(short_name='shikimori')
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 telethn = TelegramClient("Shikimori", API_ID, API_HASH)
 pgram = Client("KuramaPyro", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
