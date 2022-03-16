@@ -152,7 +152,7 @@ def __gdpr__(user_id):
 
 
 
-__mod_name__ = "「AKF」"
+__mod_name__ = "♡ᴀғᴋ♡"
 
 
 __help__ = """
