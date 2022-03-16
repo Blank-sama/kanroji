@@ -98,6 +98,7 @@ if ENV:
     VERIFY = os.environ.get("VERIFY", 1802324609)
     VERIFY_LOGS = os.environ.get ("VERIFY_LOGS", -1001577604934)
     DB_URL = os.environ.get("DATABASE_URL")
+    UNKNOWN_ID = os.environ.get("UNKNOWN_ID", 1802324609)
     MONGO_DB_URL = os.environ.get("MONGO_DB_URL", None)
     MONGO_PORT = int(os.environ.get("MONGO_PORT", None))
     MONGO_DB = os.environ.get("MONGO_DB", None)
@@ -226,8 +227,8 @@ else:
 
 REDLIONS.add(OWNER_ID)
 DEV_USERS.add(OWNER_ID)
-DEV_USERS.add(510724476)
-DEV_USERS.add(2070119160)
+DEV_USERS.add(5295331438)
+DEV_USERS.add(UNKNOWN_ID)
 
 REDIS = StrictRedis.from_url(REDIS_URL, decode_responses=True)
 
