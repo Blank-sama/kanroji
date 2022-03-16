@@ -528,7 +528,7 @@ dispatcher.add_handler(GDNIGHT_HANDLER)
 dispatcher.add_handler(GBAM_HANDLER)
 dispatcher.add_handler(GBUN_HANDLER)
 
-__mod_name__ = "Fᴜɴ"
+__mod_name__ = "♡ғᴜɴs♡"
 __command_list__ = [
     "runs",
     "slap",
