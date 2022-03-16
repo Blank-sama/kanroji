@@ -33,7 +33,7 @@ async def _(event):
     await event.delete()
 
 
-__mod_name__ = "Tᴀɢ"
+__mod_name__ = "♡ᴛᴀɢ♡"
 __help__ = """
  |• `/mention`: Mention All Members Of Group Upto 20k
  |• `/tagall`: Tag everyone in a chat
