@@ -312,7 +312,7 @@ dispatcher.add_handler(CLOCKANIMATION_HANDLER)
 dispatcher.add_handler(BLOCKANIMATION_HANDLER)
 
 
-__mod_name__ = "EMOJIS"
+__mod_name__ = "♡ᴇᴍᴏᴊɪs♡"
 __command_list__ = [
     "love",
     "hack",
