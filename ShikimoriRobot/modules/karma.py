@@ -193,7 +193,7 @@ async def captcha_state(_, message):
 
 
 
-__mod_name__ = "Kᴀʀᴍᴀ"
+__mod_name__ = "♡ᴋᴀʀᴍᴀ♡"
 __help__ = """
 
 *Upvote* - Use upvote keywords like "+", "+1", "thanks", etc. to upvote a message.
