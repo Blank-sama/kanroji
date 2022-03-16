@@ -271,6 +271,9 @@ except BaseException:
     print("Userbot Error ! Have you added a STRING_SESSION in deploying??")
     sys.exit(1)
 
+telegraph = Telegraph()
+print("[shikimori]: Telegraph Account Creating")
+telegraph.create_account(short_name='shikimori')
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 telethn = TelegramClient("Shikimori", API_ID, API_HASH)
 pgram = Client("KuramaPyro", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
