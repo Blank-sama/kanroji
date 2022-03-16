@@ -1,4 +1,4 @@
-__mod_name__ = "◎Tᴏᴏʟs"
+__mod_name__ = "♡ᴛᴏᴏʟs♡"
 
 __help__ = """
 *Date-time-Weather*
