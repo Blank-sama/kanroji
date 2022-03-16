@@ -1,4 +1,4 @@
-__mod_name__ = "Uᴘʟᴏᴀᴅ"
+__mod_name__ = "♡ᴜᴘʟᴏᴀᴅ♡"
 
 __help__ = """
 Here is the help for the Upload module:
