@@ -553,7 +553,7 @@ def snipe(update: Update, context: CallbackContext):
             )
 
 
-__mod_name__ = "Bᴀɴ/Mᴜᴛᴇ"
+__mod_name__ = "♡ʙᴀɴ/ᴍᴜᴛᴇs♡"
 
 __help__ = """
 *User Commands:*
