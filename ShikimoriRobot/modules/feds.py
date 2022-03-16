@@ -2412,7 +2412,7 @@ def fed_user_help(update: Update, context: CallbackContext):
     )
 
 
-__mod_name__ = "Fᴇᴅs"
+__mod_name__ = "♡ғᴇᴅs♡"
 __help__ = """
 *Commands:*\n
 Feds are now divided into 3 sections for your ease.
