@@ -48,12 +48,16 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import escape_markdown, mention_html, mention_markdown
 
+UNKNOWN = "https://telegra.ph//file/234e80b407948c0bbf038.jpg"
+SAWADA = "https://telegra.ph//file/74a8a3c758b57dbaf836d.jpg"
+
 import ShikimoriRobot.modules.sql.welcome_sql as sql
 from ShikimoriRobot import (
     DEV_USERS,
     LOGGER,
     LUINORS,
     OWNER_ID,
+    UNKNOWN_ID,
     REDLIONS,
     SPRYZONS,
     SUPPORT_CHAT,
@@ -225,15 +229,28 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
 
             # Give the owner a special welcome
             if new_mem.id == OWNER_ID:
-                update.effective_message.reply_text(
-                    "Oh hi, my creator.", reply_to_message_id=reply
+                   update.effective_message.reply_photo(
+                       SAWADA, caption=f"The Demon Slayer {html.escape(user.first_name)} Master Yorrichi Juts joined.", reply_to_message_id=reply,
+                       parse_mode=ParseMode.HTML,
                 )
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
                     f"#USER_JOINED\n"
-                    f"Bot Owner just joined the chat"
+                    f"My Darling just joined the chat"
                 )
                 continue
+
+             if new_mem.id == UNKNOWN_ID:
+                update.effective_message.reply_photo(
+                    UNKNOWN, caption=f"The Substitute Soul Reaper Just joined {html.escape(user.first_name)}.", reply_to_message_id=reply,
+                    parse_mode=ParseMode.HTML,
+                )
+                welcome_log = (
+                    f"{html.escape(chat.title)}\n"
+                    f"#USER_JOINED\n"
+                    f"My Darling's Brother just joined the group"
+                )
+                continue   
 
             # Welcome Devs
             if new_mem.id in DEV_USERS:
