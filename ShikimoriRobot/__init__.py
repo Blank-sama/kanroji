@@ -17,7 +17,7 @@ from pymongo.errors import ServerSelectionTimeoutError
 from pyrogram import Client, errors
 from pyrogram.errors.exceptions.bad_request_400 import ChannelInvalid, PeerIdInvalid
 from Python_ARQ import ARQ
-from telegraph import Telegraph
+from telegram import Telegraph
 from redis import StrictRedis
 from telegram import Chat
 from telethon import TelegramClient
