@@ -35,7 +35,7 @@ from ShikimoriRobot.modules.sql.afk_sql import is_afk, check_afk_status
 from ShikimoriRobot.modules.sql.users_sql import get_user_num_chats
 from ShikimoriRobot.modules.helper_funcs.chat_status import sudo_plus ,support_plus
 from ShikimoriRobot.modules.helper_funcs.extraction import extract_user
-from ShikimoriRobot import telethn as YoneTelethonClient,FAFNIRS,LUINORS,PRYZONS
+from ShikimoriRobot import telethn as YoneTelethonClient,FAFNIRS,LUINORS,SPRYZONS
 
 
 def no_by_per(totalhp, percentage):
