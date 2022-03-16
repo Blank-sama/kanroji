@@ -1,3 +1,4 @@
+
 import json
 import os
 import random
@@ -109,6 +110,7 @@ async def process(msg, user, client, reply, replied=None):
     # Draw Template
     top, middle, bottom = await drawer(width, height)
     # Profile Photo Check and Fetch
+
     yes = False
     color = random.choice(COLORS)
     async for photo in client.iter_profile_photos(user, limit=1):
@@ -198,13 +200,14 @@ async def process(msg, user, client, reply, replied=None):
         elif reply.document.size < 1048576:
             docsize = str(round(reply.document.size / 1024, 2)) + " KB "
         elif reply.document.size < 1073741824:
-            docsize = str(round(reply.document.size / 1024**2, 2)) + " MB "
+            docsize = str(round(reply.document.size / 1024 ** 2, 2)) + " MB "
         else:
-            docsize = str(round(reply.document.size / 1024**3, 2)) + " GB "
+            docsize = str(round(reply.document.size / 1024 ** 3, 2)) + " GB "
         docbglen = (
             font.getsize(docsize)[0]
             if font.getsize(docsize)[0] > font.getsize(docname)[0]
-            else font.getsize(docname)[0]
+
+else font.getsize(docname)[0]
         )
         canvas = canvas.resize((pfpbg.width + width + docbglen, 160 + height))
         top, middle, bottom = await drawer(width + docbglen, height + 30)
@@ -299,6 +302,7 @@ async def process(msg, user, client, reply, replied=None):
 async def drawer(width, height):
     # Top part
     top = Image.new("RGBA", (width, 20), (0, 0, 0, 0))
+    top = Image.new("RGBA", (width, 20), (0, 0, 0, 0))
     draw = ImageDraw.Draw(top)
     draw.line((10, 0, top.width - 20, 0), fill=(29, 29, 29, 255), width=50)
     draw.pieslice((0, 0, 30, 50), 180, 270, fill=(29, 29, 29, 255))
@@ -383,7 +387,7 @@ async def emoji_fetch(emoji):
             urllib.request.urlretrieve(img, "resources/emoji.png")[0]
         )
     else:
-        img = emojis["⛔"]
+        img = emojis["⛔️"]
         return await transparent(
             urllib.request.urlretrieve(img, "resources/emoji.png")[0]
         )
@@ -404,6 +408,8 @@ async def replied_user(draw, tot, text, maxlength, title):
     namefont = ImageFont.truetype("resources/Roboto-Medium.ttf", 38)
     namefallback = ImageFont.truetype("resources/Quivira.otf", 38)
     textfont = ImageFont.truetype("resources/Roboto-Regular.ttf", 32)
+
+
     textfallback = ImageFont.truetype("resources/Roboto-Medium.ttf", 38)
     maxlength = maxlength + 7 if maxlength < 10 else maxlength
     text = text[: maxlength - 2] + ".." if len(text) > maxlength else text
@@ -425,7 +431,6 @@ async def replied_user(draw, tot, text, maxlength, title):
             draw.text((180 + space, 132), letter, font=textfont, fill="white")
             space += textfont.getsize(letter)[0]
 
-
 @register(pattern="^/q")
 async def _(event):
     if event.fwd_from:
@@ -446,3 +451,9 @@ async def _(event):
         event.chat_id, "sticker.webp", reply_to=event.reply_to_msg_id
     )
     os.remove("sticker.webp")
+
+help = """
+- /q : use this command replying with text, image or sticker !
+"""
+
+mod_name = "ϙᴜᴏᴛʟʏ"
