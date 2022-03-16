@@ -448,7 +448,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await removebg_sticker(client, query.message)
 
 
-__mod_name__ = "Iᴍɢ Eᴅɪᴛᴇʀ"
+__mod_name__ = "♡ɪᴍɢ ᴇᴅɪᴛᴏʀ♡"
 __help__ = """
 *IMAGE EDITOR*
 Shasa have some advanced image editing tools inbuilt
