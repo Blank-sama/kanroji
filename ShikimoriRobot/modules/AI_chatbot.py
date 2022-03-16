@@ -188,7 +188,7 @@ Chatbot utilizes the Shikimori's api which allows Shikimori to talk and provide 
 
 """
 
-__mod_name__ = "Cʜᴀᴛʙᴏᴛ"
+__mod_name__ = "♡ᴀɪ-ᴄʜᴀᴛʙᴏᴛ♡"
 
 
 CHATBOTK_HANDLER = CommandHandler("chatbot", kuki, run_async=True)
