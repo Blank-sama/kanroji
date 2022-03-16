@@ -128,7 +128,7 @@ buttons = [
         text="➕️ ᴀᴅᴅ sʜɪᴋɪᴍᴏʀɪ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕️", url=f"t.me/Shikimori_Robot?startgroup=new"),
     ],
     [
-        InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", url="https://t.me/kyoukoXSupport"),
+        InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", url="https://t.me/NobaraSupport"),
         InlineKeyboardButton(text="ᴏᴡɴᴇʀ", url="https://t.me/Sawada_Kun"),
     ],
     [
@@ -151,7 +151,7 @@ I'm a Queen For Fun and help admins manage their groups ! Have a look at the fol
  ➛ /donate: information on how to donate!
  ➛ /settings: 
    ❂ in PM: will send you your settings for all supported modules.
-   ❂ in a group: will redirect you to pm, with all that chat's settings.\n• *ʀᴇᴀᴄʜ ᴏᴜᴛ ғᴏʀ sᴜᴘᴘᴏʀᴛ:* [sᴜᴘᴘᴏʀᴛ](https://t.me/KyoukoXsupport)
+   ❂ in a group: will redirect you to pm, with all that chat's settings.\n• *ʀᴇᴀᴄʜ ᴏᴜᴛ ғᴏʀ sᴜᴘᴘᴏʀᴛ:* [sᴜᴘᴘᴏʀᴛ](https://t.me/NobaraSupport)
 """
 
 DONATE_STRING = """❂ I'm Free for Everyone ❂"""
@@ -286,8 +286,8 @@ def start(update: Update, context: CallbackContext):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                         InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", url="https://t.me/kyoukoXSupport"),
-                         InlineKeyboardButton(text="ʜᴇʟᴘ", url=f"https://t.me/tohruXrobot?start=help"),
+                         InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", url="https://t.me/NobaraSupport"),
+                         InlineKeyboardButton(text="ʜᴇʟᴘ", url=f"https://t.me/Shikimori_Robot?start=help"),
                     ],
                     [
                          InlineKeyboardButton(
@@ -429,7 +429,7 @@ def shasa_callback_data(update, context):
     if query.data == "shasa_":
         query.message.edit_text(
             text="""
-        ❍[Suppσrt](https://t.me/KyoukoXsupport)🤍
+        ❍[Suppσrt](https://t.me/NobaraSupport)🤍
         ❍[Updates](https://t.me/Shikimori_Updates)🧡
         ❍[ChatGrp](https://t.me/Animechatfolks)💜
         ❍[Dev](https://t.me/Sawada_Kun)💚
@@ -459,7 +459,7 @@ def shasa_callback_data(update, context):
                     ],
                     [
                         InlineKeyboardButton(
-                            text="sᴜᴘᴘᴏʀᴛ", callback_data="ShikimoriSupport"
+                            text="sᴜᴘᴘᴏʀᴛ", url= "https://t.me/NobaraSupport"
                         ),
                         InlineKeyboardButton(
                             text="ᴄʀᴇᴅɪᴛ", callback_data="shasa_credit"
@@ -513,34 +513,7 @@ def shasa_callback_data(update, context):
                 ]
             ),
         )
-    elif query.data == "ShikimoriSupport":
-        query.message.edit_text(
-            text="*Shikimori Support chats*" "\nJoin Support Group/Channel",
-            parse_mode=ParseMode.MARKDOWN,
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton(text="ᴀʙᴏᴜᴛ", url="t.me/KyoukoXsupport"),
-                        InlineKeyboardButton(
-                            text="ᴠᴄ ʜᴇʟᴘ", url="https://telegra.ph/file/a9dadf7c0d308b0389ec5.jpg"
-                        ),
-                    ],
-                    [
-                        InlineKeyboardButton(
-                            text="sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/KyoukoXSupport"
-                        ),
-                        InlineKeyboardButton(
-                            text="ᴜᴘᴅᴀᴛᴇs", url="https://t.me/KyoukoXsupport"
-                        ),
-                    ],
-                    [
-                        InlineKeyboardButton(
-                            text="•༶Bᴀᴄᴋ༶•", callback_data="shasa_basichelp"
-                        ),
-                    ],
-                ]
-            ),
-        )
+            
     elif query.data == "shasa_credit":
         query.message.edit_text(
             text=f"<b>Shikimori Developers</b>\n"
