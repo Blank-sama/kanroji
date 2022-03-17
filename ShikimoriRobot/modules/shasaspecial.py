@@ -55,4 +55,4 @@ __help__ = """
  |• /carbon text : replies to message to make carbon
  |• /mmf upper text ; lower text : reply to sticker or image
  """
-__mod_name__ = "◎Cʀᴀғᴛ"
+__mod_name__ = "♡ᴄʀᴀғᴛ♡"
