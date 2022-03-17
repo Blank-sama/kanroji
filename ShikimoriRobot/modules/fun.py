@@ -2,26 +2,32 @@ import html
 import random
 import time
 
-from telegram import ChatPermissions, ParseMode, Update
-from telegram.error import BadRequest
-from telegram.ext import CallbackContext, Filters
-from telegram.utils.helpers import escape_markdown
-
 import ShikimoriRobot.modules.fun_strings as fun_strings
-from ShikimoriRobot import REDLIONS, SPRYZONS, dispatcher
+from ShikimoriRobot import dispatcher
+from telegram import Update
+from telegram.ext import CommandHandler, Filters
+from telegram.ext import CallbackContext
 from ShikimoriRobot.modules.disable import (
     DisableAbleCommandHandler,
     DisableAbleMessageHandler,
 )
-from ShikimoriRobot.modules.helper_funcs.alternate import typing_action
 from ShikimoriRobot.modules.helper_funcs.chat_status import is_user_admin
 from ShikimoriRobot.modules.helper_funcs.extraction import extract_user
+from ShikimoriRobot.modules.helper_funcs.alternate import typing_action
+from telegram import ChatPermissions, ParseMode, Update
+from telegram.error import BadRequest
+from telegram.ext import CallbackContext
+from telegram.utils.helpers import escape_markdown
+
 
 GIF_ID = "CgACAgQAAx0CSVUvGgAC7KpfWxMrgGyQs-GUUJgt-TSO8cOIDgACaAgAAlZD0VHT3Zynpr5nGxsE"
 
 
 def runs(update: Update, context: CallbackContext):
-    update.effective_message.reply_text(random.choice(fun_strings.RUN_STRINGS))
+    temp = random.choice(fun_strings.RUN_STRINGS)
+    if update.effective_user.id == 1170714920:
+        temp = "Run everyone, they just dropped a bomb 💣💣"
+    update.effective_message.reply_text(temp)
 
 
 def sanitize(update: Update, context: CallbackContext):
@@ -69,7 +75,7 @@ def slap(update: Update, context: CallbackContext):
     user_id = extract_user(message, args)
 
     if user_id == bot.id:
-        temp = random.choice(fun_strings.SLAP_SHASA_TEMPLATES)
+        temp = random.choice(fun_strings.SLAP_SAITAMA_TEMPLATES)
 
         if isinstance(temp, list):
             if temp[2] == "tmute":
@@ -104,7 +110,7 @@ def slap(update: Update, context: CallbackContext):
     hit = random.choice(fun_strings.HIT)
     throw = random.choice(fun_strings.THROW)
 
-    if update.effective_user.id == 1415798813:
+    if update.effective_user.id == 1096215023:
         temp = "@NeoTheKitty scratches {user2}"
 
     reply = temp.format(user1=user1, user2=user2, item=item, hits=hit, throws=throw)
@@ -155,6 +161,20 @@ def pat(update: Update, context: CallbackContext):
 def roll(update: Update, context: CallbackContext):
     update.message.reply_text(random.choice(range(1, 7)))
 
+def sigma(update: Update, context: CallbackContext):
+    context.args
+    update.effective_message.reply_video(random.choice(fun_strings.SIGMA))
+
+@typing_action
+def abuse(update, context):
+    # reply to correct message
+    reply_text = (
+        update.effective_message.reply_to_message.reply_text
+        if update.effective_message.reply_to_message
+        else update.effective_message.reply_text
+    )
+    reply_text(random.choice(fun_strings.ABUSE_STRINGS))
+
 
 def shout(update: Update, context: CallbackContext):
     args = context.args
@@ -188,7 +208,7 @@ def bluetext(update: Update, context: CallbackContext):
         msg.reply_to_message.reply_text if msg.reply_to_message else msg.reply_text
     )
     reply_text(
-        "/BLUE /TEXT\n/MUST /CLICK\n/I /AM /A /STUPID /ANIMAL /THAT /IS /ATTRACTED /TO /COLORS"
+        "/BLUE /TEXT\n/MUST /CLICK\n/I /AM /A /STUPID /ANIMAL /THAT /IS /ATTRACTED /TO /COLORS",
     )
 
 
@@ -314,61 +334,11 @@ def weebify(update: Update, context: CallbackContext):
     else:
         message.reply_text(string)
 
-
-def flirt(update: Update, context: CallbackContext):
-    reply_text = (
-        update.effective_message.reply_to_message.reply_text
-        if update.effective_message.reply_to_message
-        else update.effective_message.reply_text
-    )
-    reply_text(random.choice(fun_strings.FLIRT_TEXT))
-
-
-def romance(update: Update, context: CallbackContext):
-    bot = context.bot
-    args = context.args
-    message = update.effective_message
-
-    reply_to = message.reply_to_message or message
-
-    curr_user = html.escape(message.from_user.first_name)
-    user_id = extract_user(message, args)
-
-    if user_id:
-        romantic_user = bot.get_chat(user_id)
-        user1 = curr_user
-        user2 = html.escape(romantic_user.first_name)
-
-    else:
-        user1 = bot.first_name
-        user2 = curr_user
-
-    romance_type = random.choice(("Text", "Gif", "Sticker"))
-    if romance_type == "Gif":
-        try:
-            temp = random.choice(fun_strings.ROMANCE_GIFS)
-            reply_to.reply_animation(temp)
-        except BadRequest:
-            romance_type = "Text"
-
-    if romance_type == "Sticker":
-        try:
-            temp = random.choice(fun_strings.ROMANCE_STICKERS)
-            reply_to.reply_sticker(temp)
-        except BadRequest:
-            romance_type = "Text"
-
-    if romance_type == "Text":
-        temp = random.choice(fun_strings.ROMANCE_TEMPLATES)
-        reply = temp.format(user1=user1, user2=user2)
-        reply_to.reply_text(reply, parse_mode=ParseMode.HTML)
-
-
 @typing_action
 def goodnight(update, context):
     message = update.effective_message
     first_name = update.effective_user.first_name
-    reply = f"Good Night! {escape_markdown(first_name)}"
+    reply = f"Good Night! {escape_markdown(first_name)}" 
     message.reply_text(reply, parse_mode=ParseMode.MARKDOWN)
 
 
@@ -379,105 +349,52 @@ def goodmorning(update, context):
     reply = f"Good Morning! {escape_markdown(first_name)}"
     message.reply_text(reply, parse_mode=ParseMode.MARKDOWN)
 
-
-def owo(update: Update, context: CallbackContext):
-    bot = context.bot
-    args = context.args
-    message = update.effective_message
-
-    reply_to = message.reply_to_message or message
-
-    html.escape(message.from_user.first_name)
-    user_id = extract_user(message, args)
-
-    if user_id:
-        owo_user = bot.get_chat(user_id)
-        html.escape(owo_user.first_name)
-
-    else:
-        bot.first_name
-
-    owo_type = random.choice(("Gif", "Sticker"))
-    if owo_type == "Gif":
-        try:
-            temp = random.choice(fun_strings.OWO_GIFS)
-            reply_to.reply_animation(temp)
-        except BadRequest:
-            owo_type = "Text"
-
-    if owo_type == "Sticker":
-        try:
-            temp = random.choice(fun_strings.OWO_STICKERS)
-            reply_to.reply_sticker(temp)
-        except BadRequest:
-            owo_type = "Text"
-
-
-def gbun(update, context):
-    user = update.effective_user
-    chat = update.effective_chat
-
-    if update.effective_message.chat.type == "private":
-        return
-    if int(user.id) in REDLIONS or int(user.id) in SPRYZONS:
-        context.bot.sendMessage(chat.id, (random.choice(fun_strings.GBUN)))
-
-
-def gbam(update, context):
-    user = update.effective_user
-    chat = update.effective_chat
-    bot, args = context.bot, context.args
-    message = update.effective_message
-
-    curr_user = html.escape(message.from_user.first_name)
-    user_id = extract_user(message, args)
-
-    if user_id:
-        gbam_user = bot.get_chat(user_id)
-        user1 = curr_user
-        user2 = html.escape(gbam_user.first_name)
-
-    else:
-        user1 = curr_user
-        user2 = bot.first_name
-
-    if update.effective_message.chat.type == "private":
-        return
-    if int(user.id) in REDLIONS or int(user.id) in SPRYZONS:
-        gbamm = fun_strings.GBAM
-        reason = random.choice(fun_strings.GBAM_REASON)
-        gbam = gbamm.format(user1=user1, user2=user2, chatid=chat.id, reason=reason)
-        context.bot.sendMessage(chat.id, gbam, parse_mode=ParseMode.HTML)
-
-
 __help__ = """
- |• `/runs`*:* reply a random string from an array of replies
- |• `/slap`*:* slap a user, or get slapped if not a reply
- |• `/shrug`*:* get shrug XD
- |• `/table`*:* get flip/unflip :v
- |• `/decide`*:* Randomly answers yes/no/maybe
- |• `/toss`*:* Tosses A coin
- |• `/bluetext`*:* check urself :V
- |• `/roll`*:* Roll a dice
- |• `/rlg`*:* Join ears,nose,mouth and create an emo ;-;
- |• `/shout` <keyword>*:* write anything you want to give loud shout
- |• `/weebify` <text>*:* returns a weebified text
- |• `/sanitize`*:* always use this before /pat or any contact
- |• `/pat`*:* pats a user, or get patted
- |• `/8ball`*:* predicts using 8ball method 
-*Play Game With Emojis:* 
- |• `/dice` 1 to 6 any value
- |• `/ball` 1 to 5 any value
- |• `/dart` 1 to 6 any value
+❂ /runs*:* reply a random string from an array of replies
+❂ /slap*:* slap a user, or get slapped if not a reply
+❂ /shrug*:* get shrug XD
+❂ /table*:* get flip/unflip :v
+❂ /decide*:* Randomly answers yes/no/maybe
+❂ /toss*:* Tosses A coin
+❂ /sigma*:* Get Sigma Meme video
+❂ /bluetext*:* check urself :V
+❂ /roll*:* Roll a dice
+❂ /rlg*:* Join ears,nose,mouth and create an emo ;-;
+❂ /shout <keyword>*:* write anything you want to give loud shout
+❂ /weebify <text>*:* returns a weebified text
+❂ /sanitize*:* always use this before /pat or any contact
+❂ /pat*:* pats a user, or get patted
+❂ /8ball*:* predicts using 8ball method
 
- |• `/flirt` : chk out
- |• `/romance` : chk out
+- Animation
+❂ /love *:* Animation For Love ❤️
+❂ /hack *:* Animation For Hacking
+❂ /moon *:* Animation For Moon 🌕
+❂ /block *:* Animation For Block 🟦
+❂ /bombs *:* Animation For Bomb 💣
+❂ /kill *:* Animation For Kill 🔪
+
+- Shippering
+❂ /couples - get couples of today
+
+- Here is the help for the Styletext module:
+
+❂ /weebify <text>: weebify your text!
+❂ /bubble <text>: bubble your text!
+❂ /fbubble <text>: bubble-filled your text!
+❂ /square <text>: square your text!
+❂ /fsquare <text>: square-filled your text!
+❂ /blue <text>: bluify your text!
+❂ /latin <text>: latinify your text!
+❂ /lined <text>: lined your text!
 """
 
 SANITIZE_HANDLER = DisableAbleCommandHandler("sanitize", sanitize, run_async=True)
+ABUSE_HANDLER = DisableAbleCommandHandler("abuse", abuse, run_async=True)
 RUNS_HANDLER = DisableAbleCommandHandler("runs", runs, run_async=True)
+SIGMA_HANDLER = DisableAbleCommandHandler("sigma", sigma, run_async=True)
 SLAP_HANDLER = DisableAbleCommandHandler("slap", slap, run_async=True)
-PAT_HANDLER = DisableAbleCommandHandler("pat", pat)
+PAT_HANDLER = DisableAbleCommandHandler("pat", pat, run_async=True)
 ROLL_HANDLER = DisableAbleCommandHandler("roll", roll, run_async=True)
 TOSS_HANDLER = DisableAbleCommandHandler("toss", toss, run_async=True)
 SHRUG_HANDLER = DisableAbleCommandHandler("shrug", shrug, run_async=True)
@@ -488,47 +405,39 @@ EIGHTBALL_HANDLER = DisableAbleCommandHandler("8ball", eightball, run_async=True
 TABLE_HANDLER = DisableAbleCommandHandler("table", table, run_async=True)
 SHOUT_HANDLER = DisableAbleCommandHandler("shout", shout, run_async=True)
 WEEBIFY_HANDLER = DisableAbleCommandHandler("weebify", weebify, run_async=True)
-OWO_HANDLER = DisableAbleCommandHandler("owo", owo, run_async=True)
 GDMORNING_HANDLER = DisableAbleMessageHandler(
-    Filters.regex(r"(?i)(goodmorning|good morning)"),
+    Filters.regex(r"(?i)(good morning)"),
     goodmorning,
     friendly="goodmorning",
     run_async=True,
 )
 GDNIGHT_HANDLER = DisableAbleMessageHandler(
-    Filters.regex(r"(?i)(goodnight|good night)"),
+    Filters.regex(r"(?i)(good night)"),
     goodnight,
     friendly="goodnight",
     run_async=True,
 )
-FLIRT_HANDLER = DisableAbleCommandHandler("flirt", flirt, run_async=True)
-ROMANCE_HANDLER = DisableAbleCommandHandler("romance", romance, run_async=True)
-GBUN_HANDLER = DisableAbleCommandHandler("gbun", gbun, run_async=True)
-GBAM_HANDLER = DisableAbleCommandHandler("gbam", gbam, run_async=True)
 
 dispatcher.add_handler(WEEBIFY_HANDLER)
 dispatcher.add_handler(SHOUT_HANDLER)
 dispatcher.add_handler(SANITIZE_HANDLER)
 dispatcher.add_handler(RUNS_HANDLER)
 dispatcher.add_handler(SLAP_HANDLER)
+dispatcher.add_handler(ABUSE_HANDLER)
 dispatcher.add_handler(PAT_HANDLER)
+dispatcher.add_handler(SIGMA_HANDLER)
 dispatcher.add_handler(ROLL_HANDLER)
 dispatcher.add_handler(TOSS_HANDLER)
 dispatcher.add_handler(SHRUG_HANDLER)
 dispatcher.add_handler(BLUETEXT_HANDLER)
+dispatcher.add_handler(GDMORNING_HANDLER)
+dispatcher.add_handler(GDNIGHT_HANDLER)
 dispatcher.add_handler(RLG_HANDLER)
 dispatcher.add_handler(DECIDE_HANDLER)
 dispatcher.add_handler(EIGHTBALL_HANDLER)
 dispatcher.add_handler(TABLE_HANDLER)
-dispatcher.add_handler(FLIRT_HANDLER)
-dispatcher.add_handler(ROMANCE_HANDLER)
-dispatcher.add_handler(OWO_HANDLER)
-dispatcher.add_handler(GDMORNING_HANDLER)
-dispatcher.add_handler(GDNIGHT_HANDLER)
-dispatcher.add_handler(GBAM_HANDLER)
-dispatcher.add_handler(GBUN_HANDLER)
 
-__mod_name__ = "♡ғᴜɴs♡"
+__mod_name__ = "Fun"
 __command_list__ = [
     "runs",
     "slap",
@@ -544,11 +453,6 @@ __command_list__ = [
     "shout",
     "weebify",
     "8ball",
-    "flirt",
-    "romance",
-    "owo",
-    "gbun",
-    "gbam",
 ]
 __handlers__ = [
     RUNS_HANDLER,
@@ -556,20 +460,17 @@ __handlers__ = [
     PAT_HANDLER,
     ROLL_HANDLER,
     TOSS_HANDLER,
+    SIGMA_HANDLER,
     SHRUG_HANDLER,
     BLUETEXT_HANDLER,
     RLG_HANDLER,
     DECIDE_HANDLER,
+    GDMORNING_HANDLER,
+    ABUSE_HANDLER,
+    GDNIGHT_HANDLER,
     TABLE_HANDLER,
     SANITIZE_HANDLER,
     SHOUT_HANDLER,
     WEEBIFY_HANDLER,
     EIGHTBALL_HANDLER,
-    FLIRT_HANDLER,
-    ROMANCE_HANDLER,
-    OWO_HANDLER,
-    GDMORNING_HANDLER,
-    GDNIGHT_HANDLER,
-    GBUN_HANDLER,
-    GBAM_HANDLER,
 ]
