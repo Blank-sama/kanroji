@@ -129,7 +129,7 @@ buttons = [
     ],
     [
         InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", url="https://t.me/NobaraSupport"),
-        InlineKeyboardButton(text="ᴏᴡɴᴇʀ", url="https://t.me/Sawada_Kun"),
+        InlineKeyboardButton(text="ᴏᴡɴᴇʀ", url="https://t.me/Mightiesthashira"),
     ],
     [
         InlineKeyboardButton(text="ɪɴғᴏ", callback_data="shasa_basichelp"),
@@ -291,7 +291,7 @@ def start(update: Update, context: CallbackContext):
                     ],
                     [
                          InlineKeyboardButton(
-                          text="☆ᴅᴀʀʟɪɴɢ☆", url="https://t.me/Sawada_Kun"),  
+                          text="☆ᴅᴀʀʟɪɴɢ☆", url="https://t.me/Mightiesthashira"),  
                     ]
                 ]
             ),
@@ -432,7 +432,7 @@ def shasa_callback_data(update, context):
         ❍[Suppσrt](https://t.me/NobaraSupport)🤍
         ❍[Updates](https://t.me/Shikimori_Updates)🧡
         ❍[ChatGrp](https://t.me/Animechatfolks)💜
-        ❍[Dev](https://t.me/Sawada_Kun)💚
+        ❍[Dev](https://t.me/Mightiesthashira)💚
         ❍[ChatGrp 2](https://t.me/Animechatfolks)❤️
         ✨[Vc Player Help](https://telegra.ph/file/a9dadf7c0d308b0389ec5.jpg)✨""",
             parse_mode=ParseMode.MARKDOWN,
@@ -522,14 +522,14 @@ def shasa_callback_data(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="ᴏᴡɴᴇʀ", url="t.me/Sawada_Kun"),
+                        InlineKeyboardButton(text="ᴏᴡɴᴇʀ", url="t.me/Mightiesthashira"),
                         InlineKeyboardButton(
                             text="ɢɪᴛʜᴜʙ", url="https://github.com/Yoriichi-Tsugikuni"
                         ),
                     ],
                     [
                         InlineKeyboardButton(
-                            text="ᴅᴇᴠ", url="https://t.me/Sawada_Kun"
+                            text="ᴅᴇᴠ", url="https://t.me/Mightiesthashira"
                         ),
                         InlineKeyboardButton(
                             text="ꜱᴜᴅᴏ", url="https://t.me/KyoukoXupport"
