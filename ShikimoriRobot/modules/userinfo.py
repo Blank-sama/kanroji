@@ -488,7 +488,7 @@ def stats(update, context):
             + "\n*Bot statistics*:\n"
             + "\n".join([mod.__stats__() for mod in STATS])
             + f"\n\n ✦[Updates](https://t.me/Shikimori_Updates) | ✦[Support](https://t.me/KyoukoXSupport)\n\n"
-            + "╘══「 By [SAWADA](https://t.me/Sawada_Kun) 」\n",
+            + "╘══「 By [SAWADA](https://t.me/Mightiesthashira/) 」\n",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
         )
@@ -502,7 +502,7 @@ def stats(update, context):
                     )
                     + f"\n\n ✦[Updates](https://t.me/Shikimori_Updates) | ✦[Support](https://t.me/{SUPPORT_CHAT})\n\n"
                 )
-                + "╘══「 By [SAWADA](https://t.me/Sawada_Kun) 」\n"
+                + "╘══「 By [SAWADA](https://t.me/Mightiesthashira) 」\n"
             ),
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
