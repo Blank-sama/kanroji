@@ -125,7 +125,7 @@ PM_START_TEXT = """
 buttons = [
     [
         InlineKeyboardButton(
-        text="➕️ ᴀᴅᴅ sʜɪᴋɪᴍᴏʀɪ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕️", url=f"t.me/Shikimori_Robot?startgroup=new"),
+        text="➕️ ᴀᴅᴅ sʜɪᴋɪᴍᴏʀɪ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕️", url=f"t.me/ShikimoriXprobot?startgroup=new"),
     ],
     [
         InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", url="https://t.me/NobaraSupport"),
@@ -136,7 +136,7 @@ buttons = [
         InlineKeyboardButton(text="ᴜᴘᴅᴀᴛᴇs", url="https://t.me/Shikimori_Updates"),
     ],
     [
-        InlineKeyboardButton(text="ʜᴇʟᴘ𝘴 & ᴄᴏᴍᴀɴᴅᴀɴ𝘴", url=f"https://t.me/Shikimori_Robot?start=help"),
+        InlineKeyboardButton(text="ʜᴇʟᴘ𝘴 & ᴄᴏᴍᴀɴᴅᴀɴ𝘴", url=f"https://t.me/ShikimoriXprobot?start=help"),
     ],
 ]
 
