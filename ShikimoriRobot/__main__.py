@@ -48,8 +48,8 @@ from telegram.ext import CallbackContext, CallbackQueryHandler, Filters, Message
 from telegram.ext.dispatcher import DispatcherHandlerStop
 from telegram.utils.helpers import escape_markdown
 
-import ShasaBot.modules.sql.users_sql as sql
-from ShasaBot import (
+import ShikimoriRobot.modules.sql.users_sql as sql
+from ShikimoriRobot import (
     BOT_NAME,
     BOT_USERNAME,
     CERT_PATH,
@@ -73,11 +73,12 @@ from ShasaBot import (
 
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
-from ShasaBot.modules import ALL_MODULES
-from ShasaBot.modules.disable import DisableAbleCommandHandler
-from ShasaBot.modules.helper_funcs.alternate import typing_action
-from ShasaBot.modules.helper_funcs.chat_status import is_user_admin
-from ShasaBot.modules.helper_funcs.misc import paginate_modules
+from ShikimoriRobot.modules import ALL_MODULES
+from ShikimoriRobot.modules.disable import DisableAbleCommandHandler
+from ShikimoriRobot.modules.helper_funcs.alternate import typing_action
+from ShikimoriRobot.modules.helper_funcs.chat_status import is_user_admin
+from ShikimoriRobot.modules.helper_funcs.misc import paginate_modules
+
 
 
 def get_readable_time(seconds: int) -> str:
@@ -97,7 +98,7 @@ def get_readable_time(seconds: int) -> str:
     for x in range(len(time_list)):
         time_list[x] = str(time_list[x]) + time_suffix_list[x]
     if len(time_list) == 4:
-        ping_time += f"{time_list.pop()}, "
+        ping_time += time_list.pop() + ", "
 
     time_list.reverse()
     ping_time += ":".join(time_list)
@@ -105,52 +106,52 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
-HELP_MSG = "Click the button below to get help manu in your pm."
-START_MSG = "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>"
+HELP_IMG = "https://telegra.ph/file/a9dadf7c0d308b0389ec5.jpg"
+
+SHIKIMORI_START = "https://telegra.ph/file/1f74d36860927fb812da7.mp4"
 
 PM_START_TEXT = """
-────「 [{}](https://telegra.ph/file/ae41ca22aaff27dfb50cc.jpg) 」────
-*ʜᴇʏ! {},*
-*ɪ ᴀᴍ 𝐒𝐡𝐚𝐬𝐚 ᴀɴ ᴀɴɪᴍᴇ ᴛʜᴇᴍᴇᴅ ᴀᴅᴠᴀɴᴄᴇ ɢʀᴏᴜᴏ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ᴡɪᴛʜ ᴀ ʟᴏᴛ ᴏғ sᴘᴇᴄɪᴀʟɪᴛʏ.*
+────「 [{}](https://telegra.ph/file/6ff47820427e837dcd383.mp4) 」────
+ʜᴇʏ! {} ,
+ɪ ᴀᴍ 𝙎𝙝𝙞𝙠𝙞𝙢𝙤𝙧𝙞 ᴀɴ ᴀɴɪᴍᴇ ᴛʜᴇᴍᴇᴅ ᴀᴅᴠᴀɴᴄᴇ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ᴡɪᴛʜ ꜱᴇᴠᴇʀᴀʟ ᴀʙɪʟɪᴛɪᴇ𝘴.
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
-✓• *Uptime:* `{}`
+✓• Uᴘᴛɪᴍᴇ: {}
+✓• {} Uꜱᴇʀ, Aᴄʀᴏꜱꜱ {} Cʜᴀᴛꜱ.
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
 ➛ᴛʀʏ ᴛʜᴇ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴs ʙᴇʟᴏᴡ ᴛᴏ ᴋɴᴏᴡ ᴍʏ ᴀʙɪʟɪᴛɪᴇs ××
 """
 
-GROUP_START_TEXT = """
-I'm awake already!
-Haven't slept since: {}
-"""
 
 buttons = [
     [
         InlineKeyboardButton(
-            text=f"Add {BOT_NAME} To Your Group",
-            url=f"t.me/{BOT_USERNAME}?startgroup=true",
-        )
+        text="➕️ ᴀᴅᴅ sʜɪᴋɪᴍᴏʀɪ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕️", url=f"t.me/Shikimori_Robot?startgroup=new"),
+    ],
+    [
+        InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", url="https://t.me/NobaraSupport"),
+        InlineKeyboardButton(text="ᴏᴡɴᴇʀ", url="https://t.me/Sawada_Kun"),
     ],
     [
         InlineKeyboardButton(text="ɪɴғᴏ", callback_data="shasa_basichelp"),
-        InlineKeyboardButton(text="ɪɴʟɪɴᴇ", switch_inline_query_current_chat=""),
+        InlineKeyboardButton(text="ᴜᴘᴅᴀᴛᴇs", url="https://t.me/Shikimori_Updates"),
     ],
     [
-        InlineKeyboardButton(text="ʜᴇʟᴘ", callback_data="help_back"),
+        InlineKeyboardButton(text="ʜᴇʟᴘ𝘴 & ᴄᴏᴍᴀɴᴅᴀɴ𝘴", url=f"https://t.me/Shikimori_Robot?start=help"),
     ],
 ]
 
 
 HELP_STRINGS = """
-Hey there! Myself [𝐒𝐡𝐚𝐬𝐚](https://telegra.ph/file/c3f91b87fa65cd83f306d.jpg).
+ Hey there! Myself [Shikimori](https://telegra.ph/file/ff6ffadced1cb65db0350.jpg).
 I'm a Queen For Fun and help admins manage their groups ! Have a look at the following for an idea of some of the things I can help you with.
-
 *Main* commands available:
  ➛ /help: PM's you this message.
  ➛ /help <module name>: PM's you info about that module.
+ ➛ /bug <error name> : inform support about that error 
  ➛ /donate: information on how to donate!
- ➛ /settings:
+ ➛ /settings: 
    ❂ in PM: will send you your settings for all supported modules.
-   ❂ in a group: will redirect you to pm, with all that chat's settings.
+   ❂ in a group: will redirect you to pm, with all that chat's settings.\n• *ʀᴇᴀᴄʜ ᴏᴜᴛ ғᴏʀ sᴜᴘᴘᴏʀᴛ:* [sᴜᴘᴘᴏʀᴛ](https://t.me/NobaraSupport)
 """
 
 DONATE_STRING = """❂ I'm Free for Everyone ❂"""
@@ -167,7 +168,7 @@ CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("ShasaBot.modules." + module_name)
+    imported_module = importlib.import_module("ShikimoriRobot.modules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
 
@@ -200,6 +201,8 @@ for module_name in ALL_MODULES:
 
     if hasattr(imported_module, "__user_settings__"):
         USER_SETTINGS[imported_module.__mod_name__.lower()] = imported_module
+
+GROUP_START_IMG ="https://telegra.ph/file/89f70fbae029b7c8b94dd.mp4"
 
 
 # do not async
@@ -246,7 +249,6 @@ def start(update: Update, context: CallbackContext):
                         ]
                     ),
                 )
-
             elif args[0].lower().startswith("stngs_"):
                 match = re.match("stngs_(.*)", args[0].lower())
                 chat = dispatcher.bot.getChat(match.group(1))
@@ -274,25 +276,23 @@ def start(update: Update, context: CallbackContext):
                 timeout=60,
             )
     else:
-        update.effective_message.reply_animation(
-            GROUP_START_IMG,
-            caption="<code>Shasa is Here For You💜\nI am Awake Since</code>: <code>{}</code>".format(
+        first_name = update.effective_user.first_name
+        update.effective_message.reply_video(
+           SHIKIMORI_START, caption= "<b>Hello {}, I am Shikimori. \nSheesh! Don't simp on me\nI already have a bf \nHaven't sleep since</b>: <code>{}</code>".format(
+                escape_markdown(first_name),
                 uptime
             ),
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(
-                            text="sᴜᴘᴘᴏʀᴛ", url=f"https://telegram.dog/{SUPPORT_CHAT}"
-                        )
+                         InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", url="https://t.me/NobaraSupport"),
+                         InlineKeyboardButton(text="ʜᴇʟᴘ", url=f"https://t.me/Shikimori_Robot?start=help"),
                     ],
                     [
-                        InlineKeyboardButton(
-                            text="ᴜᴘᴅᴀᴛᴇs",
-                            url="https://telegram.dog/LionXupdates",
-                        )
-                    ],
+                         InlineKeyboardButton(
+                          text="☆ᴅᴀʀʟɪɴɢ☆", url="https://t.me/Sawada_Kun"),  
+                    ]
                 ]
             ),
         )
@@ -377,10 +377,10 @@ def help_button(update, context):
                     [
                         [
                             InlineKeyboardButton(
-                                text="【༶Back༶】", callback_data="help_back"
+                                text="【༶Bᴀᴄᴋ༶】", callback_data="help_back"
                             ),
                             InlineKeyboardButton(
-                                text="【༶Home༶】", callback_data="shasa_back"
+                                text="【༶Hᴏᴍᴇ༶】", callback_data="shasa_back"
                             ),
                         ]
                     ]
@@ -423,19 +423,18 @@ def help_button(update, context):
     except BadRequest:
         pass
 
-
 def shasa_callback_data(update, context):
     query = update.callback_query
     uptime = get_readable_time((time.time() - StartTime))
     if query.data == "shasa_":
         query.message.edit_text(
-            text="""ℹ️ ι'м *ѕнαѕα*, α ρσωєяfυℓ gяσυρ мαиαgємєит вσт вυιℓт тσ нєℓρ уσυ мαиαgє уσυя gяσυρ єαѕιℓу.
-        ❍ 💜[Owner](https://t.me/Simpleboy786)💜
-        ❍ 🧡[Updates](https://t.me/Shasa_News)🧡
-        ❍ 🤍[Suppσrt](https://t.me/joinchat/P8HIdXOL8V9iNjRh)🤍
-        ❍ 💚[LionZUb](https://t.me/LionXSupport)💚
-        ❍ ❤️[ChatGrp](https://t.me/TotalNadaniya)❤️
-        ✨[Vc Player Help](https://telegra.ph/Shasa-Music-08-15)✨""",
+            text="""
+        ❍[Suppσrt](https://t.me/NobaraSupport)🤍
+        ❍[Updates](https://t.me/Shikimori_Updates)🧡
+        ❍[ChatGrp](https://t.me/Animechatfolks)💜
+        ❍[Dev](https://t.me/Sawada_Kun)💚
+        ❍[ChatGrp 2](https://t.me/Animechatfolks)❤️
+        ✨[Vc Player Help](https://telegra.ph/file/a9dadf7c0d308b0389ec5.jpg)✨""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -447,7 +446,7 @@ def shasa_callback_data(update, context):
             text=f"*Here's basic Help regarding* *How to use Me?*"
             f"\n\n• Firstly Add {dispatcher.bot.first_name} to your group by pressing [here](http://t.me/{dispatcher.bot.username}?startgroup=true)\n"
             f"\n• After adding promote me manually with full rights for faster experience.\n"
-            f"\n• Than send `/admincache@Shasa_RoBot` in that chat to refresh admin list in My database.\n"
+            f"\n• Than send `/admincache@Shikimori_Robot` in that chat to refresh admin list in My database.\n"
             f"\n\n*All done now use below given button's to know about use!*\n"
             f"",
             parse_mode=ParseMode.MARKDOWN,
@@ -460,7 +459,7 @@ def shasa_callback_data(update, context):
                     ],
                     [
                         InlineKeyboardButton(
-                            text="sᴜᴘᴘᴏʀᴛ", callback_data="shasa_support"
+                            text="sᴜᴘᴘᴏʀᴛ", url= "https://t.me/NobaraSupport"
                         ),
                         InlineKeyboardButton(
                             text="ᴄʀᴇᴅɪᴛ", callback_data="shasa_credit"
@@ -476,7 +475,14 @@ def shasa_callback_data(update, context):
         )
     elif query.data == "shasa_admin":
         query.message.edit_text(
-            text="*Let's make your group bit effective now*",
+            text=f"*Let's make your group bit effective now*"
+            f"\nCongragulations, Shikimori is now ready to manage your group."
+            f"\n\n*Admin Tools*"
+            f"\nBasic Admin tools help you to protect and powerup your group."
+            f"\nYou can ban members, Kick members, Promote someone as admin through commands of bot."
+            f"\n\n*Welcome*"
+            f"\nLets set a welcome message to welcome new users coming to your group."
+            f"send `/setwelcome [message]` to set a welcome message!",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -492,7 +498,10 @@ def shasa_callback_data(update, context):
 
     elif query.data == "shasa_notes":
         query.message.edit_text(
-            text="<b> Setting up notes</b>",
+            text=f"<b> Setting up notes</b>"
+            f"\nYou can save message/media/audio or anything as notes"
+            f"\nto get a note simply use # at the beginning of a word"
+            f"\n\nYou can also set buttons for notes and filters (refer help menu)",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [
@@ -504,53 +513,26 @@ def shasa_callback_data(update, context):
                 ]
             ),
         )
-
-    elif query.data == "shasa_support":
-        query.message.edit_text(
-            text="* Shasa support chats*" "\nJoin Support Group/Channel",
-            parse_mode=ParseMode.MARKDOWN,
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton(text="ᴀʙᴏᴜᴛ", url="t.me/Shasa_News"),
-                        InlineKeyboardButton(
-                            text="ᴠᴄ ʜᴇʟᴘ", url="https://telegra.ph/Shasa-Music-08-15"
-                        ),
-                    ],
-                    [
-                        InlineKeyboardButton(
-                            text="sᴜᴘᴘᴏʀᴛ", url=f"https://telegram.dog/{SUPPORT_CHAT}"
-                        ),
-                        InlineKeyboardButton(
-                            text="ᴜᴘᴅᴀᴛᴇs", url="https://t.me/LionXupdates"
-                        ),
-                    ],
-                    [
-                        InlineKeyboardButton(
-                            text="•༶Bᴀᴄᴋ༶•", callback_data="shasa_basichelp"
-                        ),
-                    ],
-                ]
-            ),
-        )
+            
     elif query.data == "shasa_credit":
         query.message.edit_text(
-            text="<b> SHASA DEV'S</b>\\n",
+            text=f"<b>Shikimori Developers</b>\n"
+            f"\nHere Some Developers Helping in Making Micchon Shikimori",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="ᴅᴇᴠ", url="t.me/simpleboy786"),
+                        InlineKeyboardButton(text="ᴏᴡɴᴇʀ", url="t.me/Sawada_Kun"),
                         InlineKeyboardButton(
-                            text="ɢɪᴛʜᴜʙ", url="https://github.com/MdNoor786"
+                            text="ɢɪᴛʜᴜʙ", url="https://github.com/Yoriichi-Tsugikuni"
                         ),
                     ],
                     [
                         InlineKeyboardButton(
-                            text="ᴅᴇᴠ²", url="https://t.me/Copyless786"
+                            text="ᴅᴇᴠ", url="https://t.me/Sawada_Kun"
                         ),
                         InlineKeyboardButton(
-                            text="ʀᴇᴅʟɪᴏɴ", url="https://t.me/Shasa_News/12"
+                            text="ꜱᴜᴅᴏ", url="https://t.me/KyoukoXupport"
                         ),
                     ],
                     [
@@ -561,7 +543,6 @@ def shasa_callback_data(update, context):
                 ]
             ),
         )
-
     elif query.data == "shasa_back":
         first_name = update.effective_user.first_name
         query.message.edit_text(
@@ -589,19 +570,18 @@ def get_help(update, context):
 
         update.effective_message.reply_photo(
             HELP_IMG,
-            HELP_MSG,
+ caption= "Contact me in PM to get the list of possible commands.",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
                             text="Open In Private Chat",
-                            url=f"t.me/{context.bot.username}?start=help",
+                            url="t.me/{}?start=help".format(context.bot.username),
                         )
                     ]
                 ]
             ),
         )
-
         return
 
     if len(args) >= 2 and any(args[1].lower() == x for x in HELPABLE):
@@ -646,12 +626,13 @@ def send_settings(chat_id, user_id, user=False):
         chat_name = dispatcher.bot.getChat(chat_id).title
         dispatcher.bot.send_message(
             user_id,
-            text=f"Which module would you like to check {chat_name}'s settings for?",
+            text="Which module would you like to check {}'s settings for?".format(
+                chat_name
+            ),
             reply_markup=InlineKeyboardMarkup(
                 paginate_modules(0, CHAT_SETTINGS, "stngs", chat=chat_id)
             ),
         )
-
     else:
         dispatcher.bot.send_message(
             user_id,
@@ -684,8 +665,8 @@ def settings_button(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text="Back",
-                                callback_data=f"stngs_back({chat_id})",
+                                text="•༶Bᴀᴄᴋ༶•",
+                                callback_data="stngs_back({})".format(chat_id),
                             )
                         ]
                     ]
@@ -697,7 +678,8 @@ def settings_button(update: Update, context: CallbackContext):
             curr_page = int(prev_match.group(2))
             chat = bot.get_chat(chat_id)
             query.message.reply_text(
-                f"Hi there! There are quite a few settings for {chat.title} - go ahead and pick what you're interested in.",
+                "Hi there! There are quite a few settings for {} - go ahead and pick what "
+                "you're interested in.".format(chat.title),
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(
                         curr_page - 1, CHAT_SETTINGS, "stngs", chat=chat_id
@@ -710,7 +692,8 @@ def settings_button(update: Update, context: CallbackContext):
             next_page = int(next_match.group(2))
             chat = bot.get_chat(chat_id)
             query.message.reply_text(
-                f"Hi there! There are quite a few settings for {chat.title} - go ahead and pick what you're interested in.",
+                "Hi there! There are quite a few settings for {} - go ahead and pick what "
+                "you're interested in.".format(chat.title),
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(
                         next_page + 1, CHAT_SETTINGS, "stngs", chat=chat_id
@@ -722,7 +705,8 @@ def settings_button(update: Update, context: CallbackContext):
             chat_id = back_match.group(1)
             chat = bot.get_chat(chat_id)
             query.message.reply_text(
-                text=f"Hi there! There are quite a few settings for {escape_markdown(chat.title)} - go ahead and pick what you're interested in.",
+                text="Hi there! There are quite a few settings for {} - go ahead and pick what "
+                "you're interested in.".format(escape_markdown(chat.title)),
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(0, CHAT_SETTINGS, "stngs", chat=chat_id)
@@ -759,13 +743,14 @@ def get_settings(update: Update, context: CallbackContext):
                     [
                         InlineKeyboardButton(
                             text="Settings",
-                            url=f"t.me/{context.bot.username}?start=stngs_{chat.id}",
+                            url="t.me/{}?start=stngs_{}".format(
+                                context.bot.username, chat.id
+                            ),
                         )
                     ]
                 ]
             ),
         )
-
     else:
         text = "Click here to check your settings."
 
@@ -779,9 +764,10 @@ def donate(update: Update, context: CallbackContext):
             DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True
         )
 
-        if OWNER_ID != 1902787452 and DONATION_LINK:
+        if OWNER_ID != 2070119160 and DONATION_LINK:
             update.effective_message.reply_text(
-                f"You can also donate to the person currently running me [here]({DONATION_LINK})",
+                "You can also donate to the person currently running me "
+                "[here]({})".format(DONATION_LINK),
                 parse_mode=ParseMode.MARKDOWN,
             )
 
@@ -828,7 +814,7 @@ def main():
         try:
             dispatcher.bot.sendMessage(
                 f"@{SUPPORT_CHAT}",
-                f"I Am Ready To Work [{GROUP_START_IMG}]",
+                " I am back online[✨](https://telegra.ph/file/0c56e980cb026034bb40b.mp4)",
                 parse_mode=ParseMode.MARKDOWN,
             )
         except Unauthorized:
@@ -882,7 +868,7 @@ def main():
 
     else:
         LOGGER.info(
-            f"Shasa started, Using long polling. | BOT: [@{dispatcher.bot.username}]"
+            f"Nakiri started, Using long polling. | BOT: [@{dispatcher.bot.username}]"
         )
         updater.start_polling(
             timeout=15,
@@ -891,11 +877,11 @@ def main():
             allowed_updates=Update.ALL_TYPES,
         )
 
-    if len(argv) in {1, 3, 4}:
+    if len(argv) not in (1, 3, 4):
+        telethn.disconnect()
+    else:
         telethn.run_until_disconnected()
 
-    else:
-        telethn.disconnect()
     updater.idle()
 
 
@@ -906,7 +892,7 @@ except BaseException:
     sys.exit(1)
 
 if __name__ == "__main__":
-    LOGGER.info(f"Successfully loaded modules: {str(ALL_MODULES)}")
+    LOGGER.info("Successfully loaded modules: " + str(ALL_MODULES))
     telethn.start(bot_token=TOKEN)
     pbot.start()
     main()
