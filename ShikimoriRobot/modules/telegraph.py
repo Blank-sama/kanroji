@@ -82,7 +82,7 @@ def resize_image(image):
 
 
 __help__ = """
- ❍ /tm :Get Telegraph Link Of Replied Media
+ ❍ /tgm :Get Telegraph Link Of Replied Media
  ❍ /txt :Get Telegraph Link of Replied Text
 """
 
