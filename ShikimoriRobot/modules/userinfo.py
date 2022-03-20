@@ -32,7 +32,7 @@ from platform import python_version
 
 import requests
 from psutil import boot_time, cpu_percent, disk_usage, virtual_memory
-from telegram import MAX_MESSAGE_LENGTH, MessageEntity, ParseMode, Update
+from telegram import MAX_MESSAGE_LENGTH, MessageEntity, ParseMode, Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram import __version__ as ptbver
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler
@@ -373,20 +373,52 @@ def info(update: Update, context: CallbackContext):
 
     if INFOPIC:
         try:
+            username=update.effective_user.username
             profile = context.bot.get_user_profile_photos(user.id).photos[0][-1]
             context.bot.sendChatAction(chat.id, "upload_photo")
             context.bot.send_photo(
-                chat.id,
-                photo=profile,
+            chat.id,
+            photo=profile,
                 caption=(text),
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton(
+                                "Health", url="https://t.me/komiinfo/3"),
+                            InlineKeyboardButton(
+                                "Disaster", url="https://t.me/komiinfo/2"),
+                         ],
+                         [
+                            InlineKeyboardButton(
+                                "User", url=f"https://t.me/{html.escape(user.username)}")
+                        ],
+                    ]
+                ),
                 parse_mode=ParseMode.HTML,
             )
+
+           
         # Incase user don't have profile pic, send normal text
         except IndexError:
-            message.reply_text(text, parse_mode=ParseMode.HTML)
-
-    else:
-        message.reply_text(text, parse_mode=ParseMode.HTML)
+            message.reply_text(
+                text, 
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton(
+                                "Health", url="https://t.me/komiinfo/3"),
+                            InlineKeyboardButton(
+                                "Disaster", url="https://t.me/komiinfo/2"),
+                         ],
+                         [
+                            InlineKeyboardButton(
+                                "User", url=f"https://t.me/{html.escape(user.username)}")
+                        ],
+                    ]
+                ),
+                parse_mode=ParseMode.HTML,
+                disable_web_page_preview=True
+            )
 
     rep.delete()
 
@@ -452,11 +484,6 @@ def stats(update, context):
     botuptime = get_readable_time((time.time() - StartTime))
     status = "*╒═══「 System statistics 」*\n\n"
     status += "*➢ System Start time:* " + str(uptime) + "\n"
-    uname = platform.uname()
-    status += "*➢ System:* " + str(uname.system) + "\n"
-    status += "*➢ Node name:* " + escape_markdown(str(uname.node)) + "\n"
-    status += "*➢ Release:* " + escape_markdown(str(uname.release)) + "\n"
-    status += "*➢ Machine:* " + escape_markdown(str(uname.machine)) + "\n"
     mem = virtual_memory()
     cpu = cpu_percent()
     disk = disk_usage("/")
@@ -471,8 +498,8 @@ def stats(update, context):
             status
             + "\n*Bot statistics*:\n"
             + "\n".join([mod.__stats__() for mod in STATS])
-            + f"\n\n[✦ Support](https://t.me/{SUPPORT_CHAT}) | [✦ Updates](https://t.me/LionXUpdates)\n\n"
-            + "╘══「 by [MdNoor786](https://github.com/MdNoor786) 」\n",
+            + f"\n\n✦[Support](https://t.me/{SUPPORT_CHAT}) | ✦[Updates](https://t.me/LionXUpdates)\n\n"
+            + "╘══「 by [𝙸𝚝𝚊𝚌𝚑𝚒 - 𝙺𝚞𝚗](https://github.com/Yoriichi-Tsugikuni) 」\n",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
         )
@@ -484,9 +511,9 @@ def stats(update, context):
                         "\n*Bot statistics*:\n"
                         + "\n".join(mod.__stats__() for mod in STATS)
                     )
-                    + f"\n\n✦ [Support](https://t.me/{SUPPORT_CHAT}) | ✦ [Updates](https://t.me/LionXupdates)\n\n"
+                    + f"\n\n✦[Support](https://t.me/{SUPPORT_CHAT}) | ✦[Updates](https://t.me/ShikimoriUpdates)\n\n"
                 )
-                + "╘══「 by [MdNoor786](https://github.com/MdNoor786) 」\n"
+                + "╘══「 By [𝙸𝚝𝚊𝚌𝚑𝚒 - 𝙺𝚞𝚗](https://t.me/Gojou_Wakana) 」\n"
             ),
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
