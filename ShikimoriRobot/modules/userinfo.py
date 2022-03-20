@@ -25,6 +25,10 @@ SOFTWARE.
 """
 
 import datetime
+import re
+import random
+import os
+import requests
 import html
 import platform
 import time
