@@ -36,6 +36,7 @@ from telegram import MAX_MESSAGE_LENGTH, MessageEntity, ParseMode, Update
 from telegram import __version__ as ptbver
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler
+from telegram import MAX_MESSAGE_LENGTH, ParseMode, Update,InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.utils.helpers import escape_markdown, mention_html
 from telethon import events
 from telethon.tl.functions.channels import GetFullChannelRequest
@@ -58,7 +59,8 @@ from ShikimoriRobot import (
 )
 from ShikimoriRobot.__main__ import STATS, TOKEN, USER_INFO
 from ShikimoriRobot.modules.disable import DisableAbleCommandHandler
-from ShikimoriRobot.modules.helper_funcs.chat_status import sudo_plus
+import ShikimoriRobot.modules.sql.userinfo_sql as sql
+from ShikimoriRobot.modules.helper_funcs.chat_status import sudo_plus ,support_plus
 from ShikimoriRobot.modules.helper_funcs.extraction import extract_user
 from ShikimoriRobot.modules.redis.afk_redis import afk_reason, is_user_afk
 from ShikimoriRobot.modules.sql.global_bans_sql import is_user_gbanned
