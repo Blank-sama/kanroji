@@ -18,7 +18,7 @@ from telegram.ext.dispatcher import run_async
 from telegram.error import BadRequest
 from telegram.utils.helpers import escape_markdown, mention_html
     
-from EruRobot import (
+from ShikimoriRobot import (
     DEV_USERS,
     OWNER_ID,
     DRAGONS,
@@ -31,17 +31,17 @@ from EruRobot import (
     StartTime,
     SUPPORT_CHAT,
 )
-from EruRobot.__main__ import STATS, TOKEN, USER_INFO
-from EruRobot.modules.sql import SESSION
-import EruRobot.modules.sql.userinfo_sql as sql
-from EruRobot.modules.disable import DisableAbleCommandHandler
-from EruRobot.modules.sql.global_bans_sql import is_user_gbanned
-from EruRobot.modules.sql.afk_sql import is_afk, set_afk
-from EruRobot.modules.sql.users_sql import get_user_num_chats
-from EruRobot.modules.helper_funcs.decorators import erucallback
-from EruRobot.modules.helper_funcs.chat_status import sudo_plus
-from EruRobot.modules.helper_funcs.extraction import extract_user
-from EruRobot import telethn
+from ShikimoriRobot.__main__ import STATS, TOKEN, USER_INFO
+from ShikimoriRobot.modules.sql import SESSION
+import ShikimoriRobot.modules.sql.userinfo_sql as sql
+from ShikimoriRobot.modules.disable import DisableAbleCommandHandler
+from ShikimoriRobot.modules.sql.global_bans_sql import is_user_gbanned
+from ShikimoriRobot.modules.sql.afk_sql import is_afk, set_afk
+from ShikimoriRobot.modules.sql.users_sql import get_user_num_chats
+from ShikimoriRobot.modules.helper_funcs.decorators import erucallback
+from ShikimoriRobot.modules.helper_funcs.chat_status import sudo_plus
+from ShikimoriRobot.modules.helper_funcs.extraction import extract_user
+from ShikimoriRobot import telethn
 
 def no_by_per(totalhp, percentage):
     """
@@ -449,7 +449,7 @@ def stats(update: Update, context: CallbackContext):
     ).scalar_one_or_none()
     uptime = datetime.datetime.fromtimestamp(boot_time()).strftime("%Y-%m-%d %H:%M:%S")
     botuptime = get_readable_time((time.time() - StartTime))
-    status = "*╒═══「 Eru sama  statistics 」*\n\n"
+    status = "*╒═══「 Shikimori Statistics 」*\n\n"
     status += "*• System Start time:* " + str(uptime) + "\n"
     uname = platform.uname()
     status += "*• System:* " + str(uname.system) + "\n"
