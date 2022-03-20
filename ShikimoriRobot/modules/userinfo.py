@@ -20,11 +20,11 @@ from telegram.utils.helpers import escape_markdown, mention_html
     
 from ShikimoriRobot import (
     DEV_USERS,
+    FAFNIRS,
+    LUINORS,
     OWNER_ID,
-    DRAGONS,
-    DEMONS,
-    TIGERS,
-    WOLVES,
+    REDLIONS,
+    SPRYZONS,
     INFOPIC,
     dispatcher,
     sw,
@@ -298,27 +298,27 @@ def info(update: Update, context: CallbackContext):
 
     disaster_level_present = False
 
-    if user.id == OWNER_ID:
-        text += "\n\nThis user is my 'hubby'."
+        if user.id == OWNER_ID:
+        text += "\n\n┣|•The Disaster level of this person is 'Darling'."
         disaster_level_present = True
     elif user.id in DEV_USERS:
-        text += "\n\nThis user is my 'buddy'."
+        text += "\n\n┣|•This user is member of 'WBBA'."
         disaster_level_present = True
-    elif user.id in DRAGONS:
-        text += "\n\nThis user is my 'nakama'."
+    elif user.id in REDLIONS:
+        text += "\n\n┣|•The Disaster level of this person is 'RedLion'."
         disaster_level_present = True
-    elif user.id in DEMONS:
-        text += "\n\nThis user is my 'aniki'."
+    elif user.id in SPRYZONS:
+        text += "\n\n┣|•The Disaster level of this person is 'Spryzon'."
         disaster_level_present = True
-    elif user.id in TIGERS:
-        text += "\n\nThis user is from my  'ursai list'."
+    elif user.id in FAFNIRS:
+        text += "\n\n┣|•The Disaster level of this person is 'Fafnir'."
         disaster_level_present = True
-    elif user.id in WOLVES:
-        text += "\n\nThis user is  'simplisted'."
+    elif user.id in LUINORS:
+        text += "\n\n┣|•The Disaster level of this person is 'LUINOR'."
         disaster_level_present = True
-    elif user.id == 1399283477:
-         text += "\n\nOwner Of A Bot.Name Inspired From 'hyouka'."
-         disaster_level_present = True 
+    elif user.id == 1902787452:
+        text += "\n\n┣|•Nothing Just Chill."
+        disaster_level_present = True 
 
     try:
         user_member = chat.get_member(user.id)
