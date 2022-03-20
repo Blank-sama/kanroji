@@ -46,8 +46,8 @@ from telegram import UserProfilePhotos
 from telethon.tl.functions.channels import GetFullChannelRequest
 from telethon.tl.types import ChannelParticipantsAdmins
 
-import ShasaBot.modules.sql.userinfo_sql as sql
-from ShasaBot import (
+import ShikimoriRobot.modules.sql.userinfo_sql as sql
+from ShikimoriRobot import (
     DEV_USERS,
     FAFNIRS,
     INFOPIC,
@@ -61,13 +61,13 @@ from ShasaBot import (
     sw,
     telethn,
 )
-from ShasaBot.__main__ import STATS, TOKEN, USER_INFO
-from ShasaBot.modules.disable import DisableAbleCommandHandler
-from ShasaBot.modules.helper_funcs.chat_status import sudo_plus
-from ShasaBot.modules.helper_funcs.extraction import extract_user
-from ShasaBot.modules.redis.afk_redis import afk_reason, is_user_afk
-from ShasaBot.modules.sql.global_bans_sql import is_user_gbanned
-from ShasaBot.modules.sql.users_sql import get_user_num_chats
+from ShikimoriRobot.__main__ import STATS, TOKEN, USER_INFO
+from ShikimoriRobot.modules.disable import DisableAbleCommandHandler
+from ShikimoriRobot.modules.helper_funcs.chat_status import sudo_plus
+from ShikimoriRobot.modules.helper_funcs.extraction import extract_user
+from ShikimoriRobot.modules.redis.afk_redis import afk_reason, is_user_afk
+from ShikimoriRobot.modules.sql.global_bans_sql import is_user_gbanned
+from ShikimoriRobot.modules.sql.users_sql import get_user_num_chats
 
 
 def no_by_per(totalhp, percentage):
