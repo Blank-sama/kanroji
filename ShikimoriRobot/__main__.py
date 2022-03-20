@@ -129,7 +129,7 @@ buttons = [
     ],
     [
         InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", url="https://t.me/NobaraSupport"),
-        InlineKeyboardButton(text="ᴏᴡɴᴇʀ", url="https://t.me/Mightiesthashira"),
+        InlineKeyboardButton(text="ᴏᴡɴᴇʀ", url="https://t.me/Gojou_Wakana"),
     ],
     [
         InlineKeyboardButton(text="ɪɴғᴏ", callback_data="shasa_basichelp"),
