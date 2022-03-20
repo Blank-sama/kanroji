@@ -1,19 +1,19 @@
+import datetime
 import html
-import re
-import random
-import os
-import requests
+import platform
+import time
+from platform import python_version
 
+import requests
+from psutil import boot_time, cpu_percent, disk_usage, virtual_memory
+from telegram import MAX_MESSAGE_LENGTH, MessageEntity, ParseMode, Update
+from telegram import __version__ as ptbver
+from telegram.error import BadRequest
+from telegram.ext import CallbackContext, CommandHandler
+from telegram.utils.helpers import escape_markdown, mention_html
+from telethon import events
 from telethon.tl.functions.channels import GetFullChannelRequest
 from telethon.tl.types import ChannelParticipantsAdmins
-from telegram import UserProfilePhotos
-from telethon import events
-
-from telegram import MAX_MESSAGE_LENGTH, ParseMode, Update,InlineKeyboardButton, InlineKeyboardMarkup
-from telegram.ext import CallbackContext, CommandHandler
-from telegram.ext.dispatcher import run_async
-from telegram.error import BadRequest
-from telegram.utils.helpers import escape_markdown, mention_html
 
 from ShikimoriRobot import (
     DEV_USERS,
