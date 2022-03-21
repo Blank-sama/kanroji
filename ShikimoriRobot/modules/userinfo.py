@@ -324,29 +324,29 @@ def info(update: Update, context: CallbackContext):
     disaster_level_present = False
 
     if user.id == OWNER_ID:
-        text += "\n\nThe Disaster level of this person is 'God'."
+        text += "\n\nThe Disaster level of this person is 'Darling'."
         disaster_level_present = True
     elif user.id in DEV_USERS:
-        text += "\n\nThis user is member of 'WBBA'."
+        text += "\n\nThis user is member of 'Onii-Chan'."
         disaster_level_present = True
     elif user.id in REDLIONS:
-        text += "\n\nThe Disaster level of this person is 'RedLion'."
+        text += "\n\nThe Disaster level of this person is 'Sensei'."
         disaster_level_present = True
     elif user.id in SPRYZONS:
-        text += "\n\nThe Disaster level of this person is 'Spryzon'."
+        text += "\n\nThe Disaster level of this person is 'Senpai'."
         disaster_level_present = True
     elif user.id in FAFNIRS:
-        text += "\n\nThe Disaster level of this person is 'Fafnir'."
+        text += "\n\nThe Disaster level of this person is 'Best Friend'."
         disaster_level_present = True
     elif user.id in LUINORS:
-        text += "\n\nThe Disaster level of this person is 'LUINOR'."
+        text += "\n\nThe Disaster level of this person is 'Friend'."
         disaster_level_present = True
-    elif user.id == 1902787452:
-        text += "\n\nNothing Just Chill."
+    elif user.id == 5175917462:
+        text += "\n\nMy Darling."
         disaster_level_present = True
 
     if disaster_level_present:
-        text += ' [<a href="https://t.me/LionXUpdates/63">?</a>]'.format(
+        text += ' [<a href="https://t.me/Shikimori_Updates/4">?</a>]'.format(
             bot.username,
         )
 
@@ -384,9 +384,9 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "Health", url="https://t.me/komiinfo/3"),
+                                "Health", url="https://t.me/Shikimori_Updates/6"),
                             InlineKeyboardButton(
-                                "Disaster", url="https://t.me/komiinfo/2"),
+                                "Disaster", url="https://t.me/Shikimori_Updates/4"),
                          ],
                          [
                             InlineKeyboardButton(
@@ -406,9 +406,9 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "Health", url="https://t.me/komiinfo/3"),
+                                "Health", url="https://t.me/Shikimori_Updates/6"),
                             InlineKeyboardButton(
-                                "Disaster", url="https://t.me/komiinfo/2"),
+                                "Disaster", url="https://t.me/Shikimori_Updates/4"),
                          ],
                          [
                             InlineKeyboardButton(
