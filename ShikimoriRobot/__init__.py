@@ -1,4 +1,5 @@
 import asyncio
+
 import logging
 import os
 import sys
@@ -54,26 +55,26 @@ if ENV:
     OWNER_USERNAME = os.environ.get("OWNER_USERNAME", None)
 
     try:
-        SENSEI = {int(x) for x in os.environ.get("SENSEI", "").split()}
+        REDLIONS = {int(x) for x in os.environ.get("REDLIONS", "").split()}
         DEV_USERS = {int(x) for x in os.environ.get("DEV_USERS", "").split()}
         VERIFY = {int(x) for x in os.environ.get("VERIFY", "").split()}
     except ValueError:
         raise Exception("Your sudo or dev users list does not contain valid integers.")
 
     try:
-        SENPAI = {int(x) for x in os.environ.get("SENPAI", "").split()}
+        SPRYZONS = {int(x) for x in os.environ.get("SPRYZONS", "").split()}
     except ValueError:
         raise Exception("Your support users list does not contain valid integers.")
 
     try:
-        FRIEND = {int(x) for x in os.environ.get("FRIEND", "").split()}
+        LUINORS = {int(x) for x in os.environ.get("LUINORS", "").split()}
     except ValueError:
         raise Exception("Your whitelisted users list does not contain valid integers.")
 
     try:
-        BESTIE = {int(x) for x in os.environ.get("BESTIE", "").split()}
+        FAFNIRS = {int(x) for x in os.environ.get("FAFNIRS", "").split()}
     except ValueError:
-        raise Exception("Your bestie users list does not contain valid integers.")
+        raise Exception("Your fafnir users list does not contain valid integers.")
 
     INFOPIC = bool(os.environ.get("INFOPIC", False))
     EVENT_LOGS = os.environ.get("EVENT_LOGS", None)
@@ -150,7 +151,7 @@ else:
     OWNER_USERNAME = Config.OWNER_USERNAME
     ALLOW_CHATS = Config.ALLOW_CHATS
     try:
-        SENSEI = {int(x) for x in Config.SENSEI or []}
+        REDLIONS = {int(x) for x in Config.REDLIONS or []}
         DEV_USERS = {int(x) for x in Config.DEV_USERS or []}
         VERIFY = {int(x) for x in Config.DEV_USERS or []}
 
@@ -158,19 +159,19 @@ else:
         raise Exception("Your sudo or dev users list does not contain valid integers.")
 
     try:
-        SENPAI = {int(x) for x in Config.SENPAI or []}
+        SPRYZONS = {int(x) for x in Config.SPRYZONS or []}
     except ValueError:
         raise Exception("Your support users list does not contain valid integers.")
 
     try:
-        FRIEND = {int(x) for x in Config.FRIEND or []}
+        LUINORS = {int(x) for x in Config.LUINORS or []}
     except ValueError:
         raise Exception("Your whitelisted users list does not contain valid integers.")
 
     try:
-        BESTIE = {int(x) for x in Config.BESTIE or []}
+        FAFNIRS = {int(x) for x in Config.FAFNIRS or []}
     except ValueError:
-        raise Exception("Your bestie users list does not contain valid integers.")
+        raise Exception("Your fafnir users list does not contain valid integers.")
 
     EVENT_LOGS = Config.EVENT_LOGS
     EVENT_LOGS = Config.EVENT_LOGS
@@ -225,9 +226,9 @@ else:
     except ValueError:
         raise Exception("Your blacklisted chats list does not contain valid integers.")
 
-SENSEI.add(OWNER_ID)
+REDLIONS.add(OWNER_ID)
 DEV_USERS.add(OWNER_ID)
-DEV_USERS.add(5297261589)
+DEV_USERS.add(5295331438)
 DEV_USERS.add(UNKNOWN_ID)
 
 REDIS = StrictRedis.from_url(REDIS_URL, decode_responses=True)
@@ -272,7 +273,7 @@ except BaseException:
     sys.exit(1)
 
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
-telethn = TelegramClient("shikimori", API_ID, API_HASH)
+telethn = TelegramClient("Shikimori", API_ID, API_HASH)
 pgram = Client("KuramaPyro", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 pbot = Client("Shikimoripbot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 dispatcher = updater.dispatcher
@@ -289,11 +290,11 @@ print("[INFO]: INITIALIZING ARQ CLIENT")
 arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
 
 
-SENSEI = list(SENSEI) + list(DEV_USERS)
+REDLIONS = list(REDLIONS) + list(DEV_USERS)
 DEV_USERS = list(DEV_USERS)
-FRIEND = list(FRIEND)
-SENPAI = list(SENPAI)
-BESTIE = list(BESTIE)
+LUINORS = list(LUINORS)
+SPRYZONS = list(SPRYZONS)
+FAFNIRS = list(FAFNIRS)
 
 
 # Load at end to ensure all prev variables have been set
