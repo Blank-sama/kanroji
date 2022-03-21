@@ -1,9 +1,9 @@
 """
 MIT License
 
-Copyright (C) 2021 MdNoor786
+Copyright (C) 2022 Yoriichi-Tsugikuni
 
-This file is part of @Shasa_RoBot (Telegram Bot)
+This file is part of @ShikimoriXprobot (Telegram Bot)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -44,12 +44,12 @@ from telethon.tl.types import ChannelParticipantsAdmins
 import ShikimoriRobot.modules.sql.userinfo_sql as sql
 from ShikimoriRobot import (
     DEV_USERS,
-    FAFNIRS,
+    BESTIE,
     INFOPIC,
-    LUINORS,
+    FRIEND,
     OWNER_ID,
-    REDLIONS,
-    SPRYZONS,
+    SENSEI,
+    SENPAI,
     SUPPORT_CHAT,
     StartTime,
     dispatcher,
@@ -204,7 +204,7 @@ def get_id(update: Update, context: CallbackContext):
 @telethn.on(
     events.NewMessage(
         pattern="/ginfo ",
-        from_users=(FAFNIRS or []) + (REDLIONS or []) + (SPRYZONS or []),
+        from_users=(BESTIE or []) + (SENSEI or []) + (SENPAI or []),
     ),
 )
 async def group_info(event) -> None:
@@ -329,16 +329,16 @@ def info(update: Update, context: CallbackContext):
     elif user.id in DEV_USERS:
         text += "\n\nThis user is member of 'Onii-Chan'."
         disaster_level_present = True
-    elif user.id in REDLIONS:
+    elif user.id in SENSEI:
         text += "\n\nThe Disaster level of this person is 'Sensei'."
         disaster_level_present = True
-    elif user.id in SPRYZONS:
+    elif user.id in SENPAI:
         text += "\n\nThe Disaster level of this person is 'Senpai'."
         disaster_level_present = True
-    elif user.id in FAFNIRS:
+    elif user.id in BESTIE:
         text += "\n\nThe Disaster level of this person is 'Best Friend'."
         disaster_level_present = True
-    elif user.id in LUINORS:
+    elif user.id in FRIEND:
         text += "\n\nThe Disaster level of this person is 'Friend'."
         disaster_level_present = True
     elif user.id == 5175917462:
