@@ -1,9 +1,9 @@
 """
 MIT License
 
-Copyright (C) 2022 Yoriichi-Tsugikuni
+Copyright (C) 2021 MdNoor786
 
-This file is part of @ShikimoriXprobot (Telegram Bot)
+This file is part of @Shasa_RoBot (Telegram Bot)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -44,12 +44,12 @@ from telethon.tl.types import ChannelParticipantsAdmins
 import ShikimoriRobot.modules.sql.userinfo_sql as sql
 from ShikimoriRobot import (
     DEV_USERS,
-    BESTIE,
+    FAFNIRS,
     INFOPIC,
-    FRIEND,
+    LUINORS,
     OWNER_ID,
-    SENSEI,
-    SENPAI,
+    REDLIONS,
+    SPRYZONS,
     SUPPORT_CHAT,
     StartTime,
     dispatcher,
@@ -204,7 +204,7 @@ def get_id(update: Update, context: CallbackContext):
 @telethn.on(
     events.NewMessage(
         pattern="/ginfo ",
-        from_users=(BESTIE or []) + (SENSEI or []) + (SENPAI or []),
+        from_users=(FAFNIRS or []) + (REDLIONS or []) + (SPRYZONS or []),
     ),
 )
 async def group_info(event) -> None:
@@ -324,29 +324,29 @@ def info(update: Update, context: CallbackContext):
     disaster_level_present = False
 
     if user.id == OWNER_ID:
-        text += "\n\nThe Disaster level of this person is 'Darling'."
+        text += "\n\nThe Disaster level of this person is 'God'."
         disaster_level_present = True
     elif user.id in DEV_USERS:
-        text += "\n\nThis user is member of 'Onii-Chan'."
+        text += "\n\nThis user is member of 'WBBA'."
         disaster_level_present = True
-    elif user.id in SENSEI:
-        text += "\n\nThe Disaster level of this person is 'Sensei'."
+    elif user.id in REDLIONS:
+        text += "\n\nThe Disaster level of this person is 'RedLion'."
         disaster_level_present = True
-    elif user.id in SENPAI:
-        text += "\n\nThe Disaster level of this person is 'Senpai'."
+    elif user.id in SPRYZONS:
+        text += "\n\nThe Disaster level of this person is 'Spryzon'."
         disaster_level_present = True
-    elif user.id in BESTIE:
-        text += "\n\nThe Disaster level of this person is 'Best Friend'."
+    elif user.id in FAFNIRS:
+        text += "\n\nThe Disaster level of this person is 'Fafnir'."
         disaster_level_present = True
-    elif user.id in FRIEND:
-        text += "\n\nThe Disaster level of this person is 'Friend'."
+    elif user.id in LUINORS:
+        text += "\n\nThe Disaster level of this person is 'LUINOR'."
         disaster_level_present = True
-    elif user.id == 5175917462:
-        text += "\n\nMy Darling."
+    elif user.id == 1902787452:
+        text += "\n\nNothing Just Chill."
         disaster_level_present = True
 
     if disaster_level_present:
-        text += ' [<a href="https://t.me/Shikimori_Updates/4">?</a>]'.format(
+        text += ' [<a href="https://t.me/LionXUpdates/63">?</a>]'.format(
             bot.username,
         )
 
@@ -384,9 +384,9 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "Health", url="https://t.me/Shikimori_Updates/6"),
+                                "Health", url="https://t.me/komiinfo/3"),
                             InlineKeyboardButton(
-                                "Disaster", url="https://t.me/Shikimori_Updates/4"),
+                                "Disaster", url="https://t.me/komiinfo/2"),
                          ],
                          [
                             InlineKeyboardButton(
@@ -406,9 +406,9 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "Health", url="https://t.me/Shikimori_Updates/6"),
+                                "Health", url="https://t.me/komiinfo/3"),
                             InlineKeyboardButton(
-                                "Disaster", url="https://t.me/Shikimori_Updates/4"),
+                                "Disaster", url="https://t.me/komiinfo/2"),
                          ],
                          [
                             InlineKeyboardButton(
