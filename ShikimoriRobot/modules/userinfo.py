@@ -50,7 +50,6 @@ from ShikimoriRobot import (
     OWNER_ID,
     REDLIONS,
     SPRYZONS,
-    SUPPORT_CHAT,
     StartTime,
     dispatcher,
     sw,
