@@ -615,7 +615,7 @@ SUDO_HANDLER = CommandHandler(("addsudo", "addsensei"), addsudo, run_async=True)
 SUPPORT_HANDLER = CommandHandler(
     ("addsupport", "addsenpai"), addsupport, run_async=True
 )
-FAFNIR_HANDLER = CommandHandler(("addbestie"), addbestie, run_async=True)
+FAFNIR_HANDLER = CommandHandler(("addbestie"), addfafnir, run_async=True)
 WHITELIST_HANDLER = CommandHandler(
     ("addwhitelist", "addfriend"), addwhitelist, run_async=True
 )
@@ -625,7 +625,7 @@ UNSUDO_HANDLER = CommandHandler(
 UNSUPPORT_HANDLER = CommandHandler(
     ("removesupport", "rmsenpai"), removesupport, run_async=True
 )
-UNFAFNIR_HANDLER = CommandHandler(("rmbestie"), rmbestie, run_async=True)
+UNFAFNIR_HANDLER = CommandHandler(("rmbestie"), removefafnir, run_async=True)
 UNWHITELIST_HANDLER = CommandHandler(
     ("removewhitelist", "rmfriend"), removewhitelist, run_async=True
 )
@@ -633,7 +633,7 @@ UNWHITELIST_HANDLER = CommandHandler(
 WHITELISTLIST_HANDLER = CommandHandler(
     ["whitelistlist", "friends"], whitelistlist, run_async=True
 )
-FAFNIRLIST_HANDLER = CommandHandler(["besties"], bestielist, run_async=True)
+FAFNIRLIST_HANDLER = CommandHandler(["besties"], fafnirlist, run_async=True)
 SUPPORTLIST_HANDLER = CommandHandler(
     ["supportlist", "senpais"], supportlist, run_async=True
 )
