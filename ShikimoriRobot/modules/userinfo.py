@@ -384,13 +384,13 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "Health", url="https://t.me/komiinfo/3"),
+                                "ʜᴇᴀʟᴛʜ", url="https://t.me/Shikimori_Updates/6"),
                             InlineKeyboardButton(
-                                "Disaster", url="https://t.me/komiinfo/2"),
+                                "ᴅɪsᴀsᴛᴇʀ", url="https://t.me/Shikimori_Updates/4"),
                          ],
                          [
                             InlineKeyboardButton(
-                                "User", url=f"https://t.me/{html.escape(user.username)}")
+                                "ᴜsᴇʀ", url=f"https://t.me/{html.escape(user.username)}")
                         ],
                     ]
                 ),
