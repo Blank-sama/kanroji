@@ -406,13 +406,13 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "Health", url="https://t.me/komiinfo/3"),
+                                "ʜᴇᴀʟᴛʜ", url="https://t.me/Shikimori_Updates/6"),
                             InlineKeyboardButton(
-                                "Disaster", url="https://t.me/komiinfo/2"),
+                                "ᴅɪsᴀsᴛᴇʀ", url="https://t.me/Shikimori_Updates/4"),
                          ],
                          [
                             InlineKeyboardButton(
-                                "User", url=f"https://t.me/{html.escape(user.username)}")
+                                "ᴜsᴇʀ", url=f"https://t.me/{html.escape(user.username)}")
                         ],
                     ]
                 ),
@@ -499,7 +499,7 @@ def stats(update, context):
             + "\n*Bot statistics*:\n"
             + "\n".join([mod.__stats__() for mod in STATS])
             + f"\n\n✦[Support](https://t.me/{SUPPORT_CHAT}) | ✦[Updates](https://t.me/LionXUpdates)\n\n"
-            + "╘══「 by [𝙸𝚝𝚊𝚌𝚑𝚒 - 𝙺𝚞𝚗](https://github.com/Yoriichi-Tsugikuni) 」\n",
+            + "╘══「 by [Jin - Woo](https://t.me/Monarch_Of_Shadowss) 」\n",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
         )
@@ -513,7 +513,7 @@ def stats(update, context):
                     )
                     + f"\n\n✦[Support](https://t.me/{SUPPORT_CHAT}) | ✦[Updates](https://t.me/ShikimoriUpdates)\n\n"
                 )
-                + "╘══「 By [𝙸𝚝𝚊𝚌𝚑𝚒 - 𝙺𝚞𝚗](https://t.me/Gojou_Wakana) 」\n"
+                + "╘══「 By [Jin - Woo](https://t.me/Monarch_Of_Shadowss) 」\n"
             ),
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
