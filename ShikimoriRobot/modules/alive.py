@@ -18,12 +18,7 @@ from pyrogram import __version__ as pyro
 
 edit_time = 5
 """ =======================CONSTANTS====================== """
-file1 = "https://telegra.ph//file/38d71dde31b5f10b04d77.jpg"
-file2 = "https://telegra.ph//file/ad7c7ccdd4db3795f0d50.jpg"
-file3 = "https://telegra.ph//file/62a5a4b9bf563caac526b.jpg"
-file4 = "https://telegra.ph//file/bead833fe37b0dc1f42d4.jpg"
-file5 = "https://telegra.ph//file/ac577854aeb7b21d6bbc7.jpg"
-file6 = "https://telegra.ph//file/b0e0068dc409ae71171d2.jpg"
+file1 = "https://telegra.ph//file/ad7c7ccdd4db3795f0d50.jpg"
 """ =======================CONSTANTS====================== """
 
 START_TIME = datetime.utcnow()
@@ -60,22 +55,22 @@ async def hmm(yes):
     Shu += f"♡ **Pyrogram Version** ➟ `{pyro}`\n"
     Shu += f"♡ **My Darling** ➟ [𝙸𝚝𝚊𝚌𝚑𝚒 - 𝙺𝚞𝚗](https://t.me/Gojou_Wakana)"
     BUTTON = [[Button.url("ʜᴇʟᴘ", f"https://t.me/ShikimoriXprobot?start=help"),Button.url("sᴜᴘᴘᴏʀᴛ", f"https://t.me/NobaraSupport"),],[Button.url("♡ᴅᴀʀʟɪɴɢ♡", f"https://t.me/Gojou_Wakana")]]
-    on = await borg.send_file(yes.chat_id, file=file2,caption=Shu, buttons=BUTTON)
+    on = await borg.send_file(yes.chat_id, file=file1,caption=Shu, buttons=BUTTON)
 
     await asyncio.sleep(edit_time)
-    ok = await borg.edit_message(yes.chat_id, on, file=file6, buttons=BUTTON) 
+    ok = await borg.edit_message(yes.chat_id, on, file=file1, buttons=BUTTON) 
 
     await asyncio.sleep(edit_time)
-    ok2 = await borg.edit_message(yes.chat_id, ok, file=file5, buttons=BUTTON)
+    ok2 = await borg.edit_message(yes.chat_id, ok, file=file1, buttons=BUTTON)
 
     await asyncio.sleep(edit_time)
-    ok3 = await borg.edit_message(yes.chat_id, ok2, file=file4, buttons=BUTTON)
+    ok3 = await borg.edit_message(yes.chat_id, ok2, file=file1, buttons=BUTTON)
     
     await asyncio.sleep(edit_time)
-    ok4 = await borg.edit_message(yes.chat_id, ok3, file=file3, buttons=BUTTON)
+    ok4 = await borg.edit_message(yes.chat_id, ok3, file=file1, buttons=BUTTON)
     
     await asyncio.sleep(edit_time)
-    ok5 = await borg.edit_message(yes.chat_id, ok4, file=file2, buttons=BUTTON)
+    ok5 = await borg.edit_message(yes.chat_id, ok4, file=file1, buttons=BUTTON)
     
     await asyncio.sleep(edit_time)
     ok6 = await borg.edit_message(yes.chat_id, ok5, file=file1, buttons=BUTTON)
