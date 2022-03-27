@@ -287,11 +287,11 @@ def start(update: Update, context: CallbackContext):
                 [
                     [
                          InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", url="https://t.me/NobaraSupport"),
-                         InlineKeyboardButton(text="ʜᴇʟᴘ", url=f"https://t.me/Shikimori_Robot?start=help"),
+                         InlineKeyboardButton(text="ʜᴇʟᴘ", url=f"https://t.me/ShikimorixProbot?start=help"),
                     ],
                     [
                          InlineKeyboardButton(
-                          text="☆ᴅᴀʀʟɪɴɢ☆", url="https://t.me/Mightiesthashira"),  
+                          text="☆ᴅᴀʀʟɪɴɢ☆", url="https://t.me/Monarch_Of_Shadowss"),  
                     ]
                 ]
             ),
@@ -432,7 +432,7 @@ def shasa_callback_data(update, context):
         ❍[Suppσrt](https://t.me/NobaraSupport)🤍
         ❍[Updates](https://t.me/Shikimori_Updates)🧡
         ❍[ChatGrp](https://t.me/Animechatfolks)💜
-        ❍[Dev](https://t.me/Mightiesthashira)💚
+        ❍[Dev](https://t.me/Monarch_Of_Shadowss)💚
         ❍[ChatGrp 2](https://t.me/Animechatfolks)❤️
         ✨[Vc Player Help](https://telegra.ph/file/a9dadf7c0d308b0389ec5.jpg)✨""",
             parse_mode=ParseMode.MARKDOWN,
@@ -446,7 +446,7 @@ def shasa_callback_data(update, context):
             text=f"*Here's basic Help regarding* *How to use Me?*"
             f"\n\n• Firstly Add {dispatcher.bot.first_name} to your group by pressing [here](http://t.me/{dispatcher.bot.username}?startgroup=true)\n"
             f"\n• After adding promote me manually with full rights for faster experience.\n"
-            f"\n• Than send `/admincache@Shikimori_Robot` in that chat to refresh admin list in My database.\n"
+            f"\n• Than send `/admincache@ShikimoriXprobot` in that chat to refresh admin list in My database.\n"
             f"\n\n*All done now use below given button's to know about use!*\n"
             f"",
             parse_mode=ParseMode.MARKDOWN,
@@ -522,17 +522,17 @@ def shasa_callback_data(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="ᴏᴡɴᴇʀ", url="t.me/Mightiesthashira"),
+                        InlineKeyboardButton(text="ᴏᴡɴᴇʀ", url="t.me/Monarch_Of_Shadowss"),
                         InlineKeyboardButton(
                             text="ɢɪᴛʜᴜʙ", url="https://github.com/Yoriichi-Tsugikuni"
                         ),
                     ],
                     [
                         InlineKeyboardButton(
-                            text="ᴅᴇᴠ", url="https://t.me/Mightiesthashira"
+                            text="ᴅᴇᴠ", url="https://t.me/Monarch_Of_Shadowss"
                         ),
                         InlineKeyboardButton(
-                            text="ꜱᴜᴅᴏ", url="https://t.me/KyoukoXupport"
+                            text="ꜱᴜᴅᴏ", url="https://t.me/NobaraSupport"
                         ),
                     ],
                     [
