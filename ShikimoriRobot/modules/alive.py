@@ -54,7 +54,7 @@ async def hmm(yes):
     Shu += f"♡ **Python Telegram Bot Version** ➟ `{telegram.__version__}`\n"
     Shu += f"♡ **Pyrogram Version** ➟ `{pyro}`\n"
     Shu += f"♡ **My Darling** ➟ [Jin - Woo](https://t.me/Monarch_Of_Shadowss)"
-    BUTTON = [[Button.url("ʜᴇʟᴘ", f"https://t.me/ShikimoriXprobot?start=help"),Button.url("sᴜᴘᴘᴏʀᴛ", f"https://t.me/NobaraSupport"),],[Button.url("♡ᴅᴀʀʟɪɴɢ♡", f"https://t.me/Gojou_Wakana")]]
+    BUTTON = [[Button.url("ʜᴇʟᴘ", f"https://t.me/ShikimoriXprobot?start=help"),Button.url("sᴜᴘᴘᴏʀᴛ", f"https://t.me/NobaraSupport"),],[Button.url("♡ᴅᴀʀʟɪɴɢ♡", f"https://t.me/Monarch_Of_Shadowss")]]
     on = await borg.send_file(yes.chat_id, file=file1,caption=Shu, buttons=BUTTON)
 
     await asyncio.sleep(edit_time)
