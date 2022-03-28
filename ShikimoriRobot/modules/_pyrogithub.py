@@ -8,7 +8,7 @@ from ShikimoriRobot.utils.errors import capture_err
 __mod_name__ = "Github"
 
 
-@pbot.on_message(filters.command("github"))
+@pbot.on_message(filters.command("git"))
 @capture_err
 async def github(_, message):
     if len(message.command) != 2:
