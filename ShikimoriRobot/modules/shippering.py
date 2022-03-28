@@ -69,7 +69,7 @@ __New Nigga And Niggi of the day will be chosen at 12AM {tomorrow}__"""
             c2_name = (await app.get_users(c2_id)).first_name
             couple_selection_message = f"""Nigga And Niggi of the day:
 [{c1_name}](tg://openmessage?user_id={c1_id}) + [{c2_name}](tg://openmessage?user_id={c2_id}) = ❤️
-__New Nigga and Niggi of the day may be chosen at 12AM {tomorrow}\n Powered By - @AogiriNetwork__"""
+__New Nigga and Niggi of the day may be chosen at 12AM {tomorrow}__"""
             await app.send_message(message.chat.id, text=couple_selection_message)
     except Exception as e:
         print(e)
