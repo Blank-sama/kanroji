@@ -12,6 +12,7 @@ from ShikimoriRobot import (
     REDLIONS,
     SPRYZONS,
     UNKNOWN_ID,
+    RATBOY_ID,
     sw,
     LOGGER,
     dispatcher,
@@ -48,6 +49,7 @@ from telegram.utils.helpers import escape_markdown, mention_html, mention_markdo
 
 SEXY_IMG = "https://telegra.ph//file/74a8a3c758b57dbaf836d.jpg"
 BANKAI = "https://telegra.ph/file/d6931e4bdffcc78b329db.jpg"
+DENKBHAY = "https://telegra.ph//file/7020409c8aab763a46210.jpg"
 
 VALID_WELCOME_FORMATTERS = [
     "first",
@@ -202,7 +204,7 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
 # Give the owner a special welcome
             if new_mem.id == OWNER_ID:
                 update.effective_message.reply_photo(
-                    SEXY_IMG, caption=f"My Darling {html.escape(user.first_name)} Boy friend of Shikimori Just joined.", reply_to_message_id=reply,
+                    SEXY_IMG, caption=f"Brace Yourself My Darling {html.escape(user.first_name)} Just Joined The Chat.", reply_to_message_id=reply,
                     parse_mode=ParseMode.HTML,
                 )
                 welcome_log = (
@@ -222,7 +224,18 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
                     f"#USER_JOINED\n"
                     f"SEXY just joined the group"
                 )
-                continue   
+                continue  
+            if new_mem.id == RATBOY_ID:
+                update.effective_message.reply_photo(
+                    DENKBHAY, caption=f"You should feel honoured my crush Rat boy just joined 😻.", reply_to_message_id=reply,
+                    parse_mode=ParseMode.HTML,
+                )
+                welcome_log = (
+                    f"{html.escape(chat.title)}\n"
+                    f"#USER_JOINED\n"
+                    f"DENK just joined the group"
+                )
+                continue    
 
 
             # Welcome Devs
