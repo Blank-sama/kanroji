@@ -47,7 +47,7 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import escape_markdown, mention_html, mention_markdown
 
-SEXY_IMG = "https://telegra.ph//file/74a8a3c758b57dbaf836d.jpg"
+SEXY_IMG = "https://telegra.ph//file/317dd2cf62605a483a4da.jpg"
 BANKAI = "https://telegra.ph/file/d6931e4bdffcc78b329db.jpg"
 DENKBHAY = "https://telegra.ph//file/7020409c8aab763a46210.jpg"
 
