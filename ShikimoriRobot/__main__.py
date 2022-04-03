@@ -278,7 +278,7 @@ def start(update: Update, context: CallbackContext):
     else:
         first_name = update.effective_user.first_name
         update.effective_message.reply_video(
-           SHIKIMORI_START, caption= "<b>Hello {}, I am Shikimori. \nSheesh! Don't simp on me\nI already have a bf \nHaven't sleep since</b>: <code>{}</code>".format(
+           SHIKIMORI_START, caption= "<b>Hello {}, I am Shikimori. \nSheesh! Itna start krke kaha jayega\nI am already alive bhen ke lode \nHaven't sleep since</b>: <code>{}</code>".format(
                 escape_markdown(first_name),
                 uptime
             ),
