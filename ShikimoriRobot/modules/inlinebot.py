@@ -21,7 +21,7 @@ from ShikimoriRobot import (
     OWNER_ID,
     REDLIONS,
     SPRYZONS,
-    sw, log
+    sw, LOGGER
 )
 from ShikimoriRobot.modules.helper_funcs.misc import article
 from ShikimoriRobot.modules.helper_funcs.decorators import shikinline
@@ -112,7 +112,7 @@ def inlineinfo(query: str, update: Update, context: CallbackContext) -> None:
     """Handle the inline query."""
     bot = context.bot
     query = update.inline_query.query
-    log.info(query)
+    LOGGER.info(query)
     user_id = update.effective_user.id
 
     try:
