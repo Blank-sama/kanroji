@@ -24,7 +24,7 @@ from ShikimoriRobot import (
     sw, LOGGER
 )
 from ShikimoriRobot.modules.helper_funcs.misc import article
-from ShikimoriRobot.modules.helper_funcs.decorators import shikinline
+from ShikimoriRobot.modules.helper_funcs.decorators import shikimoriinline
 
 
 def remove_prefix(text, prefix):
@@ -32,7 +32,7 @@ def remove_prefix(text, prefix):
         text = text.replace(prefix, "", 1)
     return text
 
-@shikinline()
+@shikimoriinline()
 def inlinequery(update: Update, _) -> None:
     """
     Main InlineQueryHandler callback.
