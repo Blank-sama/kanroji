@@ -13,8 +13,8 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext
 from telegram.utils.helpers import mention_html
 
-import ShikimoriRobot.modules.sql.users_sql as sql
-from ShikimoriRobot import (
+import tg_bot.modules.sql.users_sql as sql
+from tg_bot import (
     DEV_USERS,
     FAFNIRS,
     LUINORS,
@@ -23,8 +23,8 @@ from ShikimoriRobot import (
     SPRYZONS,
     sw, LOGGER
 )
-from ShikimoriRobot.modules.helper_funcs.misc import article
-from ShikimoriRobot.modules.helper_funcs.decorators import shikimoriinline
+from tg_bot.modules.helper_funcs.misc import article
+from tg_bot.modules.helper_funcs.decorators import kiginline
 
 
 def remove_prefix(text, prefix):
@@ -32,7 +32,7 @@ def remove_prefix(text, prefix):
         text = text.replace(prefix, "", 1)
     return text
 
-@shikimoriinline()
+@kiginline()
 def inlinequery(update: Update, _) -> None:
     """
     Main InlineQueryHandler callback.
@@ -47,28 +47,28 @@ def inlinequery(update: Update, _) -> None:
             "description": "Look up a person/bot/channel/chat on @Intellivoid SpamProtection API",
             "message_text": "Click the button below to look up a person/bot/channel/chat on @Intellivoid SpamProtection API using "
                             "username or telegram id",
-            "thumb_urL": "https://telegra.ph/file/ff6ffadced1cb65db0350.jpg",
+            "thumb_urL": "https://telegra.ph/file/3ce9045b1c7faf7123c67.jpg",
             "keyboard": ".spb ",
         },
         {
-            "title": "Info on Shikimori",
-            "description": "Look up a Telegram account in Shikimori database",
-            "message_text": "Click the button below to look up a person in Shikimori database using their Telegram ID",
-            "thumb_urL": "https://telegra.ph/file/ff6ffadced1cb65db0350.jpg",
+            "title": "Account info on Kigyo",
+            "description": "Look up a Telegram account in Kigyo database",
+            "message_text": "Click the button below to look up a person in Kigyo database using their Telegram ID",
+            "thumb_urL": "https://telegra.ph/file/c85e07b58f5b3158b529a.jpg",
             "keyboard": ".info ",
         },
         {
             "title": "About",
-            "description": "About Shikimori",
-            "message_text": "Click the button below to get to know about Shikimori.",
-            "thumb_urL": "https://telegra.ph/file/ff6ffadced1cb65db0350.jpg",
+            "description": "Know about Kigyo",
+            "message_text": "Click the button below to get to know about Kigyo.",
+            "thumb_urL": "https://telegra.ph/file/c85e07b58f5b3158b529a.jpg",
             "keyboard": ".about ",
         },
         {
             "title": "Anilist",
             "description": "Search anime and manga on AniList.co",
             "message_text": "Click the button below to search anime and manga on AniList.co",
-            "thumb_urL": "https://telegra.ph/file/ff6ffadced1cb65db0350.jpg",
+            "thumb_urL": "https://telegra.ph/file/c85e07b58f5b3158b529a.jpg",
             "keyboard": ".anilist ",
         },
     ]
@@ -191,7 +191,7 @@ def inlineinfo(query: str, update: Update, context: CallbackContext) -> None:
             [
                 InlineKeyboardButton(
                     text="Report Error",
-                    url=f"https://t.me/NobaraSupport",
+                    url=f"https://t.me/YorktownEagleUnion",
                 ),
                 InlineKeyboardButton(
                     text="Search again",
@@ -222,9 +222,9 @@ def about(query: str, update: Update, context: CallbackContext) -> None:
     user = context.bot.get_chat(user_id)
     sql.update_user(user.id, user.username)
     about_text = f"""
-    Shikimori (@{context.bot.username})
-    Maintained by [Sōta Kazama](t.me/Sota_Kazama)
-    Built using python-telegram-bot v{str(__version__)}
+    Kigyo (@{context.bot.username})
+    Maintained by [Dank-del](t.me/dank_as_fuck)
+    Built with ❤️ using python-telegram-bot v{str(__version__)}
     Running on Python {python_version()}
     """
     results: list = []
@@ -233,11 +233,11 @@ def about(query: str, update: Update, context: CallbackContext) -> None:
             [
                 InlineKeyboardButton(
                     text="Support",
-                    url=f"https://t.me/NobaraSupport",
+                    url=f"https://t.me/YorktownEagleUnion",
                 ),
                 InlineKeyboardButton(
                     text="Channel",
-                    url=f"https://t.me/AogiriNetwork",
+                    url=f"https://t.me/KigyoUpdates",
                 ),
                 InlineKeyboardButton(
                     text='Ping',
@@ -247,12 +247,12 @@ def about(query: str, update: Update, context: CallbackContext) -> None:
             ],
             [
                 InlineKeyboardButton(
-                    text="Github",
-                    url=f"https://www.gitlab.com/Yoriichi-Tsugikuni",
+                    text="GitLab",
+                    url=f"https://www.gitlab.com/Dank-del/EnterpriseALRobot",
                 ),
                 InlineKeyboardButton(
-                    text="Owner",
-                    url="https://t.me/Sota_Kazama",
+                    text="GitHub",
+                    url="https://www.github.com/Dank-del/EnterpriseALRobot",
                 ),
             ],
         ])
@@ -262,7 +262,7 @@ def about(query: str, update: Update, context: CallbackContext) -> None:
         InlineQueryResultArticle
             (
             id=str(uuid4()),
-            title=f"About Shikimori (@{context.bot.username})",
+            title=f"About Kigyo (@{context.bot.username})",
             input_message_content=InputTextMessageContent(about_text, parse_mode=ParseMode.MARKDOWN,
                                                           disable_web_page_preview=True),
             reply_markup=kb
@@ -329,7 +329,7 @@ def spb(query: str, update: Update, context: CallbackContext) -> None:
             [
                 InlineKeyboardButton(
                     text="Report Error",
-                    url=f"https://t.me/NobaraSupport",
+                    url=f"https://t.me/YorktownEagleUnion",
                 ),
                 InlineKeyboardButton(
                     text="Search again",
@@ -473,7 +473,7 @@ def media_query(query: str, update: Update, context: CallbackContext) -> None:
                 [
                     InlineKeyboardButton(
                         text="Report error",
-                        url="t.me/NobaraSupport",
+                        url="t.me/YorktownEagleUnion",
                     ),
                     InlineKeyboardButton(
                         text="Search again",
