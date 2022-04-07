@@ -9,7 +9,6 @@ import json
 import zlib
 import base64
 from urllib.parse import urlparse, urljoin, urlunparse
-import base58
 from Crypto import Random, Hash, Protocol
 from Crypto.Cipher import AES
 from math import ceil
@@ -201,5 +200,4 @@ def upload_text(data: str) -> typing.Optional[str]:
     resp = requests.post('https://bin.nixnet.services', headers={'X-Requested-With': 'JSONHttpRequest'}, data=json.dumps({'v': 2, 'adata': paste_meta, 'ct': base64.b64encode(ct + tag).decode(), 'meta': {'expire': '1week'}}, separators=(',', ':')))
     data = resp.json()
     url = list(urlparse(urljoin('https://bin.nixnet.services', data['url'])))
-    url[5] = base58.b58encode(passphrase).decode()
     return urlunparse(url)
