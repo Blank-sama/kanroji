@@ -4,6 +4,7 @@ from math import ceil
 from typing import Dict, List
 
 from ShikimoriRobot import NO_LOAD
+from ShikimoriRobot import BOT_USERNAME
 from telegram import MAX_MESSAGE_LENGTH, Bot, InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, InlineQueryResultArticle, InputTextMessageContent
 from telegram.error import TelegramError
 
@@ -60,7 +61,7 @@ def paginate_modules(page_n: int, module_dict: Dict, prefix, chat=None) -> List:
         pairs.append((modules[-1],))
     else:
         pairs += [[
-            (EqInlineKeyboardButton("Try inline", switch_inline_query_current_chat="",)),
+            (EqInlineKeyboardButton("Try inline", switch_inline_query_current_chat="@{BOT_USERNAME},)),
                 EqInlineKeyboardButton("Back", callback_data="shasa_back"),
              EqInlineKeyboardButton("Support", url="t.me/NobaraSupport")]]
 
