@@ -1,24 +1,18 @@
 import html
-import socket
-import random
-import sys
-from time import time
 import json
 from datetime import datetime
 from platform import python_version
 from typing import List
 from uuid import uuid4
-from pyrogram import __version__ as pyrover
-from pyrogram import filters, errors
 
 import requests
-from telegram import InlineQueryResultArticle, ParseMode, InlineQueryResultPhoto, InputTextMessageContent, Update, InlineKeyboardMarkup, \
+from telegram import InlineQueryResultArticle, ParseMode, InputTextMessageContent, Update, InlineKeyboardMarkup, \
     InlineKeyboardButton
 from telegram import __version__
 from telegram.error import BadRequest
-from telegram.ext import (CallbackContext, CallbackQueryHandler, CommandHandler,
-                          Filters, MessageHandler)
+from telegram.ext import CallbackContext
 from telegram.utils.helpers import mention_html
+
 import ShikimoriRobot.modules.sql.users_sql as sql
 from ShikimoriRobot import (
     DEV_USERS,
@@ -27,13 +21,10 @@ from ShikimoriRobot import (
     OWNER_ID,
     REDLIONS,
     SPRYZONS,
-    pgram,
-    sw,
-    LOGGER,
+    sw, log
 )
 from ShikimoriRobot.modules.helper_funcs.misc import article
-from ShikimoriRobot.modules.helper_funcs.decorators import shikimoriinline
-from ShikimoriRobot.modules.sudoers import bot_sys_stats as bss
+from ShikimoriRobot.modules.helper_funcs.decorators import shikinline
 
 
 def remove_prefix(text, prefix):
@@ -41,7 +32,7 @@ def remove_prefix(text, prefix):
         text = text.replace(prefix, "", 1)
     return text
 
-@shikimoriinline()
+@shikinline()
 def inlinequery(update: Update, _) -> None:
     """
     Main InlineQueryHandler callback.
@@ -60,7 +51,7 @@ def inlinequery(update: Update, _) -> None:
             "keyboard": ".spb ",
         },
         {
-            "title": "Account info",
+            "title": "Info on Shikimori",
             "description": "Look up a Telegram account in Shikimori database",
             "message_text": "Click the button below to look up a person in Shikimori database using their Telegram ID",
             "thumb_urL": "https://telegra.ph/file/ff6ffadced1cb65db0350.jpg",
@@ -68,17 +59,10 @@ def inlinequery(update: Update, _) -> None:
         },
         {
             "title": "About",
-            "description": "Know about Shikimori",
+            "description": "About Shikimori",
             "message_text": "Click the button below to get to know about Shikimori.",
             "thumb_urL": "https://telegra.ph/file/ff6ffadced1cb65db0350.jpg",
             "keyboard": ".about ",
-        },
-        {
-            "title": "Help",
-            "description": "Help Inline Commands",
-            "message_text": "Click the button below to get Help Of Inline Commands.",
-            "thumb_urL": "https://telegra.ph/file/ff6ffadced1cb65db0350.jpg",
-            "keyboard": ".help ",
         },
         {
             "title": "Anilist",
@@ -87,13 +71,6 @@ def inlinequery(update: Update, _) -> None:
             "thumb_urL": "https://telegra.ph/file/ff6ffadced1cb65db0350.jpg",
             "keyboard": ".anilist ",
         },
-        {
-            "title": "Paste",
-            "description": "Paste <text> on pastebin.",
-            "message_text": "Click the button below to Paste on pastebin.",
-            "thumb_urL": "https://telegra.ph/file/ff6ffadced1cb65db0350.jpg",
-            "keyboard": ".paste ",
-        },
     ]
 
     inline_funcs = {
@@ -101,8 +78,6 @@ def inlinequery(update: Update, _) -> None:
         ".info": inlineinfo,
         ".about": about,
         ".anilist": media_query,
-        ".help": help,
-        ".paste": paste_func,
     }
 
     if (f := query.split(" ", 1)[0]) in inline_funcs:
@@ -137,7 +112,7 @@ def inlineinfo(query: str, update: Update, context: CallbackContext) -> None:
     """Handle the inline query."""
     bot = context.bot
     query = update.inline_query.query
-    LOGGER.info(query)
+    log.info(query)
     user_id = update.effective_user.id
 
     try:
@@ -191,9 +166,8 @@ def inlineinfo(query: str, update: Update, context: CallbackContext) -> None:
         text += "\n\nNothing Just Chill."
         disaster_level_present = True
 
-    if disaster_level_present:
-        text += ' [<a href="https://t.me/Shikimori_Updates/4">?</a>]'.format(
-            bot.username)
+    if nation_level_present:
+        text += ' [<a href="https://t.me/{}?start=nations">?</a>]'.format(bot.username)
 
     try:
         spamwtc = sw.get_ban(int(user.id))
@@ -231,7 +205,6 @@ def inlineinfo(query: str, update: Update, context: CallbackContext) -> None:
     results = [
         InlineQueryResultArticle(
             id=str(uuid4()),
-            thumb_url="https://telegra.ph/file/ff6ffadced1cb65db0350.jpg",
             title=f"User info of {html.escape(user.first_name)}",
             input_message_content=InputTextMessageContent(text, parse_mode=ParseMode.HTML,
                                                           disable_web_page_preview=True),
@@ -249,30 +222,50 @@ def about(query: str, update: Update, context: CallbackContext) -> None:
     user = context.bot.get_chat(user_id)
     sql.update_user(user.id, user.username)
     about_text = f"""
-    [Shikimori ❤️](https://telegra.ph/file/ff6ffadced1cb65db0350.jpg)\n*Bot State:* `Alive`\n*Python:* `{python_version()}`\n*Pyrogram:* `{pyrover}`\n*Platform:* `{sys.platform}`\n*python-telegram-bot:* `v{str(__version__)}`
+    Shikimori (@{context.bot.username})
+    Maintained by [Sōta Kazama](t.me/Sota_Kazama)
+    Built using python-telegram-bot v{str(__version__)}
+    Running on Python {python_version()}
     """
     results: list = []
     kb = InlineKeyboardMarkup(
         [
             [
                 InlineKeyboardButton(
-                    text='Shikimori Stats',
-                    callback_data='pingCB',
+                    text="Support",
+                    url=f"https://t.me/NobaraSupport",
+                ),
+                InlineKeyboardButton(
+                    text="Channel",
+                    url=f"https://t.me/AogiriNetwork",
+                ),
+                InlineKeyboardButton(
+                    text='Ping',
+                    callback_data='pingCB'
                 ),
 
+            ],
+            [
+                InlineKeyboardButton(
+                    text="Github",
+                    url=f"https://www.gitlab.com/Yoriichi-Tsugikuni",
+                ),
+                InlineKeyboardButton(
+                    text="Owner",
+                    url="https://t.me/Sota_Kazama",
+                ),
             ],
         ])
 
     results.append(
-        InlineQueryResultPhoto(
+
+        InlineQueryResultArticle
+            (
             id=str(uuid4()),
-            title="Alive",
-            description="Check Bot's Stats",
-            thumb_url="https://telegra.ph/file/396d27f7cba3f83efceab.jpg",
-            photo_url="https://telegra.ph/file/55669ba6d3475e5d77e8d.jpg",
-            caption=about_text,
-            parse_mode=ParseMode.MARKDOWN,
-            reply_markup=kb,
+            title=f"About Shikimori (@{context.bot.username})",
+            input_message_content=InputTextMessageContent(about_text, parse_mode=ParseMode.MARKDOWN,
+                                                          disable_web_page_preview=True),
+            reply_markup=kb
         )
     )
     update.inline_query.answer(results)
@@ -351,7 +344,6 @@ def spb(query: str, update: Update, context: CallbackContext) -> None:
         InlineQueryResultArticle(
             id=str(uuid4()),
             title=f"SpamProtection API info of {srdata or a}",
-            thumb_url="https://telegra.ph/file/e7bb5cf8dca5c2916128d.jpg",
             input_message_content=InputTextMessageContent(stats, parse_mode=ParseMode.MARKDOWN,
                                                           disable_web_page_preview=True),
             reply_markup=kb
@@ -481,7 +473,7 @@ def media_query(query: str, update: Update, context: CallbackContext) -> None:
                 [
                     InlineKeyboardButton(
                         text="Report error",
-                        url="https://t.me/NobaraSupport",
+                        url="t.me/NobaraSupport",
                     ),
                     InlineKeyboardButton(
                         text="Search again",
@@ -505,79 +497,3 @@ def media_query(query: str, update: Update, context: CallbackContext) -> None:
         )
 
     update.inline_query.answer(results, cache_time=5)
-
-def help(query: str, update: Update, context: CallbackContext) -> None:
-    """Handle the inline query."""
-    query = update.inline_query.query
-    user_id = update.effective_user.id
-    user = context.bot.get_chat(user_id)
-    sql.update_user(user.id, user.username)
-    help_text = f"""
-    [Shikimori Inline Help❤️](https://t.me/ShikimoriXproBot)\n*Inline Help Commands:*\n*• .about:* `You Can Check My Information`\n*• .spbinfo* `To Check Your Spam Protection With Spam Protection Api`\n*• .anilist:* `To Search Animes And Mangas`\n*• .info:* `To Check Your Information`
-    """
-    results: list = []
-    kb = InlineKeyboardMarkup(
-        [
-            [
-                InlineKeyboardButton(
-                    text="Search Inline",
-                    switch_inline_query_current_chat=".info ",
-                ),
-
-            ],
-        ])
-
-    results.append(
-        InlineQueryResultPhoto(
-            id=str(uuid4()),
-            title="Help Commands",
-            thumb_url="https://telegra.ph/file/65a47304643fcdb34f0a7.jpg",
-            photo_url="https://telegra.ph/file/65a47304643fcdb34f0a7.jpg",
-            caption=help_text,
-            parse_mode=ParseMode.MARKDOWN,
-            reply_markup=kb,
-        )
-    )
-    update.inline_query.answer(results)
-
-@pgram.on_callback_query(filters.regex("pingCB"))
-async def stats_callbacc(_, CallbackQuery):
-    text = await bss()
-    await pgram.answer_callback_query(CallbackQuery.id, text, show_alert=True)
-
-def _netcat(host, port, update: Update, context: CallbackContext):
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.connect((host, int(port)))
-    content = update.inline_query.query.split(" ", 1)[1]
-    s.sendall(content.encode())
-    s.shutdown(socket.SHUT_WR)
-    while True:
-        data = s.recv(4096).decode("utf-8").strip("\n\x00")
-        if not data:
-            break
-        return data
-    s.close()
-
-def paste(update: Update, context: CallbackContext):
-    link = _netcat("ezup.dev", 9999,  update.inline_query.query.split(" ", 1)[1])
-    return link
-
-def paste_func(query: str, update: Update, context: CallbackContext) -> None:
-    """Handle the inline query."""
-    tex = update.inline_query.query
-    text = tex.split(" ", 1)[1]
-    start_time = time()
-    url = paste(text)
-    msg = f"__**{url}**__"
-    end_time = time()
-    results: List = []
-
-    results.append(
-        InlineQueryResultArticle(
-            id=str(uuid4()),
-            title=f"Pasted In {round(end_time - start_time)} Seconds.",
-            description=url,
-            input_message_content=InputTextMessageContent(msg),
-        )
-    )
-    update.inline_query.answer(results)
