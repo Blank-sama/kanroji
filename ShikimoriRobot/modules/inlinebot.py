@@ -13,8 +13,8 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext
 from telegram.utils.helpers import mention_html
 
-import tg_bot.modules.sql.users_sql as sql
-from tg_bot import (
+import ShikimoriRobot.modules.sql.users_sql as sql
+from ShikimoriRobot import (
     DEV_USERS,
     FAFNIRS,
     LUINORS,
@@ -23,8 +23,8 @@ from tg_bot import (
     SPRYZONS,
     sw, LOGGER
 )
-from tg_bot.modules.helper_funcs.misc import article
-from tg_bot.modules.helper_funcs.decorators import kiginline
+from ShikimoriRobot.modules.helper_funcs.misc import article
+from ShikimoriRobot.modules.helper_funcs.decorators import kiginline
 
 
 def remove_prefix(text, prefix):
