@@ -26,7 +26,7 @@ class ShikimoriTelegramHandler:
                     self._dispatcher.add_handler(
                         CommandHandler(command, func, filters=filters, run_async=run_async, pass_args=pass_args), group
                     )
-                LOGGER.debug(f"[SHIKCMD] Loaded handler {command} for function {func.__name__} in group {group}")
+                LOGGER.debug(f"[SHIKIMORICMD] Loaded handler {command} for function {func.__name__} in group {group}")
             except TypeError:
                 if can_disable:
                     self._dispatcher.add_handler(
@@ -38,7 +38,7 @@ class ShikimoriTelegramHandler:
                         CommandHandler(command, func, filters=filters, run_async=run_async, pass_args=pass_args,
                                        pass_chat_data=pass_chat_data)
                     )
-                LOGGER.debug(f"[SHIKCMD] Loaded handler {command} for function {func.__name__}")
+                LOGGER.debug(f"[SHIKIMORICMD] Loaded handler {command} for function {func.__name__}")
 
             return func
 
@@ -56,7 +56,7 @@ class ShikimoriTelegramHandler:
                     self._dispatcher.add_handler(
                         MessageHandler(pattern, func, run_async=run_async), group
                     )
-                LOGGER.debug(f"[SHIKMSG] Loaded filter pattern {pattern} for function {func.__name__} in group {group}")
+                LOGGER.debug(f"[SHIKIMORIMSG] Loaded filter pattern {pattern} for function {func.__name__} in group {group}")
             except TypeError:
                 if can_disable:
                     self._dispatcher.add_handler(
@@ -66,7 +66,7 @@ class ShikimoriTelegramHandler:
                     self._dispatcher.add_handler(
                         MessageHandler(pattern, func, run_async=run_async)
                     )
-                LOGGER.debug(f"[SHIKMSG] Loaded filter pattern {pattern} for function {func.__name__}")
+                LOGGER.debug(f"[SHIKIMORIMSG] Loaded filter pattern {pattern} for function {func.__name__}")
 
             return func
 
@@ -75,7 +75,7 @@ class ShikimoriTelegramHandler:
     def callbackquery(self, pattern: str = None, run_async: bool = True):
         def _callbackquery(func):
             self._dispatcher.add_handler(CallbackQueryHandler(pattern=pattern, callback=func, run_async=run_async))
-           LOGGER.debug(f'[SHIKCALLBACK] Loaded callbackquery handler with pattern {pattern} for function {func.__name__}')
+           LOGGER.debug(f'[SHIKIMORICALLBACK] Loaded callbackquery handler with pattern {pattern} for function {func.__name__}')
             return func
 
         return _callbackquery
@@ -86,13 +86,13 @@ class ShikimoriTelegramHandler:
             self._dispatcher.add_handler(
                 InlineQueryHandler(pattern=pattern, callback=func, run_async=run_async, pass_user_data=pass_user_data,
                                    pass_chat_data=pass_chat_data, chat_types=chat_types))
-            LOGGER.debug(f'[MIKUINLINE] Loaded inlinequery handler with pattern {pattern} for function {func.__name__} | PASSES USER DATA: {pass_user_data} | PASSES CHAT DATA: {pass_chat_data} | CHAT TYPES: {chat_types}')
+            LOGGER.debug(f'[SHIKIMORIINLINE] Loaded inlinequery handler with pattern {pattern} for function {func.__name__} | PASSES USER DATA: {pass_user_data} | PASSES CHAT DATA: {pass_chat_data} | CHAT TYPES: {chat_types}')
             return func
 
         return _inlinequery
 
 
-shikcmd = ShikimoriTelegramHandler(d).command
-shikmsg = ShikimoriTelegramHandler(d).message
-shikcallback = ShikimoriTelegramHandler(d).callbackquery
-shikinline = ShikimoriTelegramHandler(d).inlinequery
+shikimoricmd = ShikimoriTelegramHandler(d).command
+shikimorimsg = ShikimoriTelegramHandler(d).message
+shikimorikcallback = ShikimoriTelegramHandler(d).callbackquery
+shikmoriinline = ShikimoriTelegramHandler(d).inlinequery
