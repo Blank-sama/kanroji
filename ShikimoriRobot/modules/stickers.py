@@ -508,7 +508,7 @@ def makepack_internal(
             )
         elif e.message == "Internal Server Error: created sticker set not found (500)":
             msg.reply_text(
-                "Le bsdk tera pack bann gya abh gand m rakhle. Le pakad apna [Pack](t.me/addstickers/%s)"
+                "Le bsdk rakhle gand m apna [pack](t.me/addstickers/%s)"
                 % packname,
                 parse_mode=ParseMode.MARKDOWN,
             )
@@ -516,7 +516,7 @@ def makepack_internal(
 
     if success:
         msg.reply_text(
-            "Le bsdk tera pack bann gya abh gand m rakhle. Le pakad apna Pack](t.me/addstickers/%s)"
+            "Le bsdk rakhle gand m apna [pack](t.me/addstickers/%s)"
             % packname,
             parse_mode=ParseMode.MARKDOWN,
         )
