@@ -2415,7 +2415,7 @@ def fed_user_help(update: Update, context: CallbackContext):
 __mod_name__ = "♡ғᴇᴅs♡"
 __help__ = """
 *Commands:*\n
-Feds are now divided into 3 sections for your ease.
+Feds are now divided into [3](https://telegra.ph//file/7117413c944803c54819e.jpg) sections for your ease.
   |• `/fedownerhelp`*:* Provides help for fed creation and owner only commands
   |• `/fedadminhelp`*:* Provides help for fed administration commands
   |• `/feduserhelp`*:* Provides help for commands anyone can use
