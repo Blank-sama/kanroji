@@ -1,20 +1,15 @@
 """
 MIT License
-
 Copyright (C) 2021 MdNoor786
-
 This file is part of @Shasa_RoBot (Telegram Bot)
-
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
-
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
-
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -369,7 +364,7 @@ def help_button(update, context):
                 "╒═══≼ ᴍᴇɴᴜ ᴏғ「 *{}* 」ᴍᴏᴅᴜʟᴇ: \n".format(HELPABLE[module].__mod_name__)
                 + HELPABLE[module].__help__
             )
-            query.message.edit_image(
+            query.message.edit_text(
                 text=text,
                 parse_mode=ParseMode.MARKDOWN,
                 disable_web_page_preview=True,
@@ -389,7 +384,7 @@ def help_button(update, context):
 
         elif prev_match:
             curr_page = int(prev_match.group(1))
-            query.message.edit_image(
+            query.message.edit_text(
                 text=HELP_STRINGS,
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
@@ -399,7 +394,7 @@ def help_button(update, context):
 
         elif next_match:
             next_page = int(next_match.group(1))
-            query.message.edit_image(
+            query.message.edit_text(
                 text=HELP_STRINGS,
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
@@ -408,7 +403,7 @@ def help_button(update, context):
             )
 
         elif back_match:
-            query.message.edit_image(
+            query.message.edit_text(
                 text=HELP_STRINGS,
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
