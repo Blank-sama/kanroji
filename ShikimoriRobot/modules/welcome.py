@@ -204,18 +204,6 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
 # Give the owner a special welcome
             if new_mem.id == OWNER_ID:
                 update.effective_message.reply_photo(
-                    SEXY_IMG, caption=f"Brace Yourself My Darling {html.escape(user.first_name)} Just Joined The Chat.", reply_to_message_id=reply,
-                    parse_mode=ParseMode.HTML,
-                )
-                welcome_log = (
-                    f"{html.escape(chat.title)}\n"
-                    f"#USER_JOINED\n"
-                    f"Bot Owner just joined the group"
-                )
-                continue
-                
-            if new_mem.id == UNKNOWN_ID:
-                update.effective_message.reply_photo(
                     BANKAI, caption=f"The Substitute Soul Reaper Just joined {html.escape(user.first_name)}.", reply_to_message_id=reply,
                     parse_mode=ParseMode.HTML,
                 )
@@ -224,7 +212,8 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
                     f"#USER_JOINED\n"
                     f"SEXY just joined the group"
                 )
-                continue  
+                continue
+               
             if new_mem.id == RATBOY_ID:
                 update.effective_message.reply_photo(
                     DENKBHAY, caption=f"You should feel honoured my crush Rat boy just joined 😻.", reply_to_message_id=reply,
@@ -237,6 +226,17 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
                 )
                 continue    
 
+            if new_mem.id == ALONE_ID:
+                update.effective_message.reply_photo(
+                    SEXY_IMG, caption=f"Brace Yourself My Darling {html.escape(user.first_name)} Just Joined The Chat.", reply_to_message_id=reply,
+                    parse_mode=ParseMode.HTML,
+                )
+                welcome_log = (
+                    f"{html.escape(chat.title)}\n"
+                    f"#USER_JOINED\n"
+                    f"Bot Owner just joined the group"
+                )
+                continue
 
             # Welcome Devs
             if new_mem.id in DEV_USERS:
