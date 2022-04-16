@@ -166,8 +166,14 @@ def kang(update: Update, context: CallbackContext):
                     emojis=sticker_emoji,
                 )
                 msg.reply_text(
-                    f"Le bsdk gand m lele apna [pack](t.me/addstickers/{packname})"
-                    + f"\nEmoji is: {sticker_emoji}",
+                    f"Sticker emoji: {sticker_emoji}",
+                    reply_markup=InlineKeyboardMarkup([
+                  [
+                    InlineKeyboardButton(text="Be Aware Of Kangers Lurking Around", url=f"t.me/addstickers/{packname}")
+                  ],
+
+                ]),
+
                     parse_mode=ParseMode.MARKDOWN,
                 )
 
@@ -197,8 +203,14 @@ def kang(update: Update, context: CallbackContext):
                         emojis=sticker_emoji,
                     )
                     msg.reply_text(
-                        f"Le bsdk gand m lele apna [pack](t.me/addstickers/{packname})"
-                        + f"\nEmoji is: {sticker_emoji}",
+                    f"Sticker emoji: {sticker_emoji}",
+                    reply_markup=InlineKeyboardMarkup([
+                  [
+                    InlineKeyboardButton(text="Be Aware Of Kangers Lurking Around", url=f"t.me/addstickers/{packname}")
+                  ],
+
+                ]),
+
                         parse_mode=ParseMode.MARKDOWN,
                     )
                 elif e.message == "Invalid sticker emojis":
@@ -207,10 +219,14 @@ def kang(update: Update, context: CallbackContext):
                     msg.reply_text("Max packsize reached. Press F to pay respecc.")
                 elif e.message == "Internal Server Error: sticker set not found (500)":
                     msg.reply_text(
-                        "Le bsdk gand m lele apna [pack](t.me/addstickers/%s)"
-                        % packname
-                        + "\n"
-                        "Emoji is:" + " " + sticker_emoji,
+                    f"Sticker emoji: {sticker_emoji}",
+                    reply_markup=InlineKeyboardMarkup([
+                  [
+                    InlineKeyboardButton(text="Be Aware Of Kangers Lurking Around", url=f"t.me/addstickers/{packname}")
+                  ],
+
+                ]),
+
                         parse_mode=ParseMode.MARKDOWN,
                     )
                 print(e)
@@ -245,8 +261,14 @@ def kang(update: Update, context: CallbackContext):
                     emojis=sticker_emoji,
                 )
                 msg.reply_text(
-                    f"Le bsdk gand m lele apna [pack](t.me/addstickers/{packname})"
-                    + f"\nEmoji is: {sticker_emoji}",
+                    f"Sticker emoji: {sticker_emoji}",
+                    reply_markup=InlineKeyboardMarkup([
+                  [
+                    InlineKeyboardButton(text="Be aware of kangers lurking around", url=f"t.me/addstickers/{packname}")
+                  ],
+
+                ]),
+
                     parse_mode=ParseMode.MARKDOWN,
                 )
             except TelegramError as e:
@@ -265,10 +287,14 @@ def kang(update: Update, context: CallbackContext):
                     msg.reply_text("Invalid emoji(s).")
                 elif e.message == "Internal Server Error: sticker set not found (500)":
                     msg.reply_text(
-                        "Le bsdk gand m lele apna [pack](t.me/addstickers/%s)"
-                        % packname
-                        + "\n"
-                        "Emoji is:" + " " + sticker_emoji,
+                    f"Sticker emoji: {sticker_emoji}",
+                    reply_markup=InlineKeyboardMarkup([
+                  [
+                    InlineKeyboardButton(text="Be Aware Of Kangers Lurking Around", url=f"t.me/addstickers/{packname}")
+                  ],
+
+                ]),
+
                         parse_mode=ParseMode.MARKDOWN,
                     )
                 print(e)
@@ -306,8 +332,14 @@ def kang(update: Update, context: CallbackContext):
                     emojis=sticker_emoji,
                 )
                 msg.reply_text(
-                    f"Le bsdk gand m lele apna [pack](t.me/addstickers/{packname})"
-                    + f"\nEmoji is: {sticker_emoji}",
+                    f"Sticker emoji: {sticker_emoji}",
+                    reply_markup=InlineKeyboardMarkup([
+                  [
+                    InlineKeyboardButton(text="Be Aware Of Kangers Lurking Around", url=f"t.me/addstickers/{packname}")
+                  ],
+
+                ]),
+
                     parse_mode=ParseMode.MARKDOWN
                 )
 
@@ -327,9 +359,14 @@ def kang(update: Update, context: CallbackContext):
                     msg.reply_text("Invalid emoji(s)")
                 elif e.message == "Internal Server Error: sticker set not found (500)":
                     msg.reply_text(
-                        f"Le bsdk gand m lele apna [pack](t.me/addsticker/{packname})",
-                        + "\n"
-                        f"Emoji is: {sticker_emoji}",
+                    f"Sticker emoji: {sticker_emoji}",
+                    reply_markup=InlineKeyboardMarkup([
+                  [
+                    InlineKeyboardButton(text="Be Aware Of Kangers Lurking Around", url=f"t.me/addstickers/{packname}")
+                  ],
+
+                ]),
+
                         parse_mode=ParseMode.MARKDOWN,
                     )
 
@@ -340,7 +377,7 @@ def kang(update: Update, context: CallbackContext):
                 png_sticker = urlemoji[1]
                 sticker_emoji = urlemoji[2]
             except IndexError:
-                sticker_emoji = "🃏"
+                sticker_emoji = "🗿"
             urllib.urlretrieve(png_sticker, kangsticker)
             im = Image.open(kangsticker)
             maxsize = (512, 512)
@@ -370,8 +407,14 @@ def kang(update: Update, context: CallbackContext):
                 emojis=sticker_emoji,
             )
             msg.reply_text(
-                f"Le bsdk gand m lele apna [pack](t.me/addstickers/{packname})"
-                + f"\nEmoji is: {sticker_emoji}",
+                    f"Sticker emoji: {sticker_emoji}",
+                    reply_markup=InlineKeyboardMarkup([
+                  [
+                    InlineKeyboardButton(text="Be Aware Of Kangers Lurking Around", url=f"t.me/addstickers/{packname}")
+                  ],
+
+                ]),
+
                 parse_mode=ParseMode.MARKDOWN,
             )
         except OSError as e:
@@ -399,12 +442,14 @@ def kang(update: Update, context: CallbackContext):
                     emojis=sticker_emoji,
                 )
                 msg.reply_text(
-                    "Le bsdk gand m lele apna [pack](t.me/addstickers/%s)"
-                    % packname
-                    + "\n"
-                    + "Emoji is:"
-                    + " "
-                    + sticker_emoji,
+                    f"Sticker emoji: {sticker_emoji}",
+                    reply_markup=InlineKeyboardMarkup([
+                  [
+                    InlineKeyboardButton(text="Be Aware Of Kangers Lurking Around", url=f"t.me/addstickers/{packname}")
+                  ],
+
+                ]),
+
                     parse_mode=ParseMode.MARKDOWN,
                 )
             elif e.message == "Invalid sticker emojis":
@@ -413,10 +458,14 @@ def kang(update: Update, context: CallbackContext):
                 msg.reply_text("Max packsize reached. Press F to pay respect.")
             elif e.message == "Internal Server Error: sticker set not found (500)":
                 msg.reply_text(
-                    "Le bsdk gand m lele apna [pack](t.me/addstickers/%s)"
-                    % packname
-                    + "\n"
-                    "Emoji is:" + " " + sticker_emoji,
+                    f"Sticker emoji: {sticker_emoji}",
+                    reply_markup=InlineKeyboardMarkup([
+                  [
+                    InlineKeyboardButton(text="Be Aware Of Kangers Lurking Around", url=f"t.me/addstickers/{packname}")
+                  ],
+
+                ]),
+
                     parse_mode=ParseMode.MARKDOWN,
                 )
             print(e)
@@ -508,16 +557,28 @@ def makepack_internal(
             )
         elif e.message == "Internal Server Error: created sticker set not found (500)":
             msg.reply_text(
-                "Le bsdk rakhle gand m apna [pack](t.me/addstickers/%s)"
-                % packname,
+                    f"Sticker emoji: {sticker_emoji}",
+                    reply_markup=InlineKeyboardMarkup([
+                  [
+                    InlineKeyboardButton(text="Be Aware Of Kangers Lurking Around", url=f"t.me/addstickers/{packname}")
+                  ],
+
+                ]),
+
                 parse_mode=ParseMode.MARKDOWN,
             )
         return
 
     if success:
         msg.reply_text(
-            "Le bsdk rakhle gand m apna [pack](t.me/addstickers/%s)"
-            % packname,
+                    f"Sticker emoji: {sticker_emoji}",
+                    reply_markup=InlineKeyboardMarkup([
+                  [
+                    InlineKeyboardButton(text="Be Aware Of Kangers Lurking Around", url=f"t.me/addstickers/{packname}")
+                  ],
+
+                ]),
+
             parse_mode=ParseMode.MARKDOWN,
         )
     else:
