@@ -1,27 +1,26 @@
 import html
 import random
 import time
-
+from telegram import (
+    Message,
+    Chat,
+    User,
+    ParseMode,
+    Update,
+    InlineKeyboardMarkup,
+    InlineKeyboardButton,
+)
 import ShikimoriRobot.modules.fun_strings as fun_strings
 from ShikimoriRobot import dispatcher
-from telegram import Update
-from telegram.ext import CommandHandler, Filters
-from telegram.ext import CallbackContext
-from ShikimoriRobot.modules.disable import (
-    DisableAbleCommandHandler,
-    DisableAbleMessageHandler,
-)
-from ShikimoriRobot.modules.helper_funcs.chat_status import is_user_admin
+from ShikimoriRobot.modules.disable import DisableAbleCommandHandler
+from ShikimoriRobot.modules.helper_funcs.chat_status import dev_plus, is_user_admin
 from ShikimoriRobot.modules.helper_funcs.extraction import extract_user
-from ShikimoriRobot.modules.helper_funcs.alternate import typing_action
 from telegram import ChatPermissions, ParseMode, Update
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext
-from telegram.utils.helpers import escape_markdown
-
 
 GIF_ID = "CgACAgQAAx0CSVUvGgAC7KpfWxMrgGyQs-GUUJgt-TSO8cOIDgACaAgAAlZD0VHT3Zynpr5nGxsE"
-
+GIF_IDD = "CgACAgUAAxkBAAERsBZiYsG9X1OWzSLb1IFh0J2S6yE0fAAC4wQAAjE7EVSwEIPLpn7PDyQE"
 
 def runs(update: Update, context: CallbackContext):
     temp = random.choice(fun_strings.RUN_STRINGS)
@@ -43,6 +42,39 @@ def sanitize(update: Update, context: CallbackContext):
         else message.reply_animation
     )
     reply_animation(GIF_ID, caption=f"*Sanitizes {name}*")
+
+@dev_plus
+def verify(update: Update, context: CallbackContext):
+    message = update.effective_message
+    args = context.bot, context.args
+    user_id = extract_user(message, args)
+    name = (
+        message.reply_to_message.from_user.first_name
+        if message.reply_to_message
+        else message.from_user.first_name
+    )
+    reply_animation = (
+        message.reply_to_message.reply_animation
+        if message.reply_to_message
+        else message.reply_animation
+    )
+    reply_animation(GIF_IDD, caption=f"""<b>*Verified  ★{name}★*
+    *User ID ★{user_id}★*</b>
+
+    """)
+            
+buttons = [
+    [
+        InlineKeyboardButton(
+            text="★ AOGIRI UNION ★",url="t.me/AogiriUnion"),
+    ],
+    [
+        InlineKeyboardButton(
+            text="★ Anime Chat ★", url=f"https://t.me/Anime_Chat_Folks"),
+
+              
+    ]
+]
 
 
 def sanitize(update: Update, context: CallbackContext):
@@ -160,20 +192,6 @@ def pat(update: Update, context: CallbackContext):
 
 def roll(update: Update, context: CallbackContext):
     update.message.reply_text(random.choice(range(1, 7)))
-
-def sigma(update: Update, context: CallbackContext):
-    context.args
-    update.effective_message.reply_video(random.choice(fun_strings.SIGMA))
-
-@typing_action
-def abuse(update, context):
-    # reply to correct message
-    reply_text = (
-        update.effective_message.reply_to_message.reply_text
-        if update.effective_message.reply_to_message
-        else update.effective_message.reply_text
-    )
-    reply_text(random.choice(fun_strings.ABUSE_STRINGS))
 
 
 def shout(update: Update, context: CallbackContext):
@@ -334,65 +352,27 @@ def weebify(update: Update, context: CallbackContext):
     else:
         message.reply_text(string)
 
-@typing_action
-def goodnight(update, context):
-    message = update.effective_message
-    first_name = update.effective_user.first_name
-    reply = f"Good Night! {escape_markdown(first_name)}" 
-    message.reply_text(reply, parse_mode=ParseMode.MARKDOWN)
-
-
-@typing_action
-def goodmorning(update, context):
-    message = update.effective_message
-    first_name = update.effective_user.first_name
-    reply = f"Good Morning! {escape_markdown(first_name)}"
-    message.reply_text(reply, parse_mode=ParseMode.MARKDOWN)
 
 __help__ = """
-❂ /runs*:* reply a random string from an array of replies
-❂ /slap*:* slap a user, or get slapped if not a reply
-❂ /shrug*:* get shrug XD
-❂ /table*:* get flip/unflip :v
-❂ /decide*:* Randomly answers yes/no/maybe
-❂ /toss*:* Tosses A coin
-❂ /sigma*:* Get Sigma Meme video
-❂ /bluetext*:* check urself :V
-❂ /roll*:* Roll a dice
-❂ /rlg*:* Join ears,nose,mouth and create an emo ;-;
-❂ /shout <keyword>*:* write anything you want to give loud shout
-❂ /weebify <text>*:* returns a weebified text
-❂ /sanitize*:* always use this before /pat or any contact
-❂ /pat*:* pats a user, or get patted
-❂ /8ball*:* predicts using 8ball method
-
-- Animation
-❂ /love *:* Animation For Love ❤️
-❂ /hack *:* Animation For Hacking
-❂ /moon *:* Animation For Moon 🌕
-❂ /block *:* Animation For Block 🟦
-❂ /bombs *:* Animation For Bomb 💣
-❂ /kill *:* Animation For Kill 🔪
-
-- Shippering
-❂ /couples - get couples of today
-
-- Here is the help for the Styletext module:
-
-❂ /weebify <text>: weebify your text!
-❂ /bubble <text>: bubble your text!
-❂ /fbubble <text>: bubble-filled your text!
-❂ /square <text>: square your text!
-❂ /fsquare <text>: square-filled your text!
-❂ /blue <text>: bluify your text!
-❂ /latin <text>: latinify your text!
-❂ /lined <text>: lined your text!
+ • `/runs`*:* reply a random string from an array of replies
+ • `/slap`*:* slap a user, or get slapped if not a reply
+ • `/shrug`*:* get shrug XD
+ • `/table`*:* get flip/unflip :v
+ • `/decide`*:* Randomly answers yes/no/maybe
+ • `/toss`*:* Tosses A coin
+ • `/bluetext`*:* check urself :V
+ • `/roll`*:* Roll a dice
+ • `/rlg`*:* Join ears,nose,mouth and create an emo ;-;
+ • `/shout <keyword>`*:* write anything you want to give loud shout
+ • `/weebify <text>`*:* returns a weebified text
+ • `/sanitize`*:* always use this before /pat or any contact
+ • `/pat`*:* pats a user, or get patted
+ • `/8ball`*:* predicts using 8ball method
 """
 
+VERIFY_HANDLER = DisableAbleCommandHandler("verify", verify, run_async=True)
 SANITIZE_HANDLER = DisableAbleCommandHandler("sanitize", sanitize, run_async=True)
-ABUSE_HANDLER = DisableAbleCommandHandler("abuse", abuse, run_async=True)
 RUNS_HANDLER = DisableAbleCommandHandler("runs", runs, run_async=True)
-SIGMA_HANDLER = DisableAbleCommandHandler("sigma", sigma, run_async=True)
 SLAP_HANDLER = DisableAbleCommandHandler("slap", slap, run_async=True)
 PAT_HANDLER = DisableAbleCommandHandler("pat", pat, run_async=True)
 ROLL_HANDLER = DisableAbleCommandHandler("roll", roll, run_async=True)
@@ -405,39 +385,24 @@ EIGHTBALL_HANDLER = DisableAbleCommandHandler("8ball", eightball, run_async=True
 TABLE_HANDLER = DisableAbleCommandHandler("table", table, run_async=True)
 SHOUT_HANDLER = DisableAbleCommandHandler("shout", shout, run_async=True)
 WEEBIFY_HANDLER = DisableAbleCommandHandler("weebify", weebify, run_async=True)
-GDMORNING_HANDLER = DisableAbleMessageHandler(
-    Filters.regex(r"(?i)(good morning)"),
-    goodmorning,
-    friendly="goodmorning",
-    run_async=True,
-)
-GDNIGHT_HANDLER = DisableAbleMessageHandler(
-    Filters.regex(r"(?i)(good night)"),
-    goodnight,
-    friendly="goodnight",
-    run_async=True,
-)
 
 dispatcher.add_handler(WEEBIFY_HANDLER)
 dispatcher.add_handler(SHOUT_HANDLER)
 dispatcher.add_handler(SANITIZE_HANDLER)
 dispatcher.add_handler(RUNS_HANDLER)
 dispatcher.add_handler(SLAP_HANDLER)
-dispatcher.add_handler(ABUSE_HANDLER)
 dispatcher.add_handler(PAT_HANDLER)
-dispatcher.add_handler(SIGMA_HANDLER)
 dispatcher.add_handler(ROLL_HANDLER)
 dispatcher.add_handler(TOSS_HANDLER)
 dispatcher.add_handler(SHRUG_HANDLER)
 dispatcher.add_handler(BLUETEXT_HANDLER)
-dispatcher.add_handler(GDMORNING_HANDLER)
-dispatcher.add_handler(GDNIGHT_HANDLER)
 dispatcher.add_handler(RLG_HANDLER)
 dispatcher.add_handler(DECIDE_HANDLER)
 dispatcher.add_handler(EIGHTBALL_HANDLER)
 dispatcher.add_handler(TABLE_HANDLER)
+dispatcher.add_handler(VERIFY_HANDLER)
 
-__mod_name__ = "♡ғᴜɴ♡"
+__mod_name__ = "Fun"
 __command_list__ = [
     "runs",
     "slap",
@@ -460,17 +425,15 @@ __handlers__ = [
     PAT_HANDLER,
     ROLL_HANDLER,
     TOSS_HANDLER,
-    SIGMA_HANDLER,
     SHRUG_HANDLER,
     BLUETEXT_HANDLER,
     RLG_HANDLER,
     DECIDE_HANDLER,
-    GDMORNING_HANDLER,
-    ABUSE_HANDLER,
-    GDNIGHT_HANDLER,
     TABLE_HANDLER,
     SANITIZE_HANDLER,
     SHOUT_HANDLER,
     WEEBIFY_HANDLER,
     EIGHTBALL_HANDLER,
+    VERIFY_HANDLER,
+
 ]
