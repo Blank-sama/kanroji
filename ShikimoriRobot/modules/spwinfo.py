@@ -53,7 +53,6 @@ class AioHttp:
 
 @pbot.on_message(
     filters.command("spwinfo", f"spwinfo@{BOT_USERNAME}")
-    & ~filters.edited
     & ~filters.bot
 )
 async def lookup(client, message):
