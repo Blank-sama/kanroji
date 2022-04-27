@@ -14,7 +14,7 @@
 </p>
 
 # Shikimori On Telegram
-Me On Telegram [✨ Shikimori ✨](http://t.me/Shikimori_Robot)
+Me On Telegram [✨ Shikimori ✨](http://t.me/ShikimoriXProBot)
 
 ## How To Host
 The easiest way to deploy this Bot
