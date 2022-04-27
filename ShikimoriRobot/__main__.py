@@ -1,30 +1,10 @@
-"""
-MIT License
-Copyright (C) 2021 MdNoor786
-This file is part of @Shasa_RoBot (Telegram Bot)
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-"""
-
 import html
 import importlib
 import json
 import re
 import sys
 import time
+import random
 import traceback
 from sys import argv
 from typing import Optional
@@ -101,44 +81,51 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
-HELP_IMG = "https://telegra.ph/file/a9dadf7c0d308b0389ec5.jpg"
-
-SHIKIMORI_START = "https://telegra.ph/file/1f74d36860927fb812da7.mp4"
-
+HELP_IMG = "https://telegra.ph/file/2a3a55d541ef99ffb9a27.jpg"
+HELP_MSG = "Baka!! Click the button below to get help to know my abilities."
+START_MSG = "I'm awake already Baka!\n<b>Have being slaying Bosses since:</b> <code>{}</code>"
+START_IMG = "https://telegra.ph/file/b8a440f1dbbc0c17dabdf.jpg"
+    
 PM_START_TEXT = """
-────「 [{}](https://telegra.ph/file/6ff47820427e837dcd383.mp4) 」────
-ʜᴇʏ! {} ,
-ɪ ᴀᴍ 𝙎𝙝𝙞𝙠𝙞𝙢𝙤𝙧𝙞 ᴀɴ ᴀɴɪᴍᴇ ᴛʜᴇᴍᴇᴅ ᴀᴅᴠᴀɴᴄᴇ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ᴡɪᴛʜ ꜱᴇᴠᴇʀᴀʟ ᴀʙɪʟɪᴛɪᴇ𝘴.
-➖➖➖➖➖➖➖➖➖➖➖➖➖
-✓• Uᴘᴛɪᴍᴇ: {}
-✓• {} Uꜱᴇʀ, Aᴄʀᴏꜱꜱ {} Cʜᴀᴛꜱ.
-➖➖➖➖➖➖➖➖➖➖➖➖➖
-➛ᴛʀʏ ᴛʜᴇ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴs ʙᴇʟᴏᴡ ᴛᴏ ᴋɴᴏᴡ ᴍʏ ᴀʙɪʟɪᴛɪᴇs ××
+
+🌺══════「 [ᴍɪᴛsᴜʀɪ ᴋᴀɴʀᴏᴊɪ](https://kimetsu-no-yaiba.fandom.com/wiki/Mitsuri_Kanroji)」══════🌺
+*ᴋᴏɴɪɴᴄʜɪᴡᴀ! {},*
+*ᴡᴀᴛᴀsʜɪ ᴏᴍᴀᴇᴡᴀ ᴋᴀɴʀᴏᴊɪ ᴍɪᴛsᴜʀɪ ɪ ᴀᴍ ʟᴏᴠᴇ ʜᴀsʜɪʀᴀ 
+ɪ ᴄᴀɴ sʟᴀʏ ᴅᴇᴍᴏɴs ᴡɪᴛʜ ʏᴏᴜʀ ɢʀᴏᴜᴘs ᴍᴀᴋᴇ sᴜʀᴇ ᴛᴏ ɢɪᴠᴇ ᴍᴇ ᴇɴᴏᴜɢʜ ʀɪɢʜᴛs ᴛᴏ sʜᴏᴡ ʏᴏᴜ ᴍʏ ᴅᴇᴍᴏɴ sʟᴀʏᴇʀ ᴍᴀʀᴋ*
+╔═══════•❃•❀•❃════════╗
+✓• *ᴜᴘᴛɪᴍᴇ:* {}
+╠════════════════════╣
+✓• {} *ᴜꜱᴇʀ, ᴀᴄʀᴏꜱꜱ* {} *ᴄʜᴀᴛꜱ.*
+╚═══════•❃•❀•❃════════╝
+
+➛ᴛʀʏ ᴛʜᴇ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴs ʙᴇʟᴏᴡ ᴛᴏ ᴋɴᴏᴡ ᴍʏ ᴅᴇᴍᴏɴ ᴀʙɪʟɪᴛɪᴇs ××
+
 """
 
+GROUP_START_TEXT = """
+Baka!! I'm awake already!
+Have been slaying Demons since: {}
+"""
 
 buttons = [
     [
         InlineKeyboardButton(
-        text="➕️ ᴀᴅᴅ sʜɪᴋɪᴍᴏʀɪ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕️", url=f"t.me/ShikimoriXprobot?startgroup=new"),
+            text="➕️ Add Mitsuri Kanroji In Your Group ➕️",url="t.me/mitsurixbot?startgroup=true"),
     ],
     [
-        InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", url="https://t.me/NobaraSupport"),
-        InlineKeyboardButton(text="ᴏᴡɴᴇʀ", url="https://t.me/Monarch_Of_Shadowss"),
+        InlineKeyboardButton(
+            text="Support", url=f"https://t.me/mitsuriXsupport"),                    
+        InlineKeyboardButton(
+            text="Help", callback_data="help_back"),
     ],
     [
-        InlineKeyboardButton(text="ɪɴғᴏ", callback_data="shasa_basichelp"),
-        InlineKeyboardButton(text="ᴜᴘᴅᴀᴛᴇs", url="https://t.me/Shikimori_Updates"),
-    ],
-    [
-        InlineKeyboardButton(text="ʜᴇʟᴘ𝘴 & ᴄᴏᴍᴀɴᴅᴀɴ𝘴", url=f"https://t.me/ShikimoriXprobot?start=help"),
+        InlineKeyboardButton(text="Owner-Sama", url=f"https://t.me/MitsuriXOwner"),
     ],
 ]
-
-
+                    
 HELP_STRINGS = """
- Hey there! Myself [Shikimori](https://telegra.ph/file/ff6ffadced1cb65db0350.jpg).
-I'm a Queen For Fun and help admins manage their groups ! Have a look at the following for an idea of some of the things I can help you with.
+Hey there! Myself [Mitsuri](https://telegra.ph/file/2a3a55d541ef99ffb9a27.jpg).
+I am Love Hashira i can slay demons i have my Demon Slayer mark which can Slay Powerful Demons eith ease look at here:
 *Main* commands available:
  ➛ /help: PM's you this message.
  ➛ /help <module name>: PM's you info about that module.
@@ -146,8 +133,15 @@ I'm a Queen For Fun and help admins manage their groups ! Have a look at the fol
  ➛ /donate: information on how to donate!
  ➛ /settings: 
    ❂ in PM: will send you your settings for all supported modules.
-   ❂ in a group: will redirect you to pm, with all that chat's settings.\n• *ʀᴇᴀᴄʜ ᴏᴜᴛ ғᴏʀ sᴜᴘᴘᴏʀᴛ:* [sᴜᴘᴘᴏʀᴛ](https://t.me/NobaraSupport)
+   ❂ in a group: will redirect you to pm, with all that chat's settings.\n• *ʀᴇᴀᴄʜ ᴏᴜᴛ ғᴏʀ sᴜᴘᴘᴏʀᴛ:* [sᴜᴘᴘᴏʀᴛ](https://t.me/RaidenXSupport)
 """
+
+GROUP_START_IMG = (
+      "https://telegra.ph/file/b8a440f1dbbc0c17dabdf.jpg"
+      "https://telegra.ph/file/541980d45561114fabc95.jpg"
+      "https://telegra.ph/file/2a3a55d541ef99ffb9a27.jpg"
+      "https://telegra.ph/file/5f1f7fa3cce1a39a3c53e.jpg"
+)
 
 DONATE_STRING = """❂ I'm Free for Everyone ❂"""
 
@@ -196,8 +190,6 @@ for module_name in ALL_MODULES:
 
     if hasattr(imported_module, "__user_settings__"):
         USER_SETTINGS[imported_module.__mod_name__.lower()] = imported_module
-
-GROUP_START_IMG ="https://telegra.ph/file/89f70fbae029b7c8b94dd.mp4"
 
 
 # do not async
@@ -258,39 +250,32 @@ def start(update: Update, context: CallbackContext):
 
         else:
             first_name = update.effective_user.first_name
-            update.effective_message.reply_text(
-                PM_START_TEXT.format(
+            update.effective_message.reply_photo(
+                random.choice(GROUP_START_IMG), caption=PM_START_TEXT.format(
                     escape_markdown(context.bot.first_name),
-                    escape_markdown(first_name),
-                    escape_markdown(uptime),
-                    sql.num_users(),
-                    sql.num_chats(),
-                ),
+                    escape_markdown(first_name)),                        
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
             )
     else:
-        first_name = update.effective_user.first_name
-        update.effective_message.reply_video(
-           SHIKIMORI_START, caption= "<b>Hello {}, I am Shikimori. \nSheesh! Itna start krke kaha jayega\nI am already alive bhen ke lode \nHaven't sleep since</b>: <code>{}</code>".format(
-                escape_markdown(first_name),
-                uptime
+                update.effective_message.reply_photo(
+            START_IMG, caption="Kon'nichiwa, Mitsuri Kanroji Here To Help!\n<b>Have been slaying Demons since:</b> <code>{}</code>".format(
+                uptime,
             ),
             parse_mode=ParseMode.HTML,
-            reply_markup=InlineKeyboardMarkup(
+             reply_markup=InlineKeyboardMarkup(
                 [
-                    [
-                         InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", url="https://t.me/NobaraSupport"),
-                         InlineKeyboardButton(text="ʜᴇʟᴘ", url=f"https://t.me/ShikimorixProbot?start=help"),
-                    ],
-                    [
-                         InlineKeyboardButton(
-                          text="☆ᴅᴀʀʟɪɴɢ☆", url="https://t.me/Monarch_Of_Shadowss"),  
-                    ]
+                  [
+                  InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url="https://telegram.dog/MitsuriXsupport")
+                  ],
+                  [
+                  InlineKeyboardButton(text="Uᴘᴅᴀᴛᴇs", url="https://telegram.dog/MitsuriXUpdates")
+                  ]
                 ]
             ),
         )
+
 
 
 def error_handler(update, context):
