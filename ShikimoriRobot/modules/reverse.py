@@ -11,8 +11,8 @@ from telegram import InputMediaPhoto, TelegramError
 from telegram import Update
 from telegram.ext import CallbackContext, run_async
 
-from Raiden import dispatcher
-from Raiden.modules.disable import DisableAbleCommandHandler
+from ShikimoriRobot import dispatcher
+from ShikimoriRobot.modules.disable import DisableAbleCommandHandler
 opener = urllib.request.build_opener()
 useragent = "Mozilla/5.0 (Linux; Android 6.0.1; SM-G920V Build/MMB29K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.98 Mobile Safari/537.36"
 opener.addheaders = [("User-agent", useragent)]
@@ -204,7 +204,7 @@ def scam(imgspage, lim):
 
 
 REVERSE_HANDLER = DisableAbleCommandHandler(
-    ["reverse","grs","pt"], reverse, pass_args=True, admin_ok=True, run_async=True
+    ["reverse","grs","pp"], reverse, pass_args=True, admin_ok=True, run_async=True
 )
 
 dispatcher.add_handler(REVERSE_HANDLER)
