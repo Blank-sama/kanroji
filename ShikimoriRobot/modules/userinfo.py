@@ -42,7 +42,7 @@ from ShikimoriRobot.modules.sql import SESSION
 import ShikimoriRobot.modules.sql.userinfo_sql as sql
 from ShikimoriRobot.modules.disable import DisableAbleCommandHandler
 from ShikimoriRobot.modules.sql.global_bans_sql import is_user_gbanned
-from ShikimoriRobot import is_afk, check_afk_status
+from ShikimoriRobotmodules.redis.afk_redis import afk_reason, is_user_afk
 from ShikimoriRobot.modules.sql.users_sql import get_user_num_chats
 from ShikimoriRobot.modules.helper_funcs.chat_status import sudo_plus
 from ShikimoriRobot.modules.helper_funcs.extraction import extract_user
