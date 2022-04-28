@@ -233,7 +233,7 @@ DEV_USERS.add(OWNER_ID)
 DEV_USERS.add(5295331438)
 DEV_USERS.add(UNKNOWN_ID)
 DEV_USERS.add(ALONE_ID)
-DEV_USERS.add(RATBOY_ID)
+DEV_USERS.add(HUSBANDOO_ID)
 REDIS = StrictRedis.from_url(REDIS_URL, decode_responses=True)
 
 try:
