@@ -9,16 +9,19 @@ from io import BytesIO
 from datetime import datetime
 import random
 from telethon import events, Button, custom, version
-from ShikimoriRobot.events import register
-from ShikimoriRobot import telethn as borg, OWNER_ID
-from ShikimoriRobot import StartTime, dispatcher
+from Raiden.events import register
+from Raiden import telethn as borg, OWNER_ID, OWNER_NAME
+from Raiden import StartTime, dispatcher
 from telethon.tl.types import ChannelParticipantsAdmins
 from pyrogram import __version__ as pyro
 
 
 edit_time = 5
 """ =======================CONSTANTS====================== """
-file1 = "https://telegra.ph//file/ad7c7ccdd4db3795f0d50.jpg"
+file1 = "https://telegra.ph/file/5f1f7fa3cce1a39a3c53e.jpg"
+file2 = "https://telegra.ph/file/2a3a55d541ef99ffb9a27.jpg"
+file3 = "https://telegra.ph/file/541980d45561114fabc95.jpg"
+file4 = "https://telegra.ph/file/b8a440f1dbbc0c17dabdf.jpg"
 """ =======================CONSTANTS====================== """
 
 START_TIME = datetime.utcnow()
@@ -48,30 +51,39 @@ async def hmm(yes):
     current_time = datetime.utcnow()
     uptime_sec = (current_time - START_TIME).total_seconds()
     uptime = await _human_time_duration(int(uptime_sec))
-    Shu = f"♡ **Hey [{yes.sender.first_name}](tg://user?id={yes.sender.id}), I'm 𝙎𝙝𝙞𝙠𝙞𝙢𝙤𝙧𝙞 - 𝙎𝙖𝙣**\n"
-    Shu += f"♡ **My Uptime** ➟ `{uptime}`\n"
-    Shu += f"♡ **Telethon Version** ➟ `{version.__version__}`\n"
-    Shu += f"♡ **Python Telegram Bot Version** ➟ `{telegram.__version__}`\n"
-    Shu += f"♡ **Pyrogram Version** ➟ `{pyro}`\n"
-    Shu += f"♡ **My Darling** ➟ [Jin - Woo](https://t.me/Monarch_Of_Shadowss)"
-    BUTTON = [[Button.url("ʜᴇʟᴘ", f"https://t.me/ShikimoriXprobot?start=help"),Button.url("sᴜᴘᴘᴏʀᴛ", f"https://t.me/NobaraSupport"),],[Button.url("♡ᴅᴀʀʟɪɴɢ♡", f"https://t.me/Monarch_Of_Shadowss")]]
-    on = await borg.send_file(yes.chat_id, file=file1,caption=Shu, buttons=BUTTON)
+    Miku = f"♡ **Hey [{yes.sender.first_name}](tg://user?id={yes.sender.id}), I'm ᴍɪᴛsᴜʀɪ Kanroji ♡**\n\n"
+    Miku += f"♡ **My Uptime** ~♪ `{uptime}`\n\n"
+    Miku += f"♡ **Telethon Version** ~♪ `{version.__version__}`\n\n"
+    Miku += f"♡ **Python Telegram Bot Version** ~♪ `{telegram.__version__}`\n\n"
+    Miku += f"♡ **Pyrogram Version** ~♪ `{pyro}`\n\n"
+    Miku += f"♡ **My Master** ~♪ [{OWNER_NAME}](tg://user?id={OWNER_ID})\n\n"
+    Miku += f"Thanks For Adding Me In {yes.chat.title}"
+    BUTTON = [[Button.url("Support Chat", "https://t.me/MitsuriXSupport"), Button.url("Updates Channel", "https://t.me/MitsuriXupdates")]]
+    on = await borg.send_file(yes.chat_id, file=file2,caption=Miku, buttons=BUTTON)
 
     await asyncio.sleep(edit_time)
-    ok = await borg.edit_message(yes.chat_id, on, file=file1, buttons=BUTTON) 
+    ok = await borg.edit_message(yes.chat_id, on, file=file3, buttons=BUTTON) 
 
     await asyncio.sleep(edit_time)
-    ok2 = await borg.edit_message(yes.chat_id, ok, file=file1, buttons=BUTTON)
+    ok2 = await borg.edit_message(yes.chat_id, ok, file=file4, buttons=BUTTON)
 
     await asyncio.sleep(edit_time)
     ok3 = await borg.edit_message(yes.chat_id, ok2, file=file1, buttons=BUTTON)
     
     await asyncio.sleep(edit_time)
-    ok4 = await borg.edit_message(yes.chat_id, ok3, file=file1, buttons=BUTTON)
+    ok4 = await borg.edit_message(yes.chat_id, ok3, file=file2, buttons=BUTTON)
     
     await asyncio.sleep(edit_time)
     ok5 = await borg.edit_message(yes.chat_id, ok4, file=file1, buttons=BUTTON)
     
     await asyncio.sleep(edit_time)
-    ok6 = await borg.edit_message(yes.chat_id, ok5, file=file1, buttons=BUTTON)
+    ok6 = await borg.edit_message(yes.chat_id, ok5, file=file3, buttons=BUTTON)
     
+    await asyncio.sleep(edit_time)
+    ok7 = await borg.edit_message(yes.chat_id, ok6, file=file4, buttons=BUTTON)
+
+@register(pattern=("/repo"))
+async def repo(event):
+    Miku = f"**Hey [{event.sender.first_name}](tg://user?id={event.sender.id}), Click The Button Below To Get My Repo**\n\n"
+    BUTTON = [[Button.url("[► Support ◄]", "https://t.me/MitsuriXupdates"), Button.url("[► Repo ◄]", "https://github.com/Nchuuya")]]
+    await borg.send_file(event.chat_id, file="https://telegra.ph/file/541980d45561114fabc95.jpg", caption=Miku, buttons=BUTTON)
