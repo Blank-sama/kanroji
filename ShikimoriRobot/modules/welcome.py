@@ -47,9 +47,9 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import escape_markdown, mention_html, mention_markdown
 
-SEXY_IMG = "https://telegra.ph//file/317dd2cf62605a483a4da.jpg"
-BANKAI = "https://telegra.ph/file/d6931e4bdffcc78b329db.jpg"
-DENKBHAY = "https://telegra.ph//file/7020409c8aab763a46210.jpg"
+SEXY_IMG = "https://telegra.ph/file/5f1f7fa3cce1a39a3c53e.jpg"
+BANKAI = "https://telegra.ph/file/541980d45561114fabc95.jpg"
+HUSBANDOO = "https://telegra.ph/file/b8a440f1dbbc0c17dabdf.jpg"
 
 VALID_WELCOME_FORMATTERS = [
     "first",
@@ -204,7 +204,7 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
 # Give the owner a special welcome
             if new_mem.id == OWNER_ID:
                 update.effective_message.reply_photo(
-                    BANKAI, caption=f"The Substitute Soul Reaper Just joined {html.escape(user.first_name)}.", reply_to_message_id=reply,
+                    BANKAI, caption=f"The Lord Just Joined Keep Attention minaa {html.escape(user.first_name)}.", reply_to_message_id=reply,
                     parse_mode=ParseMode.HTML,
                 )
                 welcome_log = (
@@ -214,19 +214,19 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
                 )
                 continue
                
-            if new_mem.id == RATBOY_ID:
+            if new_mem.id == HUSBANDOO_ID:
                 update.effective_message.reply_photo(
-                    DENKBHAY, caption=f"You should feel honoured my crush Rat boy just joined 😻.", reply_to_message_id=reply,
+                    HUSBANDOO, caption=f"Lel The Co-Owner of Bot Just Joined.", reply_to_message_id=reply,
                     parse_mode=ParseMode.HTML,
                 )
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
                     f"#USER_JOINED\n"
-                    f"DENK just joined the group"
+                    f"Hubandoo just joined the group"
                 )
                 continue    
 
-            if new_mem.id == ALONE_ID:
+            if new_mem.id == ZEROHISOKA_ID:
                 update.effective_message.reply_photo(
                     SEXY_IMG, caption=f"Brace Yourself My Darling {html.escape(user.first_name)} Just Joined The Chat.", reply_to_message_id=reply,
                     parse_mode=ParseMode.HTML,
