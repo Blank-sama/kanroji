@@ -15,8 +15,8 @@ from telethon import events
 from telethon.tl.functions.channels import GetFullChannelRequest
 from telethon.tl.types import ChannelParticipantsAdmins
 
-import YamatoRobot.modules.sql.userinfo_sql as sql
-from YamatoRobot import (
+import ShikimoriRobot.modules.sql.userinfo_sql as sql
+from ShikimoriRobot import (
     DEV_USERS,
     FAFNIRS,
     INFOPIC,
@@ -30,13 +30,14 @@ from YamatoRobot import (
     sw,
     telethn,
 )
-from YamatoRobot.__main__ import STATS, TOKEN, USER_INFO
-from YamatoRobot.modules.disable import DisableAbleCommandHandler
-from YamatoRobot.modules.helper_funcs.chat_status import sudo_plus
-from YamatoRobot.modules.helper_funcs.extraction import extract_user
-from YamatoRobot.modules.redis.afk_redis import afk_reason, is_user_afk
-from YamatoRobot.modules.sql.global_bans_sql import is_user_gbanned
-from YamatoRobot.modules.sql.users_sql import get_user_num_chats
+from ShikimoriRobot.__main__ import STATS, TOKEN, USER_INFO
+from ShikimoriRobot.modules.disable import DisableAbleCommandHandler
+from ShikimoriRobot.modules.helper_funcs.chat_status import sudo_plus
+from ShikimoriRobot.modules.helper_funcs.extraction import extract_user
+from ShikimoriRobot.modules.redis.afk_redis import afk_reason, is_user_afk
+from ShikimoriRobot.modules.sql.global_bans_sql import is_user_gbanned
+from ShikimoriRobot.modules.sql.users_sql import get_user_num_chats
+MITSURI_IMG = "https://telegra.ph/file/5f1f7fa3cce1a39a3c53e.jpg"
 
 
 def no_by_per(totalhp, percentage):
@@ -299,13 +300,13 @@ def info(update: Update, context: CallbackContext):
     disaster_level_present = False
 
     if user.id == OWNER_ID:
-        text += "\n\nThe Disaster level of this person is 'My Husband'."
+        text += "\n\nThis person is 'My Lord'."
         disaster_level_present = True
     elif user.id in DEV_USERS:
-        text += "\n\nThis user is My 'Sex Partner'."
+        text += "\n\nThis user is  'Hashira'."
         disaster_level_present = True
     elif user.id in REDLIONS:
-        text += "\n\nThis User is My 'Boyfriend'."
+        text += "\n\nThis User is 'Kinoe'."
         disaster_level_present = True
     elif user.id in SPRYZONS:
         text += "\n\nThis User is My ' Lover'."
@@ -316,12 +317,12 @@ def info(update: Update, context: CallbackContext):
     elif user.id in LUINORS:
         text += "\n\nThe Disaster level of this person is 'Friend'."
         disaster_level_present = True
-    elif user.id == 5073957473:
-        text += "\n\nThis user is my Hubby."
+    elif user.id == HUSBANDOO:
+        text += "\n\n Co-Owner Of Mitsuri."
         disaster_level_present = True
 
     if disaster_level_present:
-        text += ' [<a href="https://t.me/boa_updates">?</a>]'.format(
+        text += ' [<a href="https://t.me/MitsuriXupdates">?</a>]'.format(
             bot.username,
         )
 
@@ -424,31 +425,40 @@ def set_about_me(update: Update, context: CallbackContext):
 def stats(update, context):
     uptime = datetime.datetime.fromtimestamp(boot_time()).strftime("%Y-%m-%d %H:%M:%S")
     botuptime = get_readable_time((time.time() - StartTime))
-    status = "*╒═══「 Yamato statistics 」*\n\n"
-    status += "*✨ System Start time:* " + str(uptime) + "\n"
+    status = "*╒═══「 Mitsuri statistics 」*\n\n"
+    status += "*♡ System Start time:* " + str(uptime) + "\n"
     uname = platform.uname()
-    status += "*✨ System:* " + str(uname.system) + "\n"
-    status += "*✨ Node name:* " + escape_markdown(str(uname.node)) + "\n"
-    status += "*✨ Release:* " + escape_markdown(str(uname.release)) + "\n"
-    status += "*✨ Machine:* " + escape_markdown(str(uname.machine)) + "\n"
+    status += "*♡ System:* " + str(uname.system) + "\n"
+    status += "*♡ Node name:* " + escape_markdown(str(uname.node)) + "\n"
+    status += "*♡ Release:* " + escape_markdown(str(uname.release)) + "\n"
+    status += "*♡ Machine:* " + escape_markdown(str(uname.machine)) + "\n"
     mem = virtual_memory()
     cpu = cpu_percent()
     disk = disk_usage("/")
-    status += "*✨ CPU:* " + str(cpu) + " %\n"
-    status += "*✨ RAM:* " + str(mem[2]) + " %\n"
-    status += "*✨ Storage:* " + str(disk[3]) + " %\n\n"
-    status += "*✨ Python Version:* " + python_version() + "\n"
-    status += "*✨ python-Telegram-Bot:* " + str(ptbver) + "\n"
-    status += "*✨ Uptime:* " + str(botuptime) + "\n"
+    status += "*♡ CPU:* " + str(cpu) + " %\n"
+    status += "*♡ RAM:* " + str(mem[2]) + " %\n"
+    status += "*♡ Storage:* " + str(disk[3]) + " %\n\n"
+    status += "*♡ Python Version:* " + python_version() + "\n"
+    status += "*♡ python-Telegram-Bot:* " + str(ptbver) + "\n"
+    status += "*♡ Uptime:* " + str(botuptime) + "\n"
     try:
-        update.effective_message.reply_text(
+        update.effective_message.reply_photo(
+            MITSURI_IMG,
             status
             + "\n*Bot statistics*:\n"
             + "\n".join([mod.__stats__() for mod in STATS])
-            + f"\n\n [✦ᴜᴘᴅᴀᴛᴇs](https://t.me/boa_updates) | [✦sᴜᴘᴘᴏʀᴛ](https://t.me/BoaHancock_Support)\n\n"
-            + "╘══「 by [ᴋᴀᴢᴜᴛᴏʀᴀ ʜᴀɴᴇᴍɪʏᴀ](https://t.me/zerohisoka) 」\n",
+            + f"\n\n [✦ᴜᴘᴅᴀᴛᴇs](https://t.me/MitsuriXupdates) | [✦sᴜᴘᴘᴏʀᴛ](https://t.me/MitsuriXSupport)\n\n"
+            + "╘══「 by [ᴋᴀᴢᴜᴛᴏʀᴀ X Husbandoo](https://t.me/MitsuriXOwner) 」\n",
             parse_mode=ParseMode.MARKDOWN,
-            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                  [                  
+                       InlineKeyboardButton(
+                             text="Kazu X Husbandoo ♡",
+                             url="https://t.me/MitsuriXOwner")
+                     ] 
+                ]
+            ),
         )
     except BaseException:
         update.effective_message.reply_text(
@@ -458,9 +468,9 @@ def stats(update, context):
                         "\n*Bot statistics*:\n"
                         + "\n".join(mod.__stats__() for mod in STATS)
                     )
-                    + f"\n\n [✦ᴜᴘᴅᴀᴛᴇs](https://t.me/boa_updates) | [✦sᴜᴘᴘᴏʀᴛ](https://t.me/{SUPPORT_CHAT})\n\n"
+                    + f"\n\n [✦ᴜᴘᴅᴀᴛᴇs](https://t.me/MitsuriXupdates) | [✦sᴜᴘᴘᴏʀᴛ](https://t.me/{SUPPORT_CHAT})\n\n"
                 )
-                + "╘══「 by [ᴋᴀᴢᴜᴛᴏʀᴀ ʜᴀɴᴇᴍɪʏᴀ](https://t.me/zerohisoka) 」\n"
+                + "╘══「 by [ᴋᴀᴢᴜᴛᴏʀᴀ X Husbandoo](https://t.me/MitsuriXOwner) 」\n"
             ),
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
