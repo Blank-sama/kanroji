@@ -24,7 +24,7 @@ from telegram.ext.dispatcher import run_async
 from telegram.error import BadRequest
 from telegram.utils.helpers import escape_markdown, mention_html
     
-from Raiden import (
+from ShikimoriRobot import (
     DEV_USERS,
     OWNER_ID,
     DRAGONS,
@@ -37,16 +37,16 @@ from Raiden import (
     StartTime,
     SUPPORT_CHAT
 )
-from Raiden.__main__ import STATS, TOKEN, USER_INFO
-from Raiden.modules.sql import SESSION
-import Raiden.modules.sql.userinfo_sql as sql
-from Raiden.modules.disable import DisableAbleCommandHandler
-from Raiden.modules.sql.global_bans_sql import is_user_gbanned
-from Raiden.modules.sql.afk_sql import is_afk, check_afk_status
-from Raiden.modules.sql.users_sql import get_user_num_chats
-from Raiden.modules.helper_funcs.chat_status import sudo_plus
-from Raiden.modules.helper_funcs.extraction import extract_user
-from Raiden import telethn
+from ShikimoriRobot.__main__ import STATS, TOKEN, USER_INFO
+from ShikimoriRobot.modules.sql import SESSION
+import ShikimoriRobot.modules.sql.userinfo_sql as sql
+from ShikimoriRobot.modules.disable import DisableAbleCommandHandler
+from ShikimoriRobot.modules.sql.global_bans_sql import is_user_gbanned
+from ShikimoriRobot import is_afk, check_afk_status
+from ShikimoriRobot.modules.sql.users_sql import get_user_num_chats
+from ShikimoriRobot.modules.helper_funcs.chat_status import sudo_plus
+from ShikimoriRobot.modules.helper_funcs.extraction import extract_user
+from ShikimoriRobot import telethn
 
 MIKU_IMG = "https://telegra.ph/file/b8a440f1dbbc0c17dabdf.jpg"
 
