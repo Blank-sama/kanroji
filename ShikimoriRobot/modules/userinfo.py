@@ -27,10 +27,10 @@ from telegram.utils.helpers import escape_markdown, mention_html
 from ShikimoriRobot import (
     DEV_USERS,
     OWNER_ID,
-    DRAGONS,
-    DEMONS,
-    TIGERS,
-    WOLVES,
+    REDLIONS,
+    FAFNIRS,
+    LUINORS,
+    SPRYZONS,
     INFOPIC,
     dispatcher,
     sw,
@@ -321,20 +321,20 @@ def info(update: Update, context: CallbackContext):
     elif user.id in DEV_USERS:
         text += "\n\nThis user is 'Hashira'."
         disaster_level_present = True
-    elif user.id in DRAGONS:
+    elif user.id in REDLIONS:
         text += "\n\n The Rank of This person is 'Kinoe'."
         disaster_level_present = True
-    elif user.id in DEMONS:
+    elif user.id in SPRYZONS:
         text += "\n\nThe Disaster level of this person is 'Demon'."
         disaster_level_present = True
-    elif user.id in TIGERS:
+    elif user.id in FAFNIRS:
         text += "\n\nThe Disaster level of this person is 'Tiger'."
         disaster_level_present = True
-    elif user.id in WOLVES:
+    elif user.id in LUINORS:
         text += "\n\nThe Disaster level of this person is 'Wolf'."
         disaster_level_present = True
-    elif user.id == 5291415314:
-         text += "\n\nCo-Owner Of A Bot."
+    elif user.id == HUSBANDOO_ID:
+         text += "\n\nCo-Owner Of A Mitsuri."
          disaster_level_present = True
 
 
