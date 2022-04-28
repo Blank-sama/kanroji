@@ -9,9 +9,9 @@ from io import BytesIO
 from datetime import datetime
 import random
 from telethon import events, Button, custom, version
-from Raiden.events import register
-from Raiden import telethn as borg, OWNER_ID, OWNER_NAME
-from Raiden import StartTime, dispatcher
+from ShikimoriRobot.events import register
+from ShikimoriRobot import telethn as borg, OWNER_ID, OWNER_NAME
+from ShikimoriRobot import StartTime, dispatcher
 from telethon.tl.types import ChannelParticipantsAdmins
 from pyrogram import __version__ as pyro
 
