@@ -31,7 +31,7 @@
       "TOKEN": {
          "description": "Your bot token. Get one from @BotFather duh",
          "required": true,
-         "value": "5191978202:AAG9XO83aYutZp4tHqIy6clVsTBkLFJdLR4"
+         "value": "5105417859:AAE_Gr41S_N4AJaH7Nujq_rJqytm5YWa99w"
       },
       "API_ID": {
          "description": "Get API_ID from my.telegram.org, used for telethon based modules.",
@@ -57,7 +57,7 @@
       "STRING_SESSION": {
          "description": "Fill with telethon string session.",
          "required": true,
-         "value": "1BVtsOGgBuz7jlI1CG5dTIPD-b5cAjXLkL4iOxID4AL6ZtejBd3AoxWfed13D_SAM8KGy2_KrAFK3GQwTuGGPn9hAwRzvqkWmQW9zpJmJYK4BSA7yq0o_LcPc88nwVsQcaxEfF1qRa2db9aRGNTwVDL1D1fcmfirt5LbofgjNMcCmRKuseUXIqgKWCufQ9jhsyQ2YbbbnpZqmF_cIThbBSTnmN15F_Ok6HbLx8JA94JMiXKTpYuzZ5zfKvLWl7MeEkoHbdq9lpOjfGZLXNYT-OtA_lfDxmfG9kswmca5Krx2uJXAe6xeN_xdvFPOKBWCcORXtStEyQbUsx-gorIgw1kjQDAXWlkY=" 
+         "value": "1BVtsOH4Bu2ZAb0PAe1-HLcJTI4JcRBRQTMKNqQScpHDkyKtT6IUNfwyOcTX2E1TUpu1xCYeojTybavy5h7IP3-uoEoaJw7g44LGJ4cCsAJyNPqTag6ksflwUTgCL8_AA7GZkjwSpwqXI_Sdn0ghmraMwq9Fi2Tz-DH8iIErxllpYtBQchymW5_D61VzG39S6w4zeY8taHFdA6KxZFzDkJJfhfyaipDQ5_J-2dBy7gVOiNfvERq4YWTciJj-btEUXkS81j-VgUfy9J47qWcIcLEj5UYTATSPqWwIQn90U0Is9hw9AVpdOVu8Rk5-QNUpU9VlXT3F3ROpi-DugSfXMG-ENS9Q98ew=" 
       },
       "HEROKU_API_KEY": {
         "description": "Your Heroku API key, get it from 'https://dashboard.heroku.com/account'",
@@ -69,22 +69,22 @@
       },
       "BOT_USERNAME": {
          "description": "username of your bot without the @",
-         "value": "akiratodobot"
+         "value": "Mitsurixbot"
       },
 
       "BOT_ID": {
          "description": "to get your bot_id using other bot or userbot",
-         "value": "5191978202"
+         "value": "5105417859"
       },
 
       "OWNER_USERNAME": {
          "description": "Your username without the @",
-         "value": "zero_hisoka"
+         "value": "zer0hisoka"
       },
       "SUPPORT_CHAT": {
          "description": "Your Telegram support group chat username where your users will go and bother you with shit But be like: MyGroupChatUsernameBlah. If this ever points to masha support than consider you made an enemy.",
          "required": true,
-         "value": "akiratodosupport"
+         "value": "MitsuriXSupport"
       },
       "MONGO_DB_URI": {
          "description": "Required for database connections.",
@@ -145,22 +145,22 @@
          "description": "Enforce gbans across new groups as well as old groups. When a gbanned user talks, he will be banned.",
          "value": "True"
       },
-      "DRAGONS": {
+      "REDLIONS": {
          "description": "A space separated list of user IDs who you want to assign as sudo users.",
          "required": false,
          "value": ""
       },
-      "DEMONS": {
+      "SPRYZONS": {
          "description": "A space separated list of user IDs who you wanna assign as support users(gban perms only).",
          "required": false,
          "value": ""
       },
-      "TIGERS": {
+      "FAFNIRS": {
          "description": "A space separated list of user IDs who you wanna assign as tiger users.",
          "required": false,
          "value": ""
       },
-      "WOLVES": {
+      "LUINORS": {
          "description": "A space separated list of user IDs who you want to assign as whitelisted - can't be banned with your bot.",
          "required": false,
          "value": ""
