@@ -10,12 +10,7 @@ from ShikimoriRobot.events import register
 from ShikimoriRobot import telethn as tbot
 
 
-PHOTO = (
-      "https://telegra.ph/file/b8a440f1dbbc0c17dabdf.jpg"
-      "https://telegra.ph/file/541980d45561114fabc95.jpg"
-      "https://telegra.ph/file/2a3a55d541ef99ffb9a27.jpg"
-      "https://telegra.ph/file/5f1f7fa3cce1a39a3c53e.jpg"
-)
+PHOTO = "https://telegra.ph/file/b8a440f1dbbc0c17dabdf.jpg"
 
 @register(pattern=("/alive"))
 async def awake(event):
@@ -27,4 +22,4 @@ async def awake(event):
   TEXT += f"♡ **Pyrogram Version :** `{pyrover}` \n\n"
   TEXT += "**Thanks For Adding Me Here ♡**"
   BUTTON = [[Button.url("Help", "https://t.me/Mitsurixbot?start=help"), Button.url("Support", "https://t.me/MitsuriXSupport")]]
-  await tbot.send_file(event.chat_id, random.choice(PHOTO), caption=TEXT,  buttons=BUTTON)
+  await tbot.send_file(event.chat_id, PHOTO, caption=TEXT,  buttons=BUTTON)
