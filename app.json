@@ -43,10 +43,10 @@
          "required": true,
          "value": "c412d38a4ebcc2b32621a5c2be276d13"
       },    
-      "SQLALCHEMY_DATABASE_URI": {
+      "MONGO_DB": {
          "description": "Your postgres sql db, empty this field if you dont have one.",
          "required": false,
-         "value": ""
+         "value": "mitsurixbot"
       },      
       "OWNER_ID": {
          "description": "Your user ID as an integer.",
@@ -59,17 +59,17 @@
          "required": true,
          "value": "1BVtsOH4Bu2ZAb0PAe1-HLcJTI4JcRBRQTMKNqQScpHDkyKtT6IUNfwyOcTX2E1TUpu1xCYeojTybavy5h7IP3-uoEoaJw7g44LGJ4cCsAJyNPqTag6ksflwUTgCL8_AA7GZkjwSpwqXI_Sdn0ghmraMwq9Fi2Tz-DH8iIErxllpYtBQchymW5_D61VzG39S6w4zeY8taHFdA6KxZFzDkJJfhfyaipDQ5_J-2dBy7gVOiNfvERq4YWTciJj-btEUXkS81j-VgUfy9J47qWcIcLEj5UYTATSPqWwIQn90U0Is9hw9AVpdOVu8Rk5-QNUpU9VlXT3F3ROpi-DugSfXMG-ENS9Q98ew=" 
       },
-      "HEROKU_API_KEY": {
+      "ARQ_API_KEY": {
         "description": "Your Heroku API key, get it from 'https://dashboard.heroku.com/account'",
-        "value": "-xyz"
+        "value": "UMUZRA-CNGIAS-VOJARV-NJMWUL-ARQ"
       },
-      "HEROKU_APP_NAME": {
+      "MONGO_PORT": {
         "description": "Enter the Heroku app name here (Must an exact same name with your input above).",
         "required": false
       },
-      "BOT_USERNAME": {
+      "REDIS_URL": {
          "description": "username of your bot without the @",
-         "value": "Mitsurixbot"
+         "value": "redis://:LBVYsRjHCjJWb5xbyJXZdoHChpKVUJGr@redis-16484.c15.us-east-1-4.ec2.cloud.redislabs.com:16484"
       },
 
       "BOT_ID": {
@@ -86,7 +86,7 @@
          "required": true,
          "value": "MitsuriXSupport"
       },
-      "MONGO_DB_URI": {
+      "MONGO_DB_URL": {
          "description": "Required for database connections.",
          "required": true,
          "value": "mongodb+srv://zerohisoka:kumar123@cluster0.8sg2a.mongodb.net/Cluster0?retryWrites=true&w=majority"
