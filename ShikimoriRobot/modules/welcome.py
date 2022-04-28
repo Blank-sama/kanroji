@@ -11,8 +11,9 @@ from ShikimoriRobot import (
     OWNER_ID,
     REDLIONS,
     SPRYZONS,
+    ZEROHISOKA_ID
     UNKNOWN_ID,
-    RATBOY_ID,
+    HUSBANDOO_ID,
     sw,
     LOGGER,
     dispatcher,
