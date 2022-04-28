@@ -10,9 +10,9 @@ from telegram import (InlineKeyboardButton, InlineKeyboardMarkup, ParseMode,
                       TelegramError, Update, constants)
 from telegram.ext import CallbackContext
 from telegram.utils.helpers import mention_html
-from Raiden import dispatcher
-from Raiden.modules.disable import DisableAbleCommandHandler
-from Raiden.modules.helper_funcs.misc import convert_gif
+from ShikimoriRobot import dispatcher
+from ShikimoriRobot.modules.disable import DisableAbleCommandHandler
+from ShikimoriRobot.modules.helper_funcs.misc import convert_gif
 
 combot_stickers_url = "https://combot.org/telegram/stickers?q="
 
