@@ -102,7 +102,7 @@ def ping(update: Update, context: CallbackContext):
             reply_markup=InlineKeyboardMarkup(
                 [
                   [
-                  InlineKeyboardButton(text="Shikimori Stats", callback_data="stats_callback")
+                  InlineKeyboardButton(text="Mitsuri Stats", callback_data="stats_callback")
                   ]
                 ]
             ),
@@ -132,7 +132,7 @@ def pingall(update: Update, context: CallbackContext):
         reply_markup=InlineKeyboardMarkup(
                 [
                   [
-                  InlineKeyboardButton(text="Shikimori Stats", callback_data="stats_callback")
+                  InlineKeyboardButton(text="Mitsuri Stats", callback_data="stats_callback")
                   ]
                 ]
             ),
