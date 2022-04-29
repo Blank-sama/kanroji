@@ -137,10 +137,10 @@ I am Love Hashira i can slay demons i have my Demon Slayer mark which can Slay P
 """
 
 GROUP_START_IMG = (
-      "https://telegra.ph/file/b8a440f1dbbc0c17dabdf.jpg"
-      "https://telegra.ph/file/541980d45561114fabc95.jpg"
-      "https://telegra.ph/file/2a3a55d541ef99ffb9a27.jpg"
-      "https://telegra.ph/file/5f1f7fa3cce1a39a3c53e.jpg"
+      "https://telegra.ph/file/b8a440f1dbbc0c17dabdf.jpg",
+      "https://telegra.ph/file/541980d45561114fabc95.jpg",
+      "https://telegra.ph/file/2a3a55d541ef99ffb9a27.jpg",
+      "https://telegra.ph/file/5f1f7fa3cce1a39a3c53e.jpg",
 )
 
 DONATE_STRING = """❂ I'm Free for Everyone ❂"""
